@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\framework\AudioFile.cpp" />
+    <ClCompile Include="src\framework\Debug.cpp" />
+    <ClCompile Include="src\framework\GameSceneManager.cpp" />
+    <ClCompile Include="src\framework\Music.cpp" />
+    <ClCompile Include="src\framework\Scene.cpp" />
+    <ClCompile Include="src\framework\Texture.cpp" />
+    <ClCompile Include="src\framework\Timer.cpp" />
+    <ClCompile Include="src\framework\Window.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\scenes\Scene0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\framework\AudioFile.h" />
+    <ClInclude Include="src\framework\Debug.h" />
+    <ClInclude Include="src\framework\GameSceneManager.h" />
+    <ClInclude Include="src\framework\Music.h" />
+    <ClInclude Include="src\framework\Scene.h" />
+    <ClInclude Include="src\framework\Texture.h" />
+    <ClInclude Include="src\framework\Timer.h" />
+    <ClInclude Include="src\framework\Vector.h" />
+    <ClInclude Include="src\framework\Window.h" />
+    <ClInclude Include="src\Main.h" />
+    <ClInclude Include="src\scenes\Scene0.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15CC58BD-E267-473E-83A1-854897A5FDCE}</ProjectGuid>
+    <RootNamespace>Watermelon</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
