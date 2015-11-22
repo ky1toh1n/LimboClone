@@ -12,17 +12,22 @@ bool Scene0::OnCreate() {
 
 	/// Load Assets:
 	/// Background
-	bg = new Texture(windowPtr->GetRenderer());
-
-	bg->Load("res/textures/limb800x600.bmp");
+	backgroundTexture = new Texture(windowPtr->GetRenderer());
+	backgroundTexture->Load("res/textures/limb800x600.bmp");
 
 	/// Title
 	/// SoundEffects
 	/// Models needed for this scene
+
+	/// Load Box2D
+	contactListener = new ContactListener();
+	worldManager = new WorldManager(*contactListener);
+
+
 	/// Music
-	bgm = new Music();
-	bgm->Load("res/bgm/Martin Stig Andersen - Limbo (Original Videogame Soundtrack) - 01 Menu.wav");
-	bgm->Play();
+	backgroundMusic = new Music();
+	backgroundMusic->Load("res/bgm/Martin Stig Andersen - Limbo (Original Videogame Soundtrack) - 01 Menu.wav");
+	backgroundMusic->Play();
 
 	
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
@@ -58,7 +63,7 @@ void Scene0::Update(const float deltaTime){
 void Scene0::Render() const{
 	windowPtr->ClearRenderer();
 	/// Draw you scene
-	bg->Draw();
+	backgroundTexture->Draw();
 	
 
 	SDL_RenderPresent(windowPtr->GetRenderer());

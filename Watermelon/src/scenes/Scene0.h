@@ -4,9 +4,7 @@
 #include "Scene.h"
 #include "Window.h"
 #include "Debug.h"
-#include "Texture.h"
-#include "Music.h"
-#include "Box2D/Box2D.h"
+
 
 #include "KeyboardManager.h"
 
@@ -23,6 +21,7 @@ namespace GAME {
 		Scene0& operator=(const Scene0 &) = delete;
 		Scene0& operator=(Scene0 &&) = delete;
 
+
 		virtual bool OnCreate() ;
 		virtual void OnDestroy();
 		virtual void Update(const float deltaTime);
@@ -33,6 +32,7 @@ namespace GAME {
 		 Music * bgm;
 		 Texture * bg;
 		 KeyboardManager * keyboardManager;
+
 	};
 }
 #endif

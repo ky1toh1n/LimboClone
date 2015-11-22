@@ -3,6 +3,10 @@
 
 #include "SDL.h"
 #include "Window.h"
+#include "Texture.h"
+#include "Music.h"
+#include "ContactListener.h"
+#include "WorldManager.h"
 
 namespace GAME {
 	class Scene {
@@ -27,6 +31,10 @@ namespace GAME {
 	protected:
 		Window* windowPtr;
 
+		Music * backgroundMusic;
+		Texture * backgroundTexture;
+		WorldManager * worldManager;
+		ContactListener * contactListener;
 	};
 }
 

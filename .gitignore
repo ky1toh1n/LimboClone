@@ -231,3 +231,5 @@ _Pvt_Extensions
 
 #Watermelon specific
 Watermelon/res/bgm
+Watermelon/log.txt
+*.vcxproj
