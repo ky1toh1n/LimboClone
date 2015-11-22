@@ -4,9 +4,7 @@
 #include "Scene.h"
 #include "Window.h"
 #include "Debug.h"
-#include "Texture.h"
-#include "Music.h"
-#include "Box2D/Box2D.h"
+
 
 namespace GAME {
 	class Scene0 : public Scene  {
@@ -23,14 +21,10 @@ namespace GAME {
 
 
 
-		virtual bool OnCreate() ;
+		virtual bool OnCreate();
 		virtual void OnDestroy();
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
-
-	private:
-		 Music * bgm;
-		 Texture * bg;
 	};
 }
 #endif

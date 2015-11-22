@@ -57,6 +57,12 @@
     <ClCompile Include="src\framework\Texture.cpp">
       <Filter>Source Files\framework</Filter>
     </ClCompile>
+    <ClCompile Include="src\framework\ContactListener.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\framework\WorldManager.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -91,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="src\Main.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\ContactListener.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\WorldManager.h">
+      <Filter>Header Files\framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
