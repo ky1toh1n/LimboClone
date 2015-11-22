@@ -36,7 +36,10 @@ private:
 	/// when no deleter is specified, therefore I'll make std::default_delete my friend as well. 
 	friend std::default_delete<GameSceneManager>;
 
+
+
 private: 
+	KeyboardManager keyboardManager;
 	bool isRunning;
 	unsigned int fps; /// Frames / second
 	

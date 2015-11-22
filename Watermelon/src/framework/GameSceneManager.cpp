@@ -55,7 +55,8 @@ bool GameSceneManager::Initialize(){
 	}
 
 	/// *** This does not need to happen here; but, I need to start somewhere ***
-	currentScene = new Scene0(windowInstance);
+	keyboardManager.Initialize();
+	currentScene = new Scene0(windowInstance, keyboardManager);
 	currentScene->OnCreate();
 
 
@@ -77,13 +78,10 @@ void GameSceneManager::Run(){
 
 		/// Keeep the event loop running at a sane rate
 		SDL_Delay(timer.GetSleepTime(fps));
-		std::cout << "main loop running at: " << timer.GetDeltaTime() << "sec/frame" << std::endl;
+		// std::cout << "main loop running at: " << timer.GetDeltaTime() << "sec/frame" << std::endl;
 		
 	}
 }
-
-
-
 
 
 void GameSceneManager::Update(const float deltaTime) {
@@ -94,10 +92,18 @@ void GameSceneManager::Update(const float deltaTime) {
 			case SDL_EventType::SDL_QUIT:
 				isRunning = false;
 				return;
+			case Keyboard::State::KEYDOWN:
+				keyboardManager.OnPress(SDLEvent.key.keysym.scancode);
+				break;
+			case Keyboard::State::KEYUP:
+				keyboardManager.OnRelease(SDLEvent.key.keysym.scancode);
+				break;
 			default:  
 				break;
 		}
 	}
+
+	//keyboardManager.IsPressed(Keyboard::Key::W);
 
 	if(currentScene) currentScene->Update(deltaTime);
 }
