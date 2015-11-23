@@ -63,6 +63,12 @@
     <ClCompile Include="src\framework\Keyboard.cpp">
       <Filter>Source Files\framework</Filter>
     </ClCompile>
+    <ClCompile Include="src\framework\ContactListener.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\framework\WorldManager.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -102,6 +108,12 @@
       <Filter>Header Files\framework</Filter>
     </ClInclude>
     <ClInclude Include="src\framework\Keyboard.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\ContactListener.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\WorldManager.h">
       <Filter>Header Files\framework</Filter>
     </ClInclude>
   </ItemGroup>

@@ -24,6 +24,7 @@ namespace GAME {
 
 		virtual bool OnCreate() ;
 		virtual void OnDestroy();
+		virtual void HandleInput();
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
 
@@ -31,7 +32,7 @@ namespace GAME {
 	private:
 		 Music * bgm;
 		 Texture * bg;
-		 KeyboardManager * keyboardManager;
+		
 
 	};
 }

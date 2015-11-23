@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\framework\AudioFile.cpp" />
+    <ClCompile Include="src\framework\ContactListener.cpp" />
     <ClCompile Include="src\framework\Debug.cpp" />
     <ClCompile Include="src\framework\GameSceneManager.cpp" />
     <ClCompile Include="src\framework\Keyboard.cpp" />
@@ -21,11 +22,13 @@
     <ClCompile Include="src\framework\Texture.cpp" />
     <ClCompile Include="src\framework\Timer.cpp" />
     <ClCompile Include="src\framework\Window.cpp" />
+    <ClCompile Include="src\framework\WorldManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\scenes\Scene0.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h" />
+    <ClInclude Include="src\framework\ContactListener.h" />
     <ClInclude Include="src\framework\Debug.h" />
     <ClInclude Include="src\framework\GameSceneManager.h" />
     <ClInclude Include="src\framework\Keyboard.h" />
@@ -36,6 +39,7 @@
     <ClInclude Include="src\framework\Timer.h" />
     <ClInclude Include="src\framework\Vector.h" />
     <ClInclude Include="src\framework\Window.h" />
+    <ClInclude Include="src\framework\WorldManager.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\Scene0.h" />
   </ItemGroup>
@@ -78,8 +82,8 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;Box2D.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
@@ -99,8 +103,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;Box2D.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>

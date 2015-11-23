@@ -3,7 +3,7 @@
 
 using namespace GAME;
 
-Scene0::Scene0(class Window& windowRef, class KeyboardManager& keymanRef):  Scene(windowRef) {
+Scene0::Scene0(class Window& windowRef, class KeyboardManager& keymanRef):  Scene(windowRef, keymanRef) {
 	keyboardManager = &keymanRef;
 }
 Scene0::~Scene0(){}
@@ -35,10 +35,11 @@ bool Scene0::OnCreate() {
 }
 void Scene0::OnDestroy(){
 	/// Cleanup Assets
+	keyboardManager = nullptr;
 
 }
 
-void Scene0::Update(const float deltaTime){
+void Scene0::HandleInput() {
 	if (keyboardManager->IsPressed(Keyboard::Key::A)) {
 		std::cout << "Pressed A" << std::endl;
 	}
@@ -58,6 +59,12 @@ void Scene0::Update(const float deltaTime){
 	if (keyboardManager->IsPressed(Keyboard::Key::SPACE)) {
 		std::cout << "Pressed SPACE-DESU" << std::endl;
 	}
+
+}
+
+void Scene0::Update(const float deltaTime){
+	HandleInput();
+
 }
 
 void Scene0::Render() const{

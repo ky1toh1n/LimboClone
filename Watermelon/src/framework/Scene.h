@@ -11,7 +11,7 @@
 namespace GAME {
 	class Scene {
 	public:
-		explicit Scene(class Window& windowRef);
+		explicit Scene(class Window& windowRef, class KeyboardManager& keymanRef);
 		virtual ~Scene();
 
 		Scene(const Scene&) = delete;
@@ -25,11 +25,14 @@ namespace GAME {
 		/// The proper term for these are "pure viruals"
 		virtual bool OnCreate() = 0;
 		virtual void OnDestroy() = 0;
+		virtual void HandleInput() = 0;
 		virtual void Update(const float deltaTime) = 0;
 		virtual void Render() const = 0;
 
 	protected:
 		Window* windowPtr;
+
+		KeyboardManager * keyboardManager;
 
 		Music * backgroundMusic;
 		Texture * backgroundTexture;

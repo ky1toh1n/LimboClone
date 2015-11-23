@@ -2,7 +2,7 @@
 
 using namespace GAME;
 
-Scene::Scene(Window& windowRef): windowPtr(&windowRef) {
+Scene::Scene(Window& windowRef, KeyboardManager& keymanRef) : windowPtr(&windowRef), keyboardManager(&keymanRef) {
 
 }
 

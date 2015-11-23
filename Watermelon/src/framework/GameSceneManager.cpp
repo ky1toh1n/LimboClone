@@ -30,6 +30,7 @@ GameSceneManager::GameSceneManager() : windowInstance(), currentScene(nullptr),i
 GameSceneManager::~GameSceneManager(){
 	Debug::Log(EMessageType::INFO, "Hello from the destructor", __FILENAME__, __LINE__);
 	windowInstance.Shutdown();
+	keyboardManager.Delete();
 	isRunning = false;
 }
 
@@ -58,7 +59,6 @@ bool GameSceneManager::Initialize(){
 	keyboardManager.Initialize();
 	currentScene = new Scene0(windowInstance, keyboardManager);
 	currentScene->OnCreate();
-
 
 	return true;
 }

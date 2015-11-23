@@ -13,7 +13,7 @@ namespace GAME {
 		virtual ~ContactListener();
 
 		/// Get rid of these
-		ContactListener(const ContactListener&) = delete;
+		ContactListener(const ContactListener&) = delete; 
 		ContactListener(ContactListener &&) = delete;
 		ContactListener& operator=(const ContactListener &) = delete;
 		ContactListener& operator=(ContactListener &&) = delete;
