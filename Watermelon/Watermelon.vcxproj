@@ -23,6 +23,8 @@
     <ClCompile Include="src\framework\Timer.cpp" />
     <ClCompile Include="src\framework\Window.cpp" />
     <ClCompile Include="src\framework\WorldManager.cpp" />
+    <ClCompile Include="src\gameobjects\GameObject.cpp" />
+    <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\scenes\Scene0.cpp" />
   </ItemGroup>
@@ -40,6 +42,8 @@
     <ClInclude Include="src\framework\Vector.h" />
     <ClInclude Include="src\framework\Window.h" />
     <ClInclude Include="src\framework\WorldManager.h" />
+    <ClInclude Include="src\gameobjects\GameObject.h" />
+    <ClInclude Include="src\gameobjects\Player.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\Scene0.h" />
   </ItemGroup>
@@ -77,7 +81,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\gameobjects;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -96,7 +100,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\gameobjects;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>

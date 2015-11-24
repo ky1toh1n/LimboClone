@@ -25,6 +25,12 @@
     <Filter Include="Header Files\scenes">
       <UniqueIdentifier>{f5b91644-2eb3-4be8-a22b-5078c43caf90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gameobjects">
+      <UniqueIdentifier>{83382627-eee1-4b1b-a72e-f1bc27e39648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobjects">
+      <UniqueIdentifier>{994f30e4-b050-4686-9872-d7772713680f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -68,6 +74,12 @@
     </ClCompile>
     <ClCompile Include="src\framework\WorldManager.cpp">
       <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\GameObject.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Player.cpp">
+      <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="src\framework\WorldManager.h">
       <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\GameObject.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Player.h">
+      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

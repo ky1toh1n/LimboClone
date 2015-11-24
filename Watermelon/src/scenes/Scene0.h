@@ -5,6 +5,8 @@
 #include "Window.h"
 #include "Debug.h"
 
+#include "GameObject.h"
+#include "Player.h"
 
 #include "KeyboardManager.h"
 
@@ -30,8 +32,9 @@ namespace GAME {
 
 
 	private:
-		 Music * bgm;
-		 Texture * bg;
+		Player * player;
+		Music * bgm;
+		Texture * bg;
 		
 
 	};

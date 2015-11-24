@@ -29,6 +29,18 @@ bool Scene0::OnCreate() {
 	backgroundMusic->Load("res/bgm/Martin Stig Andersen - Limbo (Original Videogame Soundtrack) - 01 Menu.wav");
 	backgroundMusic->Play();
 
+	player = new Player(10, 10);
+
+	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
+	tmpTex->Load("res/placeholders/ph_player1.bmp");
+
+	if (tmpTex == nullptr) {
+		std::cout << "No Image" << std::endl;
+	}
+
+	player->SetSprite(*tmpTex);
+
+
 	
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
@@ -64,13 +76,14 @@ void Scene0::HandleInput() {
 
 void Scene0::Update(const float deltaTime){
 	HandleInput();
-
+	player->Update(deltaTime);
 }
 
 void Scene0::Render() const{
 	windowPtr->ClearRenderer();
 	/// Draw you scene
 	backgroundTexture->Draw();
+	player->Draw();
 	
 
 	SDL_RenderPresent(windowPtr->GetRenderer());
