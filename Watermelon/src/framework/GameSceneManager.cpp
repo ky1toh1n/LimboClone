@@ -31,6 +31,8 @@ GameSceneManager::~GameSceneManager(){
 	Debug::Log(EMessageType::INFO, "Hello from the destructor", __FILENAME__, __LINE__);
 	windowInstance.Shutdown();
 	keyboardManager.Delete();
+	delete currentScene;
+	currentScene = nullptr;
 	isRunning = false;
 }
 
@@ -55,10 +57,14 @@ bool GameSceneManager::Initialize(){
 		return false;
 	}
 
-	/// *** This does not need to happen here; but, I need to start somewhere ***
 	keyboardManager.Initialize();
+
+	/// *** This does not need to happen here; but, I need to start somewhere ***
 	currentScene = new Scene0(windowInstance, keyboardManager);
-	currentScene->OnCreate();
+	if (!currentScene->OnCreate()){
+		Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
+		return false;
+	}
 
 	return true;
 }

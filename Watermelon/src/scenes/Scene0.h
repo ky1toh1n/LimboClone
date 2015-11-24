@@ -36,7 +36,6 @@ namespace GAME {
 		Music * bgm;
 		Texture * bg;
 		
-
 	};
 }
 #endif

@@ -18,8 +18,6 @@ namespace GAME {
 		Scene(Scene&&) = delete;
 		Scene& operator = (const Scene&) = delete;
 		Scene& operator = (Scene&&) = delete;
-		
-		
 
 		/// Create the following four abstract functions and make them polymorphic
 		/// The proper term for these are "pure viruals"
@@ -31,11 +29,13 @@ namespace GAME {
 
 	protected:
 		Window* windowPtr;
-
 		KeyboardManager * keyboardManager;
 
+		//Assets
 		Music * backgroundMusic;
 		Texture * backgroundTexture;
+
+		//Box2D
 		WorldManager * worldManager;
 		ContactListener * contactListener;
 	};

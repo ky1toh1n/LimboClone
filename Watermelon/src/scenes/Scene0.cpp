@@ -2,32 +2,31 @@
 
 
 using namespace GAME;
+using namespace std;
 
 Scene0::Scene0(class Window& windowRef, class KeyboardManager& keymanRef):  Scene(windowRef, keymanRef) {
-	keyboardManager = &keymanRef;
+	
 }
-Scene0::~Scene0(){}
+
+Scene0::~Scene0(){
+	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene0.cpp", __FILENAME__, __LINE__);
+}
 
 bool Scene0::OnCreate() {
 
 	/// Load Assets:
 	/// Background
-	backgroundTexture = new Texture(windowPtr->GetRenderer());
-	backgroundTexture->Load("res/textures/limb800x600.bmp");
+	if (!backgroundTexture->Load("res/textures/limb800x600.bmp"))
+	{return false;}
 
 	/// Title
 	/// SoundEffects
 	/// Models needed for this scene
 
-	/// Load Box2D
-	contactListener = new ContactListener();
-	worldManager = new WorldManager(*contactListener);
-
-
 	/// Music
-	backgroundMusic = new Music();
-	backgroundMusic->Load("res/bgm/Martin Stig Andersen - Limbo (Original Videogame Soundtrack) - 01 Menu.wav");
-	backgroundMusic->Play();
+	if (!backgroundMusic->Load("res/bgm/Martin Stig Andersen - Limbo (Original Videogame Soundtrack) - 01 Menu.wav"))
+	{return false;}
+	backgroundMusic->Play(std::numeric_limits<int>::max());
 
 	player = new Player(10, 10);
 
@@ -45,10 +44,9 @@ bool Scene0::OnCreate() {
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
 }
+
 void Scene0::OnDestroy(){
 	/// Cleanup Assets
-	keyboardManager = nullptr;
-
 }
 
 void Scene0::HandleInput() {
