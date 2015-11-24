@@ -30,10 +30,6 @@ namespace GAME {
 
 
 	private:
-		 Music * bgm;
-		 Texture * bg;
-		
-
 	};
 }
 #endif
