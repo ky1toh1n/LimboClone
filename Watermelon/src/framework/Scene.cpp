@@ -14,7 +14,7 @@ Scene::Scene(Window& windowRef, KeyboardManager& keymanRef) : windowPtr(&windowR
 
 
 Scene::~Scene() {
-	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene.cpp", __FILENAME__, __LINE__);
+
 	delete windowPtr;
 	windowPtr = nullptr;
 
@@ -24,7 +24,7 @@ Scene::~Scene() {
 	delete backgroundTexture;
 	backgroundTexture = nullptr;
 
-	delete backgroundMusic;
+	delete backgroundMusic; 
 	backgroundMusic = nullptr;
 
 	delete contactListener;
@@ -32,4 +32,6 @@ Scene::~Scene() {
 
 	delete worldManager;
 	worldManager = nullptr;
+
+	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene.cpp", __FILENAME__, __LINE__);
 }

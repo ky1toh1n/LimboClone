@@ -2,9 +2,20 @@
 
 using namespace GAME;
 
+const float WorldManager::PTM = 10.0f;
+
 WorldManager::WorldManager(ContactListener & contactListener) {
 	world = new b2World(*gravityVec);
 	world->SetContactListener(&contactListener);
+	world->SetAllowSleeping(false); // Set to false for debugging
+
+	timeStep = 1.0f / 60.0f;
+	// timeStepMillis = timeStep * 1000.0f;
+	timeStepMillis = timeStep;
+	velocityIterations = 6;
+	positionIterations = 2;
+	timeMultiplier = 5;
+	timeAccumulator = 0;
 }
 
 
@@ -14,6 +25,7 @@ WorldManager::~WorldManager() {
 
 b2Body * WorldManager::CreateBody(const b2BodyType bodyType, const float32 positionX, const float32 positionY,
 	const b2FixtureDef * fixtureDef){
+
 	b2BodyDef * bodyDef = new b2BodyDef();
 	bodyDef->type = bodyType;
 	bodyDef->position.Set(positionX, positionY);
@@ -33,6 +45,7 @@ b2FixtureDef * WorldManager::CreateFixtureDef(const float32 friction, const floa
 	fixtureDef->friction = friction;
 	fixtureDef->restitution = restitution;
 	fixtureDef->density = density;
+
 
 	return fixtureDef;
 }
@@ -60,4 +73,12 @@ b2Shape * WorldManager::CreatePolygonShape(const b2Vec2 & vertices, const int32 
 	shape->Set(&vertices, verticeCount);
 
 	return shape;
+}
+
+void WorldManager::Update(const float deltaTime) {
+	timeAccumulator += deltaTime * timeMultiplier;
+	while (timeAccumulator > timeStepMillis) {
+		world->Step(timeStep, velocityIterations, positionIterations);
+		timeAccumulator -= timeStepMillis;
+	}
 }

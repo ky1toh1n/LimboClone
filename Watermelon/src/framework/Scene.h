@@ -9,7 +9,7 @@
 #include "WorldManager.h"
 
 namespace GAME {
-	class Scene {
+	class Scene : public ContactListener {
 	public:
 		explicit Scene(class Window& windowRef, class KeyboardManager& keymanRef);
 		virtual ~Scene();
@@ -20,7 +20,7 @@ namespace GAME {
 		Scene& operator = (Scene&&) = delete;
 
 		/// Create the following four abstract functions and make them polymorphic
-		/// The proper term for these are "pure viruals"
+		/// The proper term for these are "pure virtuals"
 		virtual bool OnCreate() = 0;
 		virtual void OnDestroy() = 0;
 		virtual void HandleInput() = 0;

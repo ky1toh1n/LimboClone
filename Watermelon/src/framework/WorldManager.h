@@ -29,9 +29,23 @@ namespace GAME {
 		b2Shape * CreateCircleShape(const float32 radius, const float32 positionX = 0, const float32 positionY = 0);
 		b2Shape * CreateBoxShape(const float32 halfWidth, const float32 halfHeight);
 		b2Shape * CreatePolygonShape(const b2Vec2 & vertices, const int32 verticeCount);
+
+		void Update(const float deltaTime);
+	public:
+		static const float32 PTM;
+
 	private:
 		b2World * world;
-		b2Vec2 * gravityVec = new b2Vec2(0, -10);
+		b2Vec2 * gravityVec = new b2Vec2(0, 10.0f);
+
+		float32 timeStep;
+		float32 timeStepMillis;
+		int32 velocityIterations;
+		int32 positionIterations;
+		float32 timeMultiplier;
+		float32 timeAccumulator;
+
+
 	};
 }
 #endif

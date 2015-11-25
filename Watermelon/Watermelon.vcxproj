@@ -24,6 +24,7 @@
     <ClCompile Include="src\framework\Window.cpp" />
     <ClCompile Include="src\framework\WorldManager.cpp" />
     <ClCompile Include="src\gameobjects\GameObject.cpp" />
+    <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\scenes\Scene0.cpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="src\framework\Window.h" />
     <ClInclude Include="src\framework\WorldManager.h" />
     <ClInclude Include="src\gameobjects\GameObject.h" />
+    <ClInclude Include="src\gameobjects\PhysicsObject.h" />
     <ClInclude Include="src\gameobjects\Player.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\Scene0.h" />

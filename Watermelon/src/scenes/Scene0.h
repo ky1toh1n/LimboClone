@@ -33,6 +33,7 @@ namespace GAME {
 
 	private:
 		Player * player;
+		Player * ground;
 		Music * bgm;
 		Texture * bg;
 		

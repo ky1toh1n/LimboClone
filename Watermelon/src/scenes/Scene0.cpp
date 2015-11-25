@@ -28,7 +28,15 @@ bool Scene0::OnCreate() {
 	{return false;}
 	backgroundMusic->Play(std::numeric_limits<int>::max());
 
-	player = new Player(10, 10);
+	b2Shape* tmpShape = worldManager->CreateBoxShape(8, 16);
+	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(1,1.0f,100,tmpShape);
+	b2Body* tmpBody = worldManager->CreateBody(b2_dynamicBody, 10, 10, tmpFixtureDef);
+	player = new Player(*tmpBody, 10, 10);
+
+	tmpShape = worldManager->CreateBoxShape(100, 16);
+	tmpFixtureDef = worldManager->CreateFixtureDef(1, 1.0f, 100, tmpShape);
+	tmpBody = worldManager->CreateBody(b2_staticBody, 0, 70, tmpFixtureDef);
+	ground = new Player(*tmpBody, 0, 70);
 
 	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
 	tmpTex->Load("res/placeholders/ph_player1.bmp");
@@ -75,6 +83,7 @@ void Scene0::HandleInput() {
 void Scene0::Update(const float deltaTime){
 	HandleInput();
 	player->Update(deltaTime);
+	worldManager->Update(deltaTime);
 }
 
 void Scene0::Render() const{
