@@ -27,13 +27,15 @@ namespace GAME {
 		virtual bool OnCreate() ;
 		virtual void OnDestroy();
 		virtual void HandleInput();
+
+		virtual void AddGameObjectToScene(GameObject* gameObjPtr);
+		virtual GameObject* GetGameObjectWithBody(const b2Body& bodyRef) const;
+
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
 
 
 	private:
-		Player * player;
-		Player * ground;
 		Music * bgm;
 		Texture * bg;
 		

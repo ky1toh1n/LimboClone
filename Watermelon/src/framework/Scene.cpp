@@ -35,3 +35,4 @@ Scene::~Scene() {
 
 	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene.cpp", __FILENAME__, __LINE__);
 }
+

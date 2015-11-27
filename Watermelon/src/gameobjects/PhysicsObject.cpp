@@ -10,6 +10,10 @@ PhysicsObject::~PhysicsObject() {
 	GameObject::~GameObject();
 }
 
+const b2Body* PhysicsObject::GetBody() {
+	return body;
+}
+
 void PhysicsObject::Update(const float deltaTime) {
 	GameObject::Update(deltaTime);
 }

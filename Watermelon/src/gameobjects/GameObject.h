@@ -3,6 +3,7 @@
 
 #include "Vector.h"
 #include "Texture.h"
+#include "Box2D/Box2D.h"
 
 using namespace MATH;
 
@@ -22,6 +23,7 @@ namespace GAME {
 		virtual Vec2 Position() const;
 		virtual void SetSprite(Texture& spriteRef);
 		virtual void Destroy();
+		virtual const b2Body* GetBody();
 		virtual void Update(const float deltaTime);
 		virtual void Draw() const;
 

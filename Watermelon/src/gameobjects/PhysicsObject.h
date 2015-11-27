@@ -17,6 +17,7 @@ namespace GAME {
 		PhysicsObject& operator=(const PhysicsObject &) = delete;
 		PhysicsObject& operator=(PhysicsObject &&) = delete;
 
+		virtual const b2Body* GetBody();
 		virtual void Update(const float deltaTime);
 		virtual void Draw() const;
 

@@ -29,11 +29,16 @@ void GameObject::SetSprite(Texture& spriteRef) {
 	sprite = &spriteRef;
 }
 
+const b2Body* GameObject::GetBody() {
+	return nullptr;
+}
+
 void GameObject::Update(const float deltaTime) {
 }
 
 void GameObject::Draw() const {
-	sprite->Draw(position.x, position.y);	
+	if (sprite != nullptr)
+		sprite->Draw(position.x, position.y);	
 }
 
 

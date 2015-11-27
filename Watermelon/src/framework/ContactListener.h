@@ -3,6 +3,8 @@
 
 #include "Debug.h"
 #include "Box2D/Box2D.h"
+// #include "Scene.h"
+// #include "GameObject.h"
 
 //Responsible for handling Box2D Contacts.
 //It implements b2ContactListener.
@@ -17,6 +19,10 @@ namespace GAME {
 		ContactListener(ContactListener &&) = delete;
 		ContactListener& operator=(const ContactListener &) = delete;
 		ContactListener& operator=(ContactListener &&) = delete;
+
+		// TODO: Adam --> Coupling to Scene
+		// Retrieves the GameObject with the respective bodyRef
+		//virtual GameObject* GetGameObjectWithBody(const Scene& sceneRef, const b2Body& bodyRef) const;
 
 		// b2ContactListener functions
 		virtual void BeginContact(b2Contact* contact);

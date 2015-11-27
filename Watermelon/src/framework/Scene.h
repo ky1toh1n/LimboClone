@@ -7,9 +7,11 @@
 #include "Music.h"
 #include "ContactListener.h"
 #include "WorldManager.h"
+#include "GameObject.h"
+#include <vector>
 
 namespace GAME {
-	class Scene : public ContactListener {
+	class Scene {
 	public:
 		explicit Scene(class Window& windowRef, class KeyboardManager& keymanRef);
 		virtual ~Scene();
@@ -24,20 +26,30 @@ namespace GAME {
 		virtual bool OnCreate() = 0;
 		virtual void OnDestroy() = 0;
 		virtual void HandleInput() = 0;
+
+		virtual void AddGameObjectToScene(GameObject* gameObjPtr) = 0;
+		virtual GameObject* GetGameObjectWithBody(const b2Body& bodyRef) const = 0;
+
 		virtual void Update(const float deltaTime) = 0;
 		virtual void Render() const = 0;
 
 	protected:
 		Window* windowPtr;
-		KeyboardManager * keyboardManager;
+		KeyboardManager* keyboardManager;
 
 		//Assets
-		Music * backgroundMusic;
-		Texture * backgroundTexture;
+		Music* backgroundMusic;
+		Texture* backgroundTexture;
+
+		// Collections
+
+		// TODO: Adam
+		// switch to whatever container you think is best
+		std::vector<GameObject*>* gameObjects;
 
 		//Box2D
-		WorldManager * worldManager;
-		ContactListener * contactListener;
+		WorldManager* worldManager;
+		ContactListener* contactListener;
 	};
 }
 
