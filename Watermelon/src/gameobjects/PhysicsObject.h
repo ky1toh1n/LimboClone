@@ -7,7 +7,7 @@
 
 
 namespace GAME {
-	class PhysicsObject : public GameObject, public ContactListener {
+	class PhysicsObject : public GameObject {
 	public:
 		PhysicsObject(int x = 0, int y = 0);
 		virtual ~PhysicsObject();

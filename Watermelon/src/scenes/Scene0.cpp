@@ -30,40 +30,36 @@ bool Scene0::OnCreate() {
 
 	gameObjects = new std::vector<GameObject*>();
 
-	b2Shape* tmpShape = worldManager->CreateBoxShape(8, 16);
-	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(1,1.0f,100,tmpShape);
-	b2Body* tmpBody = worldManager->CreateBody(b2_dynamicBody, 10, 10, tmpFixtureDef);
-	GameObject* player = new Player(*tmpBody, 10, 10);
+	string s = "res/placeholders/ph_player1.png";
+	b2BodyType t = b2_dynamicBody;
+	CreateBoxGameObject(t, 10.0f, 10.0f, s);
+
+	s = "res/placeholders/ground128x32.png";
+	t = b2_staticBody;
+	CreateBoxGameObject(t, 10.0f, 100.0f, s);
 
 
-	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
-	tmpTex->Load("res/placeholders/ph_player1.bmp");
-
-	if (tmpTex == nullptr) {
-		std::cout << "No Image" << std::endl;
-	}
-
-	player->SetSprite(*tmpTex);
-
-
-	AddGameObjectToScene(player);
-
-	tmpShape = worldManager->CreateBoxShape(100, 16);
-	tmpFixtureDef = worldManager->CreateFixtureDef(1, 1.0f, 100, tmpShape);
-	tmpBody = worldManager->CreateBody(b2_staticBody, 0, 70, tmpFixtureDef);
-	GameObject* tmp = new Player(*tmpBody, 0, 70);
-
-	AddGameObjectToScene(tmp);
-
-	GetGameObjectWithBody(*tmpBody);
-
-	tmpBody = worldManager->CreateBody(b2_staticBody, 0, 70, tmpFixtureDef);
-	GetGameObjectWithBody(*tmpBody);
-
-
-	
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
+}
+
+
+void Scene0::CreateBoxGameObject(const b2BodyType& type, const float32 x, const float32 y, const std::string& path) {
+
+	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
+	tmpTex->Load(path);
+	float32 width = tmpTex->GetWidth()/2;
+	float32 height = tmpTex->GetHeight()/2;
+
+
+	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
+	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(1, 0.2f, 100, tmpShape);
+	b2Body* tmpBody = worldManager->CreateBody(type, x, y, tmpFixtureDef);
+	GameObject* gameObject = new Player(*tmpBody);
+
+	gameObject->SetSprite(*tmpTex);
+
+	AddGameObjectToScene(gameObject);
 }
 
 void Scene0::OnDestroy(){
@@ -97,18 +93,6 @@ void Scene0::AddGameObjectToScene(GameObject* gameObjRef) {
 	gameObjects->push_back(gameObjRef);
 }
 
-GameObject* Scene0::GetGameObjectWithBody(const b2Body& bodyRef) const {
-	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
-		GameObject* gameObject = *it;
-		if (gameObject->GetBody() == &bodyRef) {
-			std::cout << "Body Found" << std::endl;
-			return gameObject;
-		}
-	}
-	std::cout << "No Body Found" << std::endl;
-}
-
-
 void Scene0::Update(const float deltaTime){
 	HandleInput();
 
@@ -131,4 +115,4 @@ void Scene0::Render() const{
 		gameObject->Draw();
 	}
 	SDL_RenderPresent(windowPtr->GetRenderer());
-};
+}

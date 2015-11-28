@@ -3,7 +3,7 @@
 
 using namespace GAME;
 
-Player::Player(b2Body& bodyRef, int x, int y) {
+Player::Player(b2Body& bodyRef) {
 	// JUST PICK ONE
 	// TODO: 1.) Either create the body with position then assign the object's position to the body's position
 	//								OR
@@ -25,10 +25,11 @@ void Player::Update(const float deltaTime) {
 	// Testing
 
 	b2Vec2 tmpPosition = body->GetPosition();
+	
 	//std::cout << tmpPosition.x << ", "<< tmpPosition.y << std::endl;
 	//std::cout << WorldManager::PTM << std::endl;
-	
-	PhysicsObject::SetPosition(tmpPosition.x * WorldManager::PTM, tmpPosition.y * WorldManager::PTM);
+
+	PhysicsObject::SetPosition(tmpPosition.x, tmpPosition.y);
 	//position.x += 1;
 }
 

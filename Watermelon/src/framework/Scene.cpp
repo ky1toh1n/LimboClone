@@ -8,13 +8,12 @@ Scene::Scene(Window& windowRef, KeyboardManager& keymanRef) : windowPtr(&windowR
 	backgroundTexture = new Texture(windowPtr->GetRenderer());
 	backgroundMusic = new Music();
 	//Box2D
-	contactListener = new ContactListener();
+	contactListener = new ContactListener(gameObjects);
 	worldManager = new WorldManager(*contactListener);
 }
 
 
 Scene::~Scene() {
-
 	delete windowPtr;
 	windowPtr = nullptr;
 

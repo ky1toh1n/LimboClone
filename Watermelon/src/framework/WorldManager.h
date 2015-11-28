@@ -18,7 +18,7 @@ namespace GAME {
 		WorldManager(WorldManager &&) = delete;
 		WorldManager& operator=(const WorldManager &) = delete;
 		WorldManager& operator=(WorldManager &&) = delete;
-	
+
 		/// b2Body creation interface
 		b2Body * CreateBody(const b2BodyType bodyType, const float32 positionX, const float32 positionY,
 			const b2FixtureDef * fixtureDef);

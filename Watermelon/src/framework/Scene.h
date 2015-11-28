@@ -28,7 +28,6 @@ namespace GAME {
 		virtual void HandleInput() = 0;
 
 		virtual void AddGameObjectToScene(GameObject* gameObjPtr) = 0;
-		virtual GameObject* GetGameObjectWithBody(const b2Body& bodyRef) const = 0;
 
 		virtual void Update(const float deltaTime) = 0;
 		virtual void Render() const = 0;

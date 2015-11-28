@@ -6,7 +6,7 @@
 namespace GAME {
 	class Player : public PhysicsObject {
 	public:
-		explicit Player(b2Body& bodyRef, int x = 0, int y = 0);
+		explicit Player(b2Body& bodyRef);
 		~Player();
 
 		Player(const Player&) = delete;

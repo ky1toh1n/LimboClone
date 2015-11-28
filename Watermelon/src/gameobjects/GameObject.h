@@ -21,6 +21,8 @@ namespace GAME {
 	public:
 		virtual void SetPosition(int x, int y); // no decimal values on screen pixels
 		virtual Vec2 Position() const;
+		virtual float Width() const;
+		virtual float Height() const;
 		virtual void SetSprite(Texture& spriteRef);
 		virtual void Destroy();
 		virtual const b2Body* GetBody();

@@ -25,6 +25,14 @@ Vec2 GameObject::Position() const {
 	return position;
 }
 
+float GameObject::Width() const {
+	return sprite->GetWidth();
+}
+
+float GameObject::Height() const {
+	return sprite->GetHeight();
+}
+
 void GameObject::SetSprite(Texture& spriteRef) {
 	sprite = &spriteRef;
 }
@@ -38,7 +46,7 @@ void GameObject::Update(const float deltaTime) {
 
 void GameObject::Draw() const {
 	if (sprite != nullptr)
-		sprite->Draw(position.x, position.y);	
+		sprite->Draw(position.x-Width()/2, position.y-Width()/2);	
 }
 
 

@@ -2,8 +2,8 @@
 
 using namespace GAME;
 
-ContactListener::ContactListener() {
-
+ContactListener::ContactListener(std::vector<GameObject*>* sceneGameObjects) {
+	gameObjects = sceneGameObjects;
 }
 
 
@@ -11,12 +11,15 @@ ContactListener::~ContactListener() {
 
 }
 
-/*
-GameObject* ContactListener::GetGameObjectWithBody(const Scene& sceneRef, const b2Body& bodyRef) const {
-	return sceneRef.GetGameObjectWithBody(bodyRef);
-}
-*/
 
+GameObject* ContactListener::GetGameObjectWithBody(const b2Body& bodyRef) const {
+	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
+		GameObject* gameObject = *it;
+		if (gameObject->GetBody() == &bodyRef) {
+			return gameObject;
+		}
+	}
+}
 
 void ContactListener::BeginContact(b2Contact* contact){}
 void ContactListener::EndContact(b2Contact* contact){}
