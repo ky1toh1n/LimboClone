@@ -2,7 +2,7 @@
 
 using namespace GAME;
 
-GameObject::GameObject(int x, int y) {
+GameObject::GameObject(const float32 x, const float32 y) {
 	position.x = x;
 	position.y = y;
 	sprite = nullptr;
@@ -16,7 +16,7 @@ void GameObject::Destroy() {
 	sprite = nullptr;
 }
 
-void GameObject::SetPosition(int x, int y) {
+void GameObject::SetPosition(const float32 x, const float32 y) {
 	position.x = x;
 	position.y = y;
 }
@@ -25,12 +25,12 @@ Vec2 GameObject::Position() const {
 	return position;
 }
 
-float GameObject::Width() const {
-	return sprite->GetWidth();
+float32 GameObject::Width() const {
+	return (float32)sprite->GetWidth();
 }
 
-float GameObject::Height() const {
-	return sprite->GetHeight();
+float32 GameObject::Height() const {
+	return (float32)sprite->GetHeight();
 }
 
 void GameObject::SetSprite(Texture& spriteRef) {
@@ -44,9 +44,13 @@ const b2Body* GameObject::GetBody() {
 void GameObject::Update(const float deltaTime) {
 }
 
-void GameObject::Draw() const {
+
+// TODO: Get actual screen size values and recalculate position
+// HardCoded values for now.. im tired.
+void GameObject::Draw(const int xOffset, const int yOffset) const {
 	if (sprite != nullptr)
-		sprite->Draw(position.x-Width()/2, position.y-Height()/2);	
+		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400, 
+					 (int)(position.y - Height() / 2) - yOffset + 500);
 }
 
 

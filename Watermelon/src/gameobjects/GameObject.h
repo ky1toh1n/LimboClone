@@ -8,9 +8,10 @@
 using namespace MATH;
 
 namespace GAME {
+
 	class GameObject {
 	public:
-		GameObject(int x = 0, int y = 0);
+		GameObject(const float32 x = 0, const float32 y = 0);
 		virtual ~GameObject();
 
 		GameObject(const GameObject&) = delete;
@@ -19,15 +20,15 @@ namespace GAME {
 		GameObject& operator=(GameObject &&) = delete;
 	
 	public:
-		virtual void SetPosition(int x, int y); // no decimal values on screen pixels
+		virtual void SetPosition(const float32 x, const float32 y); // no decimal values on screen pixels
 		virtual Vec2 Position() const;
-		virtual float Width() const;
-		virtual float Height() const;
+		virtual float32 Width() const;
+		virtual float32 Height() const;
 		virtual void SetSprite(Texture& spriteRef);
 		virtual void Destroy();
 		virtual const b2Body* GetBody();
 		virtual void Update(const float deltaTime);
-		virtual void Draw() const;
+		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
 
 // Member Fields
 	protected:

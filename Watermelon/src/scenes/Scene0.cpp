@@ -1,6 +1,5 @@
 #include "Scene0.h"
 
-
 using namespace GAME;
 using namespace std;
 
@@ -32,43 +31,35 @@ bool Scene0::OnCreate() {
 
 	/// Create Game Objects!!!!!!!!!
 	gameObjects = new std::vector<GameObject*>();
-	
-	string s;
-	b2BodyType t;
 
-	for (int i = 0; i < 9; i++){
-		s = "res/placeholders/ph_player1.png";
-		t = b2_dynamicBody;
-		CreateBoxGameObject(t, 0 + i * 16, 10.0f, s);
-	}
 
-	s = "res/placeholders/ground128x32.png";
-	t = b2_staticBody;
-	CreateBoxGameObject(t, 0, 32.0f, s);
-
+	camera = new OrthographicCamera();
+	player = new Player(this, 50, 450);
+	camera->SetFocus(player);
+	Ground1024x32* groundZero = new Ground1024x32(this, 0, 500);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
 }
 
 
-void Scene0::CreateBoxGameObject(const b2BodyType& type, const float32 x, const float32 y, const std::string& path) {
-
+void Scene0::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type, const float32 x, const float32 y, const std::string& path) {
+	// Attaches a Box b2Body to a GameObject
+	
 	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
 	tmpTex->Load(path);
-	float32 width = tmpTex->GetWidth()/2;
-	float32 height = tmpTex->GetHeight()/2;
-
+	float32 width = (float32)tmpTex->GetWidth()/2;
+	float32 height = (float32)tmpTex->GetHeight() / 2;
 
 	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
-	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(1, 0.2f, 100, tmpShape);
+	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0, 1, 1, tmpShape);
 	//SWEEP! Add width and height ONLY if they are boxes!! This is to handle their centering issue.
 	b2Body* tmpBody = worldManager->CreateBody(type, x + width, y + height, tmpFixtureDef);
-	GameObject* gameObject = new Player(*tmpBody);
 
-	gameObject->SetSprite(*tmpTex);
+	gameObjectPtr->SetBody(*tmpBody);
+	gameObjectPtr->SetSprite(*tmpTex);
 
-	AddGameObjectToScene(gameObject);
+	AddGameObjectToScene(gameObjectPtr);
 }
 
 void Scene0::OnDestroy(){
@@ -78,6 +69,7 @@ void Scene0::OnDestroy(){
 void Scene0::HandleInput() {
 	if (keyboardManager->IsPressed(Keyboard::Key::A)) {
 		std::cout << "Pressed A" << std::endl;
+		player->MoveLeft();
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::W)) {
@@ -90,6 +82,7 @@ void Scene0::HandleInput() {
 
 	if (keyboardManager->IsPressed(Keyboard::Key::D)) {
 		std::cout << "Pressed D" << std::endl;
+		player->MoveRight();
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::SPACE)) {
@@ -101,6 +94,7 @@ void Scene0::HandleInput() {
 void Scene0::AddGameObjectToScene(GameObject* gameObjRef) {
 	gameObjects->push_back(gameObjRef);
 }
+
 
 void Scene0::Update(const float deltaTime){
 	HandleInput();
@@ -121,7 +115,16 @@ void Scene0::Render() const{
 	// TODO: Nicco/Adam Simplify, put in a separate function or something
 	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
 		GameObject* gameObject = *it;
-		gameObject->Draw();
-	}
+		// gameObject->Draw();
+		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);
+	} 
+	std::cout << camera->GetPosition().x << std::endl;
+
+	// SDL_RenderSetViewport(windowPtr->GetRenderer(), camera->GetRect());
+	// SDL_Surface* screenSurface = windowPtr->GetWindowSurface();
+	// SDL_Texture* currentScreen = SDL_CreateTextureFromSurface(windowPtr->GetRenderer(), screenSurface);
+
+
+
 	SDL_RenderPresent(windowPtr->GetRenderer());
 }

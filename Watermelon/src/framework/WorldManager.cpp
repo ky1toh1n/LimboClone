@@ -12,8 +12,8 @@ WorldManager::WorldManager(ContactListener & contactListener) {
 	timeStep = 1.0f / 60.0f;
 	// timeStepMillis = timeStep * 1000.0f;
 	timeStepMillis = timeStep;
-	velocityIterations = 6;
-	positionIterations = 2;
+	velocityIterations = 12;
+	positionIterations = 4;
 	timeMultiplier = 5;
 	timeAccumulator = 0;
 }

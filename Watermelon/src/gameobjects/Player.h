@@ -1,12 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "Scene.h"
 #include "PhysicsObject.h"
+
 
 namespace GAME {
 	class Player : public PhysicsObject {
 	public:
-		explicit Player(b2Body& bodyRef);
+		Player(Scene* scenePtr,const float32 x, const float32 y);
 		~Player();
 
 		Player(const Player&) = delete;
@@ -14,9 +16,11 @@ namespace GAME {
 		Player& operator=(const Player &) = delete;
 		Player& operator=(Player &&) = delete;
 
-	public:
+		void MoveLeft();
+		void MoveRight();
+
 		void Update(const float deltaTime);
-		void Draw() const;
+		// void Draw() const;
 	};
 }
 

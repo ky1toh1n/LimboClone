@@ -20,6 +20,7 @@ namespace GAME {
 		void ClearRenderer() const;
 		void SetWindowSize(const int Width_, const int Height_);
 		void ToggleFullScreen();
+		SDL_Surface* GetWindowSurface() const;
 		SDL_Renderer* GetRenderer() const;
 		int GetWidth() const;
 		int GetHeight() const;

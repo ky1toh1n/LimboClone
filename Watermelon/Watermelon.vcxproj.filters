@@ -84,6 +84,12 @@
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameobjects\Ground1024x32.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\OrthographicCamera.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -139,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="src\gameobjects\PhysicsObject.h">
       <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Ground1024x32.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\OrthographicCamera.h">
+      <Filter>Source Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

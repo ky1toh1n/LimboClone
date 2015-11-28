@@ -65,6 +65,10 @@ void Window::SetWindowSize(const int width_, const int height_) {
 	winRect.h = height_;
 }
 
+SDL_Surface* Window::GetWindowSurface() const {
+	return SDL_GetWindowSurface(SDLWindow);
+}
+
 void Window::ClearRenderer() const {
 	SDL_SetRenderDrawColor(SDLRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(SDLRenderer);

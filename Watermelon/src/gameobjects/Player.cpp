@@ -1,38 +1,32 @@
 #include "Player.h"
-#include "WorldManager.h"
 
 using namespace GAME;
 
-Player::Player(b2Body& bodyRef) {
-	// JUST PICK ONE
-	// TODO: 1.) Either create the body with position then assign the object's position to the body's position
-	//								OR
-	// 2.) Create object with position and assign the body position to the body's position
-
-	// for now, I'm assigning the body position to object's position
-	body = &bodyRef;
-	b2Vec2 tmpPosition = body->GetPosition();
-	PhysicsObject::PhysicsObject(tmpPosition.x, tmpPosition.y);
-
+Player::Player(Scene* scenePtr, const float32 x = 0, const float32 y = 0) {
+	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/ph_player1.png");
 }
 
 Player::~Player() {
 	PhysicsObject::~PhysicsObject();
 }
 
-void Player::Update(const float deltaTime) {
-	PhysicsObject::Update(deltaTime);
-	// Testing
-
-	b2Vec2 tmpPosition = body->GetPosition();
-	
-	//std::cout << tmpPosition.x << ", "<< tmpPosition.y << std::endl;
-	//std::cout << WorldManager::PTM << std::endl;
-
-	PhysicsObject::SetPosition(tmpPosition.x, tmpPosition.y);
-	//position.x += 1;
+void Player::MoveLeft() {
+	body->ApplyForceToCenter(b2Vec2(-10011, 0), true);
 }
 
+void Player::MoveRight() {
+	body->ApplyForceToCenter(b2Vec2(10011, 0), true);
+}
+
+
+void Player::Update(const float deltaTime) {
+	PhysicsObject::Update(deltaTime);
+	b2Vec2 tmpPosition = body->GetPosition();
+	SetPosition(tmpPosition.x, tmpPosition.y);
+}
+
+/*
 void Player::Draw() const {
 	PhysicsObject::Draw();
 }
+*/

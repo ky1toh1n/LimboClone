@@ -1,6 +1,8 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include <vector>
+
 #include "SDL.h"
 #include "Window.h"
 #include "Texture.h"
@@ -8,9 +10,13 @@
 #include "ContactListener.h"
 #include "WorldManager.h"
 #include "GameObject.h"
-#include <vector>
+#include "PhysicsObject.h"
+#include "OrthographicCamera.h"
+
 
 namespace GAME {
+	class Player;
+
 	class Scene {
 	public:
 		explicit Scene(class Window& windowRef, class KeyboardManager& keymanRef);
@@ -28,6 +34,8 @@ namespace GAME {
 		virtual void HandleInput() = 0;
 
 		virtual void AddGameObjectToScene(GameObject* gameObjPtr) = 0;
+		virtual void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
+			const float32 x, const float32 y, const std::string& path) = 0;
 
 		virtual void Update(const float deltaTime) = 0;
 		virtual void Render() const = 0;
@@ -41,6 +49,8 @@ namespace GAME {
 		Texture* backgroundTexture;
 
 		// Collections
+		OrthographicCamera* camera;
+		Player* player;
 
 		// TODO: Adam
 		// switch to whatever container you think is best
