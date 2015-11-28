@@ -83,12 +83,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\gameobjects;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2-2.0.3\include;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\include;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\include;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\data\Universal\programming-random\school\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\data\Universal\game-programming\libs\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\gameobjects;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\GameDev\Box2D-master%28vs13%29\Box2D;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\gameobjects;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\framework;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2-2.0.3\lib\x86;C:\data\Universal\programming-random\libs\SDL2_mixer-2.0.0\lib\x86;C:\data\Universal\programming-random\libs\SDL2_image-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\Box2D-master%28vs13%29\Box2D\Build\vs2013\bin\x32\Release;C:\GameDev\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;Box2D.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>
