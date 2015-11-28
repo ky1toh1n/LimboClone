@@ -28,15 +28,23 @@ bool Scene0::OnCreate() {
 	{return false;}
 	backgroundMusic->Play(std::numeric_limits<int>::max());
 
-	gameObjects = new std::vector<GameObject*>();
+	/////////////////////////////// End of Load Assets
 
-	string s = "res/placeholders/ph_player1.png";
-	b2BodyType t = b2_dynamicBody;
-	CreateBoxGameObject(t, 10.0f, 10.0f, s);
+	/// Create Game Objects!!!!!!!!!
+	gameObjects = new std::vector<GameObject*>();
+	
+	string s;
+	b2BodyType t;
+
+	for (int i = 0; i < 9; i++){
+		s = "res/placeholders/ph_player1.png";
+		t = b2_dynamicBody;
+		CreateBoxGameObject(t, 0 + i * 16, 10.0f, s);
+	}
 
 	s = "res/placeholders/ground128x32.png";
 	t = b2_staticBody;
-	CreateBoxGameObject(t, 10.0f, 100.0f, s);
+	CreateBoxGameObject(t, 0, 32.0f, s);
 
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
@@ -54,7 +62,8 @@ void Scene0::CreateBoxGameObject(const b2BodyType& type, const float32 x, const 
 
 	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
 	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(1, 0.2f, 100, tmpShape);
-	b2Body* tmpBody = worldManager->CreateBody(type, x, y, tmpFixtureDef);
+	//SWEEP! Add width and height ONLY if they are boxes!! This is to handle their centering issue.
+	b2Body* tmpBody = worldManager->CreateBody(type, x + width, y + height, tmpFixtureDef);
 	GameObject* gameObject = new Player(*tmpBody);
 
 	gameObject->SetSprite(*tmpTex);

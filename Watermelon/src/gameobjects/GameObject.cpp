@@ -46,7 +46,7 @@ void GameObject::Update(const float deltaTime) {
 
 void GameObject::Draw() const {
 	if (sprite != nullptr)
-		sprite->Draw(position.x-Width()/2, position.y-Width()/2);	
+		sprite->Draw(position.x-Width()/2, position.y-Height()/2);	
 }
 
 
