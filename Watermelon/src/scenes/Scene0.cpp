@@ -48,16 +48,27 @@ void Scene0::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType&
 	
 	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
 	tmpTex->Load(path);
-	float32 width = (float32)tmpTex->GetWidth()/2;
+	float32 width = (float32)tmpTex->GetWidth() / 2;
 	float32 height = (float32)tmpTex->GetHeight() / 2;
 
+	//Convert from pixels to meters
+	float32 ptmX = x;
+	float32 ptmY = y;
+	
+	width /= WorldManager::PTM;
+	height /= WorldManager::PTM;
+	ptmX = x / WorldManager::PTM;
+	ptmY = y / WorldManager::PTM;
+
+	//Creating body
 	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
 	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0, 1, 1, tmpShape);
-	//SWEEP! Add width and height ONLY if they are boxes!! This is to handle their centering issue.
-	b2Body* tmpBody = worldManager->CreateBody(type, x + width, y + height, tmpFixtureDef);
+	b2Body* tmpBody = worldManager->CreateBody(type
+		, ptmX + width, ptmY + height, tmpFixtureDef);
 
 	gameObjectPtr->SetBody(*tmpBody);
 	gameObjectPtr->SetSprite(*tmpTex);
+	printf("Object size: %f, %f\n", width * 2, height * 2);
 
 	AddGameObjectToScene(gameObjectPtr);
 }
@@ -118,7 +129,7 @@ void Scene0::Render() const{
 		// gameObject->Draw();
 		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);
 	} 
-	std::cout << camera->GetPosition().x << std::endl;
+	//std::cout << camera->GetPosition().x << std::endl;
 
 	// SDL_RenderSetViewport(windowPtr->GetRenderer(), camera->GetRect());
 	// SDL_Surface* screenSurface = windowPtr->GetWindowSurface();

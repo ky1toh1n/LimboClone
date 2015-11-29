@@ -11,18 +11,16 @@ Player::~Player() {
 }
 
 void Player::MoveLeft() {
-	body->ApplyForceToCenter(b2Vec2(-10011, 0), true);
+	body->ApplyForceToCenter(b2Vec2(-100, 0), true);
 }
 
 void Player::MoveRight() {
-	body->ApplyForceToCenter(b2Vec2(10011, 0), true);
+	body->ApplyForceToCenter(b2Vec2(100, 0), true);
 }
 
 
 void Player::Update(const float deltaTime) {
 	PhysicsObject::Update(deltaTime);
-	b2Vec2 tmpPosition = body->GetPosition();
-	SetPosition(tmpPosition.x, tmpPosition.y);
 }
 
 /*

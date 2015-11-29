@@ -35,6 +35,8 @@ float32 GameObject::Height() const {
 
 void GameObject::SetSprite(Texture& spriteRef) {
 	sprite = &spriteRef;
+	printf("Object info: %f, %f\n", position.x, position.y);
+
 }
 
 const b2Body* GameObject::GetBody() {
@@ -48,9 +50,12 @@ void GameObject::Update(const float deltaTime) {
 // TODO: Get actual screen size values and recalculate position
 // HardCoded values for now.. im tired.
 void GameObject::Draw(const int xOffset, const int yOffset) const {
-	if (sprite != nullptr)
-		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400, 
-					 (int)(position.y - Height() / 2) - yOffset + 500);
+	if (sprite != nullptr){
+		printf("Object DRAW info: %f, %f, %f, %f\n", position.x, position.y, Width(), Height());
+
+		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
+			(int)(position.y - Height() / 2) - yOffset + 500);
+	}
 }
 
 

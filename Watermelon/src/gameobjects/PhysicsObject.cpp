@@ -12,6 +12,10 @@ PhysicsObject::~PhysicsObject() {
 
 void PhysicsObject::SetBody(b2Body& bodyRef) {
 	body = &bodyRef;
+
+	//Should initialize position state ASAP IMHOPHO...
+	b2Vec2 tmpPosition = body->GetPosition();
+	SetPosition(tmpPosition.x, tmpPosition.y);
 }
 
 const b2Body* PhysicsObject::GetBody() {
@@ -21,7 +25,7 @@ const b2Body* PhysicsObject::GetBody() {
 void PhysicsObject::Update(const float deltaTime) {
 	GameObject::Update(deltaTime);
 	b2Vec2 tmpPosition = body->GetPosition();
-	SetPosition(tmpPosition.x, tmpPosition.y);
+	SetPosition(tmpPosition.x * WorldManager::PTM, tmpPosition.y * WorldManager::PTM);
 }
 
 void PhysicsObject::Draw(const int xOffset, const int yOffset) const {

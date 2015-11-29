@@ -4,6 +4,7 @@
 #include "Vector.h"
 #include "Texture.h"
 #include "Box2D/Box2D.h"
+#include "Debug.h"
 
 using namespace MATH;
 
