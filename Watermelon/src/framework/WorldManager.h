@@ -44,8 +44,6 @@ namespace GAME {
 		int32 positionIterations;
 		float32 timeMultiplier;
 		float32 timeAccumulator;
-
-
 	};
 }
 #endif

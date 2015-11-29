@@ -2,7 +2,7 @@
 
 using namespace GAME;
 
-Player::Player(Scene* scenePtr, const float32 x = 0, const float32 y = 0) {
+Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/ph_player1.png");
 }
 

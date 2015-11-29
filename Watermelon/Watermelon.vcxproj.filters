@@ -57,9 +57,6 @@
     <ClCompile Include="src\framework\Window.cpp">
       <Filter>Source Files\framework</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\Scene0.cpp">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
     <ClCompile Include="src\framework\Texture.cpp">
       <Filter>Source Files\framework</Filter>
     </ClCompile>
@@ -90,6 +87,12 @@
     <ClCompile Include="src\gameobjects\OrthographicCamera.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\framework\PlatformerScene.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\PlatformerScene0.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -118,9 +121,6 @@
     </ClInclude>
     <ClInclude Include="src\framework\Window.h">
       <Filter>Header Files\framework</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\Scene0.h">
-      <Filter>Header Files\scenes</Filter>
     </ClInclude>
     <ClInclude Include="src\Main.h">
       <Filter>Header Files</Filter>
@@ -151,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="src\gameobjects\OrthographicCamera.h">
       <Filter>Source Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\PlatformerScene.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\PlatformerScene0.h">
+      <Filter>Header Files\scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

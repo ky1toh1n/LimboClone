@@ -4,7 +4,7 @@
 #include "Window.h"
 
 #include "Scene.h"
-#include "Scene0.h"
+#include "PlatformerScene0.h"
 
 namespace GAME {
 
@@ -25,7 +25,7 @@ private:
 	/// Notice that windowInstance is a stack variable here - see the 
 	/// GameSceneManager constructor for the best way to initialize it 
 	Window windowInstance;
-	Scene *currentScene; 
+	PlatformerScene *currentScene;
 
 
 	///std::unique_ptr is a smart pointer that destroys the object it point to when the unique_ptr goes out of scope.

@@ -18,6 +18,7 @@
     <ClCompile Include="src\framework\Keyboard.cpp" />
     <ClCompile Include="src\framework\KeyboardManager.cpp" />
     <ClCompile Include="src\framework\Music.cpp" />
+    <ClCompile Include="src\framework\PlatformerScene.cpp" />
     <ClCompile Include="src\framework\Scene.cpp" />
     <ClCompile Include="src\framework\Texture.cpp" />
     <ClCompile Include="src\framework\Timer.cpp" />
@@ -29,7 +30,7 @@
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\scenes\Scene0.cpp" />
+    <ClCompile Include="src\scenes\PlatformerScene0.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="src\framework\Keyboard.h" />
     <ClInclude Include="src\framework\KeyboardManager.h" />
     <ClInclude Include="src\framework\Music.h" />
+    <ClInclude Include="src\framework\PlatformerScene.h" />
     <ClInclude Include="src\framework\Scene.h" />
     <ClInclude Include="src\framework\Texture.h" />
     <ClInclude Include="src\framework\Timer.h" />
@@ -51,7 +53,7 @@
     <ClInclude Include="src\gameobjects\PhysicsObject.h" />
     <ClInclude Include="src\gameobjects\Player.h" />
     <ClInclude Include="src\Main.h" />
-    <ClInclude Include="src\scenes\Scene0.h" />
+    <ClInclude Include="src\scenes\PlatformerScene0.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{15CC58BD-E267-473E-83A1-854897A5FDCE}</ProjectGuid>

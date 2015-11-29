@@ -60,7 +60,7 @@ bool GameSceneManager::Initialize(){
 	keyboardManager.Initialize();
 
 	/// *** This does not need to happen here; but, I need to start somewhere ***
-	currentScene = new Scene0(windowInstance, keyboardManager);
+	currentScene = new PlatformerScene0(windowInstance, keyboardManager);
 	if (!currentScene->OnCreate()){
 		Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
 		return false;
