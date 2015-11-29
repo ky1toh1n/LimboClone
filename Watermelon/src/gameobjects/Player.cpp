@@ -7,7 +7,6 @@ Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y =
 }
 
 Player::~Player() {
-	PhysicsObject::~PhysicsObject();
 }
 
 void Player::MoveLeft() {

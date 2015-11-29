@@ -19,7 +19,7 @@ namespace GAME {
 		PhysicsObject& operator=(PhysicsObject &&) = delete;
 
 		virtual void SetBody(b2Body& bodyRef);
-		virtual const b2Body* GetBody();
+		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
 		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
 

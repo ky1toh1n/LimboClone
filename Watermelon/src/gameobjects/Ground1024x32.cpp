@@ -7,5 +7,4 @@ Ground1024x32::Ground1024x32(PlatformerScene* scenePtr, const float32 x = 0, con
 }
 
 Ground1024x32::~Ground1024x32() {
-	PhysicsObject::~PhysicsObject();
 }

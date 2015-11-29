@@ -26,8 +26,7 @@ namespace GAME {
 		virtual float32 Width() const;
 		virtual float32 Height() const;
 		virtual void SetSprite(Texture& spriteRef);
-		virtual void Destroy();
-		virtual const b2Body* GetBody();
+		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
 		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
 

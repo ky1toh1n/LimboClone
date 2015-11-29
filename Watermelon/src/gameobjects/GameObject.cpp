@@ -2,17 +2,11 @@
 
 using namespace GAME;
 
-GameObject::GameObject(const float32 x, const float32 y) {
-	position.x = x;
-	position.y = y;
+GameObject::GameObject(const float32 x, const float32 y) : position(x,y) {
 	sprite = nullptr;
 }
 
 GameObject::~GameObject() {
-	Destroy();
-}
-
-void GameObject::Destroy() {
 	sprite = nullptr;
 }
 
@@ -39,7 +33,7 @@ void GameObject::SetSprite(Texture& spriteRef) {
 
 }
 
-const b2Body* GameObject::GetBody() {
+const b2Body* GameObject::GetBody() const {
 	return nullptr;
 }
 
