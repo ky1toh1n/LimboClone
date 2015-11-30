@@ -64,6 +64,7 @@ void PlatformerScene0::HandleInput() {
 
 	if (keyboardManager->IsPressed(Keyboard::Key::SPACE)) {
 		// std::cout << "Pressed SPACE" << std::endl;
+		player->Jump();
 	}
 }
 

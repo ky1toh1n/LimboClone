@@ -28,6 +28,10 @@ void Player::MoveRight() {
 	body->ApplyForceToCenter(b2Vec2(50, 0), true);
 }
 
+void Player::Jump() {
+	body->ApplyLinearImpulse(b2Vec2(0, 1), b2Vec2(25, 30), true);
+}
+
 void Player::HandleCollision(const PhysicsObject& physObjRef) {
 	if (physObjRef.GetType() == TYPE::BLOCK_64x32) {
 		std::cout << "Life -1;";

@@ -20,6 +20,7 @@ namespace GAME {
 
 		void MoveLeft();
 		void MoveRight();
+		void Jump();
 
 		void HandleCollision(const PhysicsObject& physObjRef);
 		void Update(const float deltaTime);
