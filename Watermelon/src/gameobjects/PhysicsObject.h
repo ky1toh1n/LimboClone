@@ -18,6 +18,8 @@ namespace GAME {
 		PhysicsObject& operator=(const PhysicsObject &) = delete;
 		PhysicsObject& operator=(PhysicsObject &&) = delete;
 
+		virtual GameObject::TYPE GetType() const;
+		virtual void HandleCollision(const PhysicsObject& physObjRef);
 		virtual void SetBody(b2Body& bodyRef);
 		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);

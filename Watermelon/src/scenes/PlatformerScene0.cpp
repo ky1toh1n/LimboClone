@@ -32,7 +32,12 @@ bool PlatformerScene0::LoadActors() {
 	player = new Player(this, 50, 450);
 	camera->SetFocus(player);
 
-	Ground1024x32* groundZero = new Ground1024x32(this, 0, 500);
+	new Ground1024x32(this, 0, 500);
+
+	// Testing collisions
+	new Block64x32(this, 250, 0);
+	new Block64x32(this, 350, 50);
+	new Block64x32(this, 450, 100);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
@@ -40,25 +45,25 @@ bool PlatformerScene0::LoadActors() {
 
 void PlatformerScene0::HandleInput() {
 	if (keyboardManager->IsPressed(Keyboard::Key::A)) {
-		std::cout << "Pressed A" << std::endl;
+		// std::cout << "Pressed A" << std::endl;
 		player->MoveLeft();
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::W)) {
-		std::cout << "Pressed W" << std::endl;
+		// std::cout << "Pressed W" << std::endl;
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::S)) {
-		std::cout << "Pressed S" << std::endl;
+		// std::cout << "Pressed S" << std::endl;
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::D)) {
-		std::cout << "Pressed D" << std::endl;
+		// std::cout << "Pressed D" << std::endl;
 		player->MoveRight();
 	}
 
 	if (keyboardManager->IsPressed(Keyboard::Key::SPACE)) {
-		std::cout << "Pressed SPACE" << std::endl;
+		// std::cout << "Pressed SPACE" << std::endl;
 	}
 }
 

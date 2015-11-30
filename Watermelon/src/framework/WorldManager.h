@@ -36,7 +36,7 @@ namespace GAME {
 
 	private:
 		b2World * world;
-		b2Vec2 * gravityVec = new b2Vec2(0, 10.0f);
+		b2Vec2 * gravityVec = new b2Vec2(0, 2.0f);
 
 		float32 timeStep;
 		float32 timeStepMillis;

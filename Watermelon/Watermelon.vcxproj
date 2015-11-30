@@ -18,18 +18,19 @@
     <ClCompile Include="src\framework\Keyboard.cpp" />
     <ClCompile Include="src\framework\KeyboardManager.cpp" />
     <ClCompile Include="src\framework\Music.cpp" />
-    <ClCompile Include="src\framework\PlatformerScene.cpp" />
     <ClCompile Include="src\framework\Scene.cpp" />
     <ClCompile Include="src\framework\Texture.cpp" />
     <ClCompile Include="src\framework\Timer.cpp" />
     <ClCompile Include="src\framework\Window.cpp" />
     <ClCompile Include="src\framework\WorldManager.cpp" />
+    <ClCompile Include="src\gameobjects\Block64x32.cpp" />
     <ClCompile Include="src\gameobjects\GameObject.cpp" />
     <ClCompile Include="src\gameobjects\Ground1024x32.cpp" />
     <ClCompile Include="src\gameobjects\OrthographicCamera.cpp" />
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\scenes\PlatformerScene.cpp" />
     <ClCompile Include="src\scenes\PlatformerScene0.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +48,7 @@
     <ClInclude Include="src\framework\Vector.h" />
     <ClInclude Include="src\framework\Window.h" />
     <ClInclude Include="src\framework\WorldManager.h" />
+    <ClInclude Include="src\gameobjects\Block64x32.h" />
     <ClInclude Include="src\gameobjects\GameObject.h" />
     <ClInclude Include="src\gameobjects\Ground1024x32.h" />
     <ClInclude Include="src\gameobjects\OrthographicCamera.h" />

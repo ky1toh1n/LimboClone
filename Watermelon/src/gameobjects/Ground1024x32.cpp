@@ -8,3 +8,7 @@ Ground1024x32::Ground1024x32(PlatformerScene* scenePtr, const float32 x = 0, con
 
 Ground1024x32::~Ground1024x32() {
 }
+
+GameObject::TYPE Ground1024x32::GetType() const {
+	return TYPE::GROUND_1024x32;
+}

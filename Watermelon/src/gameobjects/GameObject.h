@@ -11,7 +11,17 @@ using namespace MATH;
 namespace GAME {
 
 	class GameObject {
+
+
 	public:
+		enum TYPE {
+			NO_CLASS,
+			PLAYER,
+			GROUND_1024x32,
+			BLOCK_64x32
+		};
+
+
 		GameObject(const float32 x = 0, const float32 y = 0);
 		virtual ~GameObject();
 

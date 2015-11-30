@@ -5,6 +5,7 @@
 #include "PhysicsObject.h"
 
 
+
 namespace GAME {
 	class Player : public PhysicsObject {
 	public:
@@ -19,8 +20,9 @@ namespace GAME {
 		void MoveLeft();
 		void MoveRight();
 
+		void HandleCollision(const PhysicsObject& physObjRef);
 		void Update(const float deltaTime);
-		// void Draw() const;
+
 	};
 }
 

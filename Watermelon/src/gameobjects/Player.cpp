@@ -10,20 +10,24 @@ Player::~Player() {
 }
 
 void Player::MoveLeft() {
-	body->ApplyForceToCenter(b2Vec2(-100, 0), true);
+	body->ApplyForceToCenter(b2Vec2(-50, 0), true);
 }
 
 void Player::MoveRight() {
-	body->ApplyForceToCenter(b2Vec2(100, 0), true);
+	body->ApplyForceToCenter(b2Vec2(50, 0), true);
 }
 
+void Player::HandleCollision(const PhysicsObject& physObjRef) {
+	if (physObjRef.GetType() == TYPE::BLOCK_64x32) {
+		std::cout << "Life -1;";
+	}
+
+	if (physObjRef.GetType() == TYPE::GROUND_1024x32) {
+		std::cout << "Grounded";
+	}
+}
 
 void Player::Update(const float deltaTime) {
 	PhysicsObject::Update(deltaTime);
 }
 
-/*
-void Player::Draw() const {
-	PhysicsObject::Draw();
-}
-*/

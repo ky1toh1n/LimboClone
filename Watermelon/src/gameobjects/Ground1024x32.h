@@ -14,6 +14,8 @@ namespace GAME {
 		Ground1024x32(Ground1024x32 &&) = delete;
 		Ground1024x32& operator=(const Ground1024x32 &) = delete;
 		Ground1024x32& operator=(Ground1024x32 &&) = delete;
+
+		GameObject::TYPE GetType() const;
 	};
 }
 

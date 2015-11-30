@@ -8,6 +8,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Ground1024x32.h"
+#include "Block64x32.h"
 #include "KeyboardManager.h"
 
 namespace GAME {

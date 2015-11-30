@@ -64,6 +64,7 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2
 	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0, 1, 1, tmpShape);
 	b2Body* tmpBody = worldManager->CreateBody(type
 		, ptmX + width, ptmY + height, tmpFixtureDef);
+	tmpBody->SetUserData(gameObjectPtr);
 
 	//Binding b2Body to GameObject
 	gameObjectPtr->SetBody(*tmpBody);
