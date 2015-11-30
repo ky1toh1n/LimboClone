@@ -40,6 +40,7 @@ namespace GAME {
 		void AddGameObjectToPlatformerScene(GameObject* gameObjPtr);
 		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
 			const float32 x, const float32 y, const std::string& path);
+		Texture* LoadTexture(const std::string& path) const;
 
 	protected:
 		//Abstract functions

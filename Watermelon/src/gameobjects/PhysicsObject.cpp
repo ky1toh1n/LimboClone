@@ -26,6 +26,7 @@ void PhysicsObject::HandleCollision(const PhysicsObject& physObjRef) {
 	return;
 }
 
+
 void PhysicsObject::Update(const float deltaTime) {
 	GameObject::Update(deltaTime);
 	SetPosition(body->GetPosition().x * WorldManager::PTM, body->GetPosition().y * WorldManager::PTM);

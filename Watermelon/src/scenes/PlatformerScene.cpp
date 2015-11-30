@@ -74,6 +74,12 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2
 	AddGameObjectToPlatformerScene(gameObjectPtr);
 }
 
+Texture* PlatformerScene::LoadTexture(const string& path) const {
+	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
+	tmpTex->Load(path);
+	return tmpTex;
+}
+
 void PlatformerScene::Update(const float deltaTime){
 	HandleInput();
 

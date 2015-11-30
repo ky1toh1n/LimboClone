@@ -96,6 +96,9 @@
     <ClCompile Include="src\gameobjects\Block64x32.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\framework\Animation.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="src\gameobjects\Block64x32.h">
       <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\Animation.h">
+      <Filter>Header Files\framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

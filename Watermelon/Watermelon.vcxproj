@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\framework\Animation.cpp" />
     <ClCompile Include="src\framework\AudioFile.cpp" />
     <ClCompile Include="src\framework\ContactListener.cpp" />
     <ClCompile Include="src\framework\Debug.cpp" />
@@ -34,6 +35,7 @@
     <ClCompile Include="src\scenes\PlatformerScene0.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\framework\Animation.h" />
     <ClInclude Include="src\framework\AudioFile.h" />
     <ClInclude Include="src\framework\ContactListener.h" />
     <ClInclude Include="src\framework\Debug.h" />

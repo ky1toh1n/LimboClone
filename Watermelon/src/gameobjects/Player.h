@@ -3,6 +3,7 @@
 
 #include "PlatformerScene.h"
 #include "PhysicsObject.h"
+#include "Animation.h"
 
 
 
@@ -22,7 +23,10 @@ namespace GAME {
 
 		void HandleCollision(const PhysicsObject& physObjRef);
 		void Update(const float deltaTime);
+		void Draw() const;
 
+	private:
+		Animation* running;
 	};
 }
 
