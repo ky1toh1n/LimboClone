@@ -5,7 +5,7 @@ using namespace GAME;
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/player/pl1.png");
 
-	running = new Animation(0.08);
+	running = new Animation(0.08f);
 	running->AddFrame(scenePtr->LoadTexture("res/placeholders/player/pl1.png"));
 	running->AddFrame(scenePtr->LoadTexture("res/placeholders/player/pl2.png"));
 	running->AddFrame(scenePtr->LoadTexture("res/placeholders/player/pl3.png"));

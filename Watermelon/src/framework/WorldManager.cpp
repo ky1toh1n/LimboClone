@@ -82,3 +82,21 @@ void WorldManager::Update(const float deltaTime) {
 		timeAccumulator -= timeStepMillis;
 	}
 }
+
+b2Body * WorldManager::CreateBox(const float32 positionX, const float32 positionY,
+	const float32 width, const float32 height, const b2BodyType bodyType,
+	const float32 friction, const float32 restitution, const float32 density){
+	//Convert from pixels to meters
+	float32 halfWidth = ((width / 2) / WorldManager::PTM);
+	float32 halfHeight = ((height / 2) / WorldManager::PTM);
+	float32 ptmX = positionX / WorldManager::PTM;
+	float32 ptmY = positionY / WorldManager::PTM;
+
+	//Create b2Body
+	b2Shape* tmpShape = CreateBoxShape(halfWidth, halfHeight);
+	b2FixtureDef* tmpFixtureDef = CreateFixtureDef(0.35, 0.2, 1, tmpShape);
+	b2Body* tmpBody = CreateBody(bodyType
+		, ptmX + halfWidth, ptmY + halfHeight, tmpFixtureDef);
+
+	return tmpBody;
+}
