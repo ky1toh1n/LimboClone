@@ -10,7 +10,8 @@ ContactListener::ContactListener(std::vector<GameObject*>* sceneGameObjects) {
 
 
 ContactListener::~ContactListener() {
-
+	delete gameObjects;
+	gameObjects = nullptr;
 }
 
 

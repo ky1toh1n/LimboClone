@@ -9,7 +9,9 @@ Animation::Animation(float duration_) : currentFrame(0) {
 	timeTillNextFrame = duration_;
 }
 
-Animation::~Animation() { }
+Animation::~Animation() { 
+	Destroy();
+}
 
 void Animation::AddFrame(Texture* texPtr) {
 	animation->push_back(texPtr);
@@ -23,4 +25,9 @@ Texture* Animation::Play(const float deltaTime) {
 	}
 	timeTillNextFrame -= deltaTime;
 	return animation->at(currentFrame);
+}
+
+void Animation::Destroy() {
+	delete animation;
+	animation = nullptr;
 }
