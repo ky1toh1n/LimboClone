@@ -3,7 +3,7 @@
 using namespace GAME;
 
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
-	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/ph_player1.png");
+	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/player/pl1.png");
 
 	running = new Animation(0.08);
 	running->AddFrame(scenePtr->LoadTexture("res/placeholders/player/pl1.png"));
@@ -21,15 +21,15 @@ Player::~Player() {
 }
 
 void Player::MoveLeft() {
-	body->ApplyForceToCenter(b2Vec2(-50, 0), true);
+	body->ApplyForceToCenter(b2Vec2(-200, 0), true);
 }
 
 void Player::MoveRight() {
-	body->ApplyForceToCenter(b2Vec2(50, 0), true);
+	body->ApplyForceToCenter(b2Vec2(200, 0), true);
 }
 
 void Player::Jump() {
-	body->ApplyLinearImpulse(b2Vec2(0, 1), b2Vec2(25, 30), true);
+	body->ApplyLinearImpulse(b2Vec2(0, 20), b2Vec2(25, 30), true);
 }
 
 void Player::HandleCollision(const PhysicsObject& physObjRef) {

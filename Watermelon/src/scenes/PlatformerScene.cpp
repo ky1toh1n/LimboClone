@@ -59,9 +59,12 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2
 	float32 ptmX = x / WorldManager::PTM;
 	float32 ptmY = y / WorldManager::PTM;
 
+	std::cout << width << " ";
+	std::cout << height << endl;
+
 	//Create b2Body
 	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
-	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0, 1, 1, tmpShape);
+	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0.35, 0.2, 1, tmpShape);
 	b2Body* tmpBody = worldManager->CreateBody(type
 		, ptmX + width, ptmY + height, tmpFixtureDef);
 	tmpBody->SetUserData(gameObjectPtr);

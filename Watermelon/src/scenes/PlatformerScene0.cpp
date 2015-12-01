@@ -29,7 +29,7 @@ bool PlatformerScene0::LoadAssets() {
 bool PlatformerScene0::LoadActors() {
 	gameObjects = new std::vector<GameObject*>();
 
-	player = new Player(this, 50, 450);
+	player = new Player(this, 50, 30);
 	camera->SetFocus(player);
 
 	new Ground1024x32(this, 0, 500);

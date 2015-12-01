@@ -20,7 +20,6 @@ Texture* Animation::Play(const float deltaTime) {
 		currentFrame++;
 		if (currentFrame > animation->size() - 1) { currentFrame = 0; }
 		timeTillNextFrame = duration;
-
 	}
 	timeTillNextFrame -= deltaTime;
 	return animation->at(currentFrame);
