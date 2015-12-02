@@ -29,6 +29,7 @@ bool PlatformerScene0::LoadAssets() {
 bool PlatformerScene0::LoadActors() {
 	gameObjects = new std::vector<GameObject*>();
 
+
 	// Scrolling Background
 	Texture* tex = LoadTexture("res/textures/background.png");
 	GameObject* bg = new GameObject(0, 195);
@@ -45,10 +46,17 @@ bool PlatformerScene0::LoadActors() {
 
 	new Ground1024x32(this, 0, 300);
 
+
 	// Testing collisions
-	new Block64x32(this, 250, 0);
-	new Block64x32(this, 350, 50);
-	new Block64x32(this, 450, 100);
+	//new Block64x32(this, 250, 0);
+	//new Block64x32(this, 350, 50);
+	//new Block64x32(this, 450, 100);
+	//new Circle64x64(this, 300, -50);
+
+	//Testing
+	new Triangle64x32(this, 300, 0);
+	new Block64x32(this, 600, 0);
+	new Circle64x64(this, 800, 50);
 
 
 

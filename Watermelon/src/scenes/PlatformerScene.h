@@ -38,12 +38,21 @@ namespace GAME {
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
 		void AddToScene(GameObject* gameObjPtr);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		//New param list: PhysicsObject* gameObjectPtr, const std::string& path,
-		//const float32 x, const float32 y, const b2BodyType& type
 
 		Texture* LoadTexture(const std::string& path, const SDL_BlendMode blendType = SDL_BLENDMODE_NONE) const;
+
+		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
+		
+		void CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
+		
+		void CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2Vec2 vertices[], const b2BodyType& type,
+			const float32 friction = WorldManager::DEF_FRICTION, const float32 restitution = WorldManager::DEF_RESTITUTION,
+			const float32 density = WorldManager::DEF_DENSITY);
 
 	protected:
 		//Abstract functions
@@ -60,20 +69,11 @@ namespace GAME {
 
 		//Collections
 		OrthographicCamera* camera;
-		// TODO: We won't have a lot of entities so we shouldn't have to worry about scale. 
-		// Meaning, I am fine with any kind of container. YOLO!
 		std::vector<GameObject*>* gameObjects;
 		Player* player;
 
 	private:
-		//void AttachBodyToGameObject(b2Shape* shape, float32 x, float32 y,);
-		/*
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);*/
+		void BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObject * gameObjectPtr);
 	};
 }
 

@@ -43,27 +43,70 @@ void PlatformerScene::AddToScene(GameObject* gameObjPtr) {
 }
 
 /*
-This function:
+The 'create' functions are responsible for:
 -Creates a b2Body via WorldManager
 -Attaches the b2Body to a GameObject
 -Adds the GameObject to the PlatformerScene.
 */
-void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-	const float32 x, const float32 y, const std::string& path) {
+void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+	const float32 x, const float32 y, const b2BodyType& type, const float32 friction,
+	const float32 restitution, const float32 density) {
 	//Load texture
 	Texture* tmpTex = LoadTexture(path);
 
 	//Box creation
 	b2Body * tmpBody = worldManager->CreateBox(x, y, (float32)tmpTex->GetWidth(), (float32)tmpTex->GetHeight(),
-		type, 0.0, 0, 1);
+		type, friction, restitution, density);
 	tmpBody->SetUserData(gameObjectPtr);
+		
 
+	BindToScene(tmpTex, tmpBody, gameObjectPtr);
+	gameObjectPtr->Print();
+}
+
+void PlatformerScene::CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+	const float32 x, const float32 y, const b2BodyType& type, const float32 friction,
+	const float32 restitution, const float32 density) {
+	//Load texture
+	Texture* tmpTex = LoadTexture(path);
+	
+	#ifndef _DEBUG 
+		if (tmpTex->GetWidth() != tmpTex->GetHeight())
+		{Debug::Log(EMessageType::ERROR, "Texture's width and height are not equal: " + path, __FILENAME__, __LINE__);}
+	#endif
+
+
+	//Box creation
+	b2Body * tmpBody = worldManager->CreateCircle(x, y, (float32)tmpTex->GetWidth() / 2,
+		type, friction, restitution, density);
+
+	BindToScene(tmpTex, tmpBody, gameObjectPtr);
+}
+
+void PlatformerScene::CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+	const float32 x, const float32 y, const b2Vec2 vertices[], const b2BodyType& type,
+	const float32 friction, const float32 restitution,
+	const float32 density)
+{
+	//Load texture
+	Texture* tmpTex = LoadTexture(path);
+
+	//Box creation
+	b2Body * tmpBody = worldManager->CreatePolygon(x, y, vertices, 3,
+		(float32)tmpTex->GetWidth(), (float32)tmpTex->GetHeight(), type, friction, restitution, density);
+
+	BindToScene(tmpTex, tmpBody, gameObjectPtr);
+}
+
+void PlatformerScene::BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObject * gameObjectPtr){
 	//Binding b2Body to GameObject
+	tmpBody->SetUserData(gameObjectPtr);
 	gameObjectPtr->SetBody(*tmpBody);
 	gameObjectPtr->SetSprite(*tmpTex);
 
 	//Add to PlatformerScene
 	AddToScene(gameObjectPtr);
+	//gameObjectPtr->Print();
 }
 
 Texture* PlatformerScene::LoadTexture(const string& path, const SDL_BlendMode blendType) const {
@@ -88,15 +131,20 @@ void PlatformerScene::Render() const{
 	backgroundTexture->Draw();
 
 	//Draw actors
-	// for_each(gameObjects->begin(), gameObjects->end(),
-	//	bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
-
 	
 	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
 		GameObject* gameObject = *it;
 		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);
 	}
 	
+	// for_each(gameObjects->begin(), gameObjects->end(),
+	//	bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
 
+	
+	//Camera-disabled draw
+	/*
+	for_each(gameObjects->begin(), gameObjects->end(),
+		bind(&GameObject::Draw, _1, 0, 1));
+	*/
 	SDL_RenderPresent(windowPtr->GetRenderer());
 }

@@ -49,12 +49,16 @@ void GameObject::Draw(const int xOffset, const int yOffset, const float scale, S
 	const double angle, SDL_Point* center,
 	const SDL_RendererFlip flip) const {
 	if (sprite != nullptr){
-		// printf("Object DRAW info: %f, %f, %f, %f\n", position.x, position.y, Width(), Height());
+
 		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
 			(int)(position.y - Height() / 2) - yOffset + 350, scale, clip, angle, center, flip);
 	}
 }
 
+void GameObject::Print() const
+{
+	printf("Object DRAW info: %f, %f, %f, %f\n", position.x, position.y, Width(), Height());
+}
 
 
 

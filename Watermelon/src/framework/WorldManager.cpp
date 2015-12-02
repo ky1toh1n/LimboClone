@@ -3,6 +3,9 @@
 using namespace GAME;
 
 const float WorldManager::PTM = 10.0f;
+const float32 WorldManager::DEF_FRICTION = 0.35f;
+const float32 WorldManager::DEF_RESTITUTION = 0.2f;//0.2f
+const float32 WorldManager::DEF_DENSITY = 1;
 
 WorldManager::WorldManager(ContactListener & contactListener) {
 	world = new b2World(*gravityVec);
@@ -68,6 +71,7 @@ b2Shape * WorldManager::CreateBoxShape(const float32 halfWidth, const float32 ha
 	return shape;
 }
 
+//Verices must be in CCW order
 b2Shape * WorldManager::CreatePolygonShape(const b2Vec2 & vertices, const int32 verticeCount){
 	b2PolygonShape * shape = new b2PolygonShape();
 	shape->Set(&vertices, verticeCount);
@@ -87,16 +91,59 @@ b2Body * WorldManager::CreateBox(const float32 positionX, const float32 position
 	const float32 width, const float32 height, const b2BodyType bodyType,
 	const float32 friction, const float32 restitution, const float32 density){
 	//Convert from pixels to meters
-	float32 halfWidth = ((width / 2) / WorldManager::PTM);
-	float32 halfHeight = ((height / 2) / WorldManager::PTM);
-	float32 ptmX = positionX / WorldManager::PTM;
-	float32 ptmY = positionY / WorldManager::PTM;
+	float32 halfWidth = ((width / 2) / PTM);
+	float32 halfHeight = ((height / 2) / PTM);
+	float32 ptmX = positionX / PTM;
+	float32 ptmY = positionY / PTM;
 
 	//Create b2Body
 	b2Shape* tmpShape = CreateBoxShape(halfWidth, halfHeight);
-	b2FixtureDef* tmpFixtureDef = CreateFixtureDef(0.35, 0.2, 1, tmpShape);
+	b2FixtureDef* tmpFixtureDef = CreateFixtureDef(friction, restitution, density, tmpShape);
 	b2Body* tmpBody = CreateBody(bodyType
 		, ptmX + halfWidth, ptmY + halfHeight, tmpFixtureDef);
+
+	return tmpBody;
+}
+
+b2Body * WorldManager::CreateCircle(const float32 positionX, const float32 positionY,
+	const float32 radius, const b2BodyType bodyType,
+	const float32 friction, const float32 restitution, const float32 density){
+	//Convert from pixels to meters
+	float32 ptmRadius = radius / PTM;
+	float32 ptmX = positionX / PTM;
+	float32 ptmY = positionY / PTM;
+
+	//Create b2Body
+	b2Shape* tmpShape = CreateCircleShape(ptmRadius);
+	b2FixtureDef* tmpFixtureDef = CreateFixtureDef(friction, restitution, density, tmpShape);
+	b2Body* tmpBody = CreateBody(bodyType
+		, ptmX, ptmY, tmpFixtureDef);
+
+	//printf("Circle PTM Creation : %f, %f, %f\n", ptmX, ptmY, ptmRadius);
+	
+	return tmpBody;
+}
+
+b2Body * WorldManager::CreatePolygon(const float32 positionX, const float32 positionY,
+	const b2Vec2 vertices[], const int verticeCount, const float32 width, const float32 height, 
+	const b2BodyType bodyType, const float32 friction, const float32 restitution, const float32 density){
+	//Convert from pixels to meters
+	b2Vec2 ptmVertices[3];
+	float32 ptmHalfWidth = width / 2 / PTM;
+	float32 ptmHalfHeight = height/ 2 / PTM;
+	float32 ptmX = positionX / PTM;
+	float32 ptmY = positionY / PTM;
+	for (int i = 0; i < verticeCount; i++){
+		ptmVertices[i].Set(vertices[i].x / PTM - ptmHalfWidth, vertices[i].y / PTM - ptmHalfHeight);
+	}
+
+	//Create b2Body
+	b2Shape* tmpShape = CreatePolygonShape(*ptmVertices, verticeCount);
+	b2FixtureDef* tmpFixtureDef = CreateFixtureDef(friction, restitution, density, tmpShape);
+	b2Body* tmpBody = CreateBody(bodyType
+		,ptmX, ptmY, tmpFixtureDef);
+
+	printf("Polygon PTM Creation : %f, %f\n", ptmX, ptmY);
 
 	return tmpBody;
 }

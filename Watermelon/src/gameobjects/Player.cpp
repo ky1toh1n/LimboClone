@@ -5,8 +5,7 @@ using namespace GAME;
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	currentState = PlayerState::JUMPING;
 	animations = new std::vector<Animation*>();
-
-	scenePtr->CreateBoxGameObject(this, b2_dynamicBody, x, y, "res/placeholders/player/idle/idle0.png");
+	scenePtr->CreateBoxGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody);
 
 	// There is no spritesheet class, so we are adding individual images to the animation
 
@@ -100,7 +99,7 @@ void Player::HandleCollision(const b2Contact* contact, const PhysicsObject& phys
 		if (currentState != PlayerState::IDLE) currentState = PlayerState::IDLE;
 	} */
 
-	if (contact->GetManifold()->localNormal.y < 0 && contact->GetManifold()->localPoint.x == 0) {
+	if (contact->GetManifold()->localNormal.y < 0) {
 		if (currentState != PlayerState::IDLE) currentState = PlayerState::IDLE;
 	}
 

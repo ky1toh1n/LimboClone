@@ -25,6 +25,6 @@ SDL_Rect* OrthographicCamera::GetRect() const {
 }
 
 void OrthographicCamera::Update(const float deltaTime) {
-	cam->x = focus->Position().x;
-	cam->y = focus->Position().y;
+	cam->x = (int)focus->Position().x;
+	cam->y = (int)focus->Position().y;
 }
