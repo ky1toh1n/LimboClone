@@ -21,16 +21,21 @@ namespace GAME {
 		//b2Body creation public interface
 		b2Body * CreateBox(const float32 positionX, const float32 positionY,
 			const float32 halfWidth, const float32 halfHeight, const b2BodyType bodyType = b2_staticBody,
-			const float32 friction =0.35f, const float32 restitution =0.2f, const float32 density=1);
-		//b2Body * CreateTriangle();
+			const float32 friction = DEF_FRICTION, const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
+		b2Body * CreateCircle(const float32 positionX, const float32 positionY,
+			const float32 radius, const b2BodyType bodyType, const float32 friction = DEF_FRICTION,
+			const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
 		//b2Body * CreatePolygon();
 		void Update(const float deltaTime);
 	public:
 		static const float32 PTM;
+		static const float32 DEF_FRICTION;
+		static const float32 DEF_RESTITUTION;
+		static const float32 DEF_DENSITY;
 
 	private:
 		b2World * world;
-		b2Vec2 * gravityVec = new b2Vec2(0, 2.0f);
+		b2Vec2 * gravityVec = new b2Vec2(0, 2.0f); //2.0f;
 
 		//World state
 		float32 timeStep;

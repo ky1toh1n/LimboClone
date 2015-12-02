@@ -38,10 +38,12 @@ namespace GAME {
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
 		void AddToScene(GameObject* gameObjPtr);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		//New param list: PhysicsObject* gameObjectPtr, const std::string& path,
-		//const float32 x, const float32 y, const b2BodyType& type
+		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
+		void CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
 
 		Texture* LoadTexture(const std::string& path) const;
 
@@ -66,14 +68,7 @@ namespace GAME {
 		Player* player;
 
 	private:
-		//void AttachBodyToGameObject(b2Shape* shape, float32 x, float32 y,);
-		/*
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);
-		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
-			const float32 x, const float32 y, const std::string& path);*/
+		void BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObject * gameObjectPtr);
 	};
 }
 

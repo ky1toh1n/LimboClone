@@ -18,7 +18,8 @@ namespace GAME {
 			NO_CLASS,
 			PLAYER,
 			GROUND_1024x32,
-			BLOCK_64x32
+			BLOCK_64x32,
+			CIRCLE_64x64
 		};
 
 
@@ -39,6 +40,7 @@ namespace GAME {
 		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
 		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
+		virtual void Print() const;
 
 // Member Fields
 	protected:

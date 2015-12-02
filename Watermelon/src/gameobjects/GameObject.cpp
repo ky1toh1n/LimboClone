@@ -45,13 +45,16 @@ void GameObject::Update(const float deltaTime) {
 // HardCoded values for now.. im tired.
 void GameObject::Draw(const int xOffset, const int yOffset) const {
 	if (sprite != nullptr){
-		// printf("Object DRAW info: %f, %f, %f, %f\n", position.x, position.y, Width(), Height());
-
+		//Print();
 		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
 			(int)(position.y - Height() / 2) - yOffset + 500);
 	}
 }
 
+void GameObject::Print() const
+{
+	printf("Object DRAW info: %f, %f, %f, %f\n", position.x, position.y, Width(), Height());
+}
 
 
 

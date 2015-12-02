@@ -99,6 +99,9 @@
     <ClCompile Include="src\scenes\PlatformerScene.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameobjects\Circle64x64.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="src\scenes\PlatformerScene.h">
       <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Circle64x64.h">
+      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

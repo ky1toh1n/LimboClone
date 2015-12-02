@@ -32,12 +32,14 @@ bool PlatformerScene0::LoadActors() {
 	player = new Player(this, 50, 30);
 	camera->SetFocus(player);
 
+	
 	new Ground1024x32(this, 0, 500);
 
 	// Testing collisions
-	new Block64x32(this, 250, 0);
+	//new Block64x32(this, 250, 0);
 	new Block64x32(this, 350, 50);
 	new Block64x32(this, 450, 100);
+	new Circle64x64(this, 300, -50);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
