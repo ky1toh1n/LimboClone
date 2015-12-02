@@ -32,6 +32,7 @@ b2Body * WorldManager::CreateBody(const b2BodyType bodyType, const float32 posit
 	b2BodyDef * bodyDef = new b2BodyDef();
 	bodyDef->type = bodyType;
 	bodyDef->position.Set(positionX, positionY);
+	// bodyDef->fixedRotation = true;
 
 	//Creates & adds body to world
 	b2Body* dynamicBody = world->CreateBody(bodyDef);

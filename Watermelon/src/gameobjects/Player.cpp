@@ -5,7 +5,7 @@ using namespace GAME;
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	currentState = PlayerState::JUMPING;
 	animations = new std::vector<Animation*>();
-	scenePtr->CreateBoxGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody);
+	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody);
 
 	// There is no spritesheet class, so we are adding individual images to the animation
 
