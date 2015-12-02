@@ -44,7 +44,10 @@ namespace GAME {
 		void CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
 			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
 			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
-
+		void CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+			const float32 x, const float32 y, const b2Vec2 vertices[], const b2BodyType& type,
+			const float32 friction = WorldManager::DEF_FRICTION, const float32 restitution = WorldManager::DEF_RESTITUTION,
+			const float32 density = WorldManager::DEF_DENSITY);
 		Texture* LoadTexture(const std::string& path) const;
 
 	protected:
@@ -62,8 +65,6 @@ namespace GAME {
 
 		//Collections
 		OrthographicCamera* camera;
-		// TODO: We won't have a lot of entities so we shouldn't have to worry about scale. 
-		// Meaning, I am fine with any kind of container. YOLO!
 		std::vector<GameObject*>* gameObjects;
 		Player* player;
 

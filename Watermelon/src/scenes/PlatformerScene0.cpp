@@ -29,6 +29,7 @@ bool PlatformerScene0::LoadAssets() {
 bool PlatformerScene0::LoadActors() {
 	gameObjects = new std::vector<GameObject*>();
 
+	
 	player = new Player(this, 50, 30);
 	camera->SetFocus(player);
 
@@ -37,9 +38,14 @@ bool PlatformerScene0::LoadActors() {
 
 	// Testing collisions
 	//new Block64x32(this, 250, 0);
-	new Block64x32(this, 350, 50);
-	new Block64x32(this, 450, 100);
-	new Circle64x64(this, 300, -50);
+	//new Block64x32(this, 350, 50);
+	//new Block64x32(this, 450, 100);
+	//new Circle64x64(this, 300, -50);
+
+	//Testing
+	new Triangle64x32(this, 300, 0);
+	new Block64x32(this, 600, 0);
+	new Circle64x64(this, 800, 50);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;

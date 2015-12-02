@@ -59,6 +59,7 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const st
 		type, friction, restitution, density);
 
 	BindToScene(tmpTex, tmpBody, gameObjectPtr);
+	gameObjectPtr->Print();
 }
 
 void PlatformerScene::CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
@@ -77,8 +78,21 @@ void PlatformerScene::CreateCircleGameObject(PhysicsObject* gameObjectPtr, const
 		type, friction, restitution, density);
 
 	BindToScene(tmpTex, tmpBody, gameObjectPtr);
+}
 
-	gameObjectPtr->Print();
+void PlatformerScene::CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
+	const float32 x, const float32 y, const b2Vec2 vertices[], const b2BodyType& type,
+	const float32 friction, const float32 restitution,
+	const float32 density)
+{
+	//Load texture
+	Texture* tmpTex = LoadTexture(path);
+
+	//Box creation
+	b2Body * tmpBody = worldManager->CreatePolygon(x, y, vertices, 3,
+		(float32)tmpTex->GetWidth(), (float32)tmpTex->GetHeight(), type, friction, restitution, density);
+
+	BindToScene(tmpTex, tmpBody, gameObjectPtr);
 }
 
 void PlatformerScene::BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObject * gameObjectPtr){
@@ -89,6 +103,7 @@ void PlatformerScene::BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObje
 
 	//Add to PlatformerScene
 	AddToScene(gameObjectPtr);
+	//gameObjectPtr->Print();
 }
 
 Texture* PlatformerScene::LoadTexture(const string& path) const {
@@ -115,8 +130,9 @@ void PlatformerScene::Render() const{
 	
 	for_each(gameObjects->begin(), gameObjects->end(),
 		bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
-
-	/*//Camera-disabling
+	
+	//Camera-disabled draw
+	/*
 	for_each(gameObjects->begin(), gameObjects->end(),
 		bind(&GameObject::Draw, _1, 0, 1));
 	*/

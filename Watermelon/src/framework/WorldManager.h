@@ -25,7 +25,10 @@ namespace GAME {
 		b2Body * CreateCircle(const float32 positionX, const float32 positionY,
 			const float32 radius, const b2BodyType bodyType, const float32 friction = DEF_FRICTION,
 			const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
-		//b2Body * CreatePolygon();
+		b2Body * CreatePolygon(const float32 positionX, const float32 positionY, const b2Vec2 vertices[],
+			const int verticeCount, const float32 width, const float32 height, 
+			const b2BodyType bodyType, const float32 friction = DEF_FRICTION,
+			const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
 		void Update(const float deltaTime);
 	public:
 		static const float32 PTM;
@@ -35,7 +38,7 @@ namespace GAME {
 
 	private:
 		b2World * world;
-		b2Vec2 * gravityVec = new b2Vec2(0, 2.0f); //2.0f;
+		b2Vec2 * gravityVec = new b2Vec2(0, 2.0); //2.0f;
 
 		//World state
 		float32 timeStep;

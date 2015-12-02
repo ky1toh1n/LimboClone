@@ -10,6 +10,7 @@
 #include "Ground1024x32.h"
 #include "Block64x32.h"
 #include "Circle64x64.h"
+#include "Triangle64x32.h"
 #include "KeyboardManager.h"
 
 namespace GAME {
