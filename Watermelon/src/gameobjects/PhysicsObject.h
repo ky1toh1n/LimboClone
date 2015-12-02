@@ -19,11 +19,13 @@ namespace GAME {
 		PhysicsObject& operator=(PhysicsObject &&) = delete;
 
 		virtual GameObject::TYPE GetType() const;
-		virtual void HandleCollision(const PhysicsObject& physObjRef);
+		virtual void HandleCollision(const b2Contact* contact, const PhysicsObject& physObjRef);
 		virtual void SetBody(b2Body& bodyRef);
 		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
-		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
+		virtual void  Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,
+			const double angle = 0, SDL_Point* center = nullptr,
+			const SDL_RendererFlip flip = SDL_RendererFlip::SDL_FLIP_NONE) const;
 
 	public:
 		b2Body* body;

@@ -38,11 +38,12 @@ void ContactListener::BeginContact(b2Contact* contact) {
 	PhysicsObject* gameObjectA = static_cast<PhysicsObject*>(bodyAUserData);
 	PhysicsObject* gameObjectB = static_cast<PhysicsObject*>(bodyBUserData);
 	if (bodyAUserData && bodyBUserData) {
-		gameObjectA->HandleCollision(*gameObjectB);
-		gameObjectB->HandleCollision(*gameObjectA);
+		gameObjectA->HandleCollision(contact, *gameObjectB);
+		gameObjectB->HandleCollision(contact, *gameObjectA);
 	}
 
 }
+
 void ContactListener::EndContact(b2Contact* contact){}
 void ContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold){}
 void ContactListener::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse){}

@@ -50,6 +50,7 @@
     <ClInclude Include="src\framework\Vector.h" />
     <ClInclude Include="src\framework\Window.h" />
     <ClInclude Include="src\framework\WorldManager.h" />
+    <ClInclude Include="src\gameobjects\Background.h" />
     <ClInclude Include="src\gameobjects\Block64x32.h" />
     <ClInclude Include="src\gameobjects\GameObject.h" />
     <ClInclude Include="src\gameobjects\Ground1024x32.h" />

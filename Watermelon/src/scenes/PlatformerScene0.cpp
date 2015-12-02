@@ -29,15 +29,28 @@ bool PlatformerScene0::LoadAssets() {
 bool PlatformerScene0::LoadActors() {
 	gameObjects = new std::vector<GameObject*>();
 
+	// Scrolling Background
+	Texture* tex = LoadTexture("res/textures/background.png");
+	GameObject* bg = new GameObject(0, 195);
+	bg->SetSprite(*tex);
+	AddToScene(bg);
+	bg = new GameObject(1150, 195);
+	bg->SetSprite(*tex);
+	AddToScene(bg);
+
+
+
 	player = new Player(this, 50, 30);
 	camera->SetFocus(player);
 
-	new Ground1024x32(this, 0, 500);
+	new Ground1024x32(this, 0, 300);
 
 	// Testing collisions
 	new Block64x32(this, 250, 0);
 	new Block64x32(this, 350, 50);
 	new Block64x32(this, 450, 100);
+
+
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;

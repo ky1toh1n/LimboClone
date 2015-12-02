@@ -37,10 +37,13 @@ namespace GAME {
 		virtual bool OnCreate();
 		virtual void Update(const float deltaTime);
 		virtual void Render() const;
-		void AddGameObjectToPlatformerScene(GameObject* gameObjPtr);
+		void AddToScene(GameObject* gameObjPtr);
 		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
 			const float32 x, const float32 y, const std::string& path);
-		Texture* LoadTexture(const std::string& path) const;
+		//New param list: PhysicsObject* gameObjectPtr, const std::string& path,
+		//const float32 x, const float32 y, const b2BodyType& type
+
+		Texture* LoadTexture(const std::string& path, const SDL_BlendMode blendType = SDL_BLENDMODE_NONE) const;
 
 	protected:
 		//Abstract functions
@@ -61,6 +64,16 @@ namespace GAME {
 		// Meaning, I am fine with any kind of container. YOLO!
 		std::vector<GameObject*>* gameObjects;
 		Player* player;
+
+	private:
+		//void AttachBodyToGameObject(b2Shape* shape, float32 x, float32 y,);
+		/*
+		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
+			const float32 x, const float32 y, const std::string& path);
+		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
+			const float32 x, const float32 y, const std::string& path);
+		void CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
+			const float32 x, const float32 y, const std::string& path);*/
 	};
 }
 

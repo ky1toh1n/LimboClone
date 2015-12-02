@@ -170,5 +170,8 @@
     <ClInclude Include="src\framework\Animation.h">
       <Filter>Header Files\framework</Filter>
     </ClInclude>
+    <ClInclude Include="src\gameobjects\Background.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

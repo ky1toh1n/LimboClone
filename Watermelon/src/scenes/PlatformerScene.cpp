@@ -38,35 +38,24 @@ bool PlatformerScene::OnCreate() {
 	return true;
 }
 
-void PlatformerScene::AddGameObjectToPlatformerScene(GameObject* gameObjRef) {
-	gameObjects->push_back(gameObjRef);
+void PlatformerScene::AddToScene(GameObject* gameObjPtr) {
+	gameObjects->push_back(gameObjPtr);
 }
 
 /*
 This function:
--Creates a b2Body
+-Creates a b2Body via WorldManager
 -Attaches the b2Body to a GameObject
 -Adds the GameObject to the PlatformerScene.
 */
-void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type, const float32 x, const float32 y, const std::string& path) {
+void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2BodyType& type,
+	const float32 x, const float32 y, const std::string& path) {
 	//Load texture
-	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
-	tmpTex->Load(path);
+	Texture* tmpTex = LoadTexture(path);
 
-	//Convert from pixels to meters
-	float32 width = ((float32)tmpTex->GetWidth() / 2) / WorldManager::PTM;
-	float32 height = ((float32)tmpTex->GetHeight() / 2) / WorldManager::PTM;
-	float32 ptmX = x / WorldManager::PTM;
-	float32 ptmY = y / WorldManager::PTM;
-
-	std::cout << width << " ";
-	std::cout << height << endl;
-
-	//Create b2Body
-	b2Shape* tmpShape = worldManager->CreateBoxShape(width, height);
-	b2FixtureDef* tmpFixtureDef = worldManager->CreateFixtureDef(0.35, 0.2, 1, tmpShape);
-	b2Body* tmpBody = worldManager->CreateBody(type
-		, ptmX + width, ptmY + height, tmpFixtureDef);
+	//Box creation
+	b2Body * tmpBody = worldManager->CreateBox(x, y, (float32)tmpTex->GetWidth(), (float32)tmpTex->GetHeight(),
+		type, 0.0, 0, 1);
 	tmpBody->SetUserData(gameObjectPtr);
 
 	//Binding b2Body to GameObject
@@ -74,12 +63,13 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const b2
 	gameObjectPtr->SetSprite(*tmpTex);
 
 	//Add to PlatformerScene
-	AddGameObjectToPlatformerScene(gameObjectPtr);
+	AddToScene(gameObjectPtr);
 }
 
-Texture* PlatformerScene::LoadTexture(const string& path) const {
+Texture* PlatformerScene::LoadTexture(const string& path, const SDL_BlendMode blendType) const {
 	Texture* tmpTex = new Texture(windowPtr->GetRenderer());
 	tmpTex->Load(path);
+	tmpTex->SetBlendMode(blendType);
 	return tmpTex;
 }
 
@@ -98,8 +88,15 @@ void PlatformerScene::Render() const{
 	backgroundTexture->Draw();
 
 	//Draw actors
-	for_each(gameObjects->begin(), gameObjects->end(),
-		bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
+	// for_each(gameObjects->begin(), gameObjects->end(),
+	//	bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
+
+	
+	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
+		GameObject* gameObject = *it;
+		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);
+	}
+	
 
 	SDL_RenderPresent(windowPtr->GetRenderer());
 }

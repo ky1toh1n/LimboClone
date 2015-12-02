@@ -29,7 +29,7 @@ GameObject::TYPE PhysicsObject::GetType() const {
 	return NO_CLASS;
 }
 
-void PhysicsObject::HandleCollision(const PhysicsObject& physObjRef) {
+void PhysicsObject::HandleCollision(const b2Contact* contact, const PhysicsObject& physObjRef) {
 	return;
 }
 
@@ -39,7 +39,10 @@ void PhysicsObject::Update(const float deltaTime) {
 	SetPosition(body->GetPosition().x * WorldManager::PTM, body->GetPosition().y * WorldManager::PTM);
 }
 
-void PhysicsObject::Draw(const int xOffset, const int yOffset) const {
-	GameObject::Draw(xOffset, yOffset);
+void PhysicsObject::Draw(const int xOffset, const int yOffset, const float scale, SDL_Rect* clip,
+	const double angle, SDL_Point* center,
+	const SDL_RendererFlip flip) const {
+	GameObject::Draw(xOffset, yOffset, scale, clip, angle, center, flip);
+
 }
 

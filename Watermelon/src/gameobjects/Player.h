@@ -27,20 +27,24 @@ namespace GAME {
 		Player& operator=(const Player &) = delete;
 		Player& operator=(Player &&) = delete;
 
+		void HandleInput(const bool keyDownW, const bool keyDownA,
+			const bool keyDownS, const bool keyDownD,
+			const bool keyDownSPACE);
+
+		void HandleCollision(const b2Contact* contact, const PhysicsObject& physObjRef);
+		void Update(const float deltaTime);
+		void Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,
+			const double angle = 0, SDL_Point* center = nullptr,
+			const SDL_RendererFlip flip = SDL_RendererFlip::SDL_FLIP_NONE) const;
+
+	private:
 		void MoveLeft();
 		void MoveRight();
 		void Jump();
 		void Stop();
 
-		void HandleInput(const bool keyDownW, const bool keyDownA,
-			const bool keyDownS, const bool keyDownD,
-			const bool keyDownSPACE);
-
-		void HandleCollision(const PhysicsObject& physObjRef);
-		void Update(const float deltaTime);
-		void Draw() const;
-
 	private:
+		SDL_RendererFlip flipTex = SDL_FLIP_NONE;
 		std::vector<Animation*>* animations;
 		PlayerState currentState;
 	};

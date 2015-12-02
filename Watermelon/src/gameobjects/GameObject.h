@@ -6,6 +6,7 @@
 #include "Box2D/Box2D.h"
 #include "Debug.h"
 
+
 using namespace MATH;
 
 namespace GAME {
@@ -38,7 +39,9 @@ namespace GAME {
 		virtual void SetSprite(Texture& spriteRef);
 		virtual const b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
-		virtual void Draw(const int xOffset=0, const int yOffset=0) const;
+		virtual void Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,
+			const double angle = 0, SDL_Point* center = nullptr,
+			const SDL_RendererFlip flip = SDL_RendererFlip::SDL_FLIP_NONE) const;
 
 // Member Fields
 	protected:
