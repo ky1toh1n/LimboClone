@@ -90,14 +90,20 @@
     <ClCompile Include="src\scenes\PlatformerScene0.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\PlatformerScene.cpp">
-      <Filter>Source Files\framework</Filter>
-    </ClCompile>
     <ClCompile Include="src\gameobjects\Block64x32.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
     <ClCompile Include="src\framework\Animation.cpp">
       <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\PlatformerScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Circle64x64.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Triangle64x32.cpp">
+      <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +164,6 @@
     <ClInclude Include="src\gameobjects\OrthographicCamera.h">
       <Filter>Source Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="src\framework\PlatformerScene.h">
-      <Filter>Header Files\framework</Filter>
-    </ClInclude>
     <ClInclude Include="src\scenes\PlatformerScene0.h">
       <Filter>Header Files\scenes</Filter>
     </ClInclude>
@@ -170,7 +173,13 @@
     <ClInclude Include="src\framework\Animation.h">
       <Filter>Header Files\framework</Filter>
     </ClInclude>
-    <ClInclude Include="src\gameobjects\Background.h">
+    <ClInclude Include="src\scenes\PlatformerScene.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Circle64x64.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Triangle64x32.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
