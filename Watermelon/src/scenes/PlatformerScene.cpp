@@ -101,11 +101,5 @@ void PlatformerScene::Render() const{
 	for_each(gameObjects->begin(), gameObjects->end(),
 		bind(&GameObject::Draw, _1, camera->GetPosition().x, camera->GetPosition().y));
 
-	//std::cout << camera->GetPosition().x << std::endl;
-
-	// SDL_RenderSetViewport(windowPtr->GetRenderer(), camera->GetRect());
-	// SDL_Surface* screenSurface = windowPtr->GetWindowSurface();
-	// SDL_Texture* currentScreen = SDL_CreateTextureFromSurface(windowPtr->GetRenderer(), screenSurface);
-
 	SDL_RenderPresent(windowPtr->GetRenderer());
 }

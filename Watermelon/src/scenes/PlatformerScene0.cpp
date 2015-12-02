@@ -44,27 +44,11 @@ bool PlatformerScene0::LoadActors() {
 }
 
 void PlatformerScene0::HandleInput() {
-	if (keyboardManager->IsPressed(Keyboard::Key::A)) {
-		// std::cout << "Pressed A" << std::endl;
-		player->MoveLeft();
-	}
+	player->HandleInput(keyboardManager->IsPressed(Keyboard::Key::W),
+						keyboardManager->IsPressed(Keyboard::Key::A),
+						keyboardManager->IsPressed(Keyboard::Key::S),
+						keyboardManager->IsPressed(Keyboard::Key::D),
+						keyboardManager->IsPressed(Keyboard::Key::SPACE));
 
-	if (keyboardManager->IsPressed(Keyboard::Key::W)) {
-		// std::cout << "Pressed W" << std::endl;
-	}
-
-	if (keyboardManager->IsPressed(Keyboard::Key::S)) {
-		// std::cout << "Pressed S" << std::endl;
-	}
-
-	if (keyboardManager->IsPressed(Keyboard::Key::D)) {
-		// std::cout << "Pressed D" << std::endl;
-		player->MoveRight();
-	}
-
-	if (keyboardManager->IsPressed(Keyboard::Key::SPACE)) {
-		// std::cout << "Pressed SPACE" << std::endl;
-		player->Jump();
-	}
 }
 

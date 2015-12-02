@@ -6,6 +6,7 @@ PhysicsObject::PhysicsObject(const float32 x, const float32 y) : GameObject(x,y)
 }
 
 PhysicsObject::~PhysicsObject() {
+
 	// TODO: Deallocate Body
 	// deallocating this is trickier, because I believe you can only delete a body when b2World isn't locked? <Thanks Adam>
 	// so create a list of objects to be destroyed that the scene calls every <insert condition here>, and when the object
