@@ -34,6 +34,10 @@ void GameObject::SetSprite(Texture& spriteRef) {
 
 }
 
+float32 GameObject::RadiansToDegrees(float32 radians) {
+	return (radians * 180) / M_PI;
+}
+
 
 const b2Body* GameObject::GetBody() const {
 	return nullptr;

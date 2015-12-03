@@ -45,6 +45,7 @@ bool PlatformerScene0::LoadActors() {
 	camera->SetFocus(player);
 
 	new Ground1024x32(this, 0, 300);
+	new Ground1024x32(this, 1025, 268);
 
 
 	// Testing collisions

@@ -52,7 +52,7 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const st
 	const float32 x, const float32 y, const b2BodyType& type, const float32 friction,
 	const float32 restitution, const float32 density) {
 	//Load texture
-	Texture* tmpTex = LoadTexture(path);
+	Texture* tmpTex = LoadTexture(path, SDL_BLENDMODE_BLEND);
 
 	//Box creation
 	b2Body * tmpBody = worldManager->CreateBox(x, y, (float32)tmpTex->GetWidth(), (float32)tmpTex->GetHeight(),
@@ -68,7 +68,7 @@ void PlatformerScene::CreateCircleGameObject(PhysicsObject* gameObjectPtr, const
 	const float32 x, const float32 y, const b2BodyType& type, const float32 friction,
 	const float32 restitution, const float32 density) {
 	//Load texture
-	Texture* tmpTex = LoadTexture(path);
+	Texture* tmpTex = LoadTexture(path, SDL_BLENDMODE_BLEND);
 	
 	#ifndef _DEBUG 
 		if (tmpTex->GetWidth() != tmpTex->GetHeight())
@@ -89,7 +89,7 @@ void PlatformerScene::CreateTriangleGameObject(PhysicsObject* gameObjectPtr, con
 	const float32 density)
 {
 	//Load texture
-	Texture* tmpTex = LoadTexture(path);
+	Texture* tmpTex = LoadTexture(path, SDL_BLENDMODE_BLEND);
 
 	//Box creation
 	b2Body * tmpBody = worldManager->CreatePolygon(x, y, vertices, 3,

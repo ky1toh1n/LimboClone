@@ -39,14 +39,16 @@ namespace GAME {
 		virtual float32 Height() const;
 		virtual void SetSprite(Texture& spriteRef);
 		virtual const b2Body* GetBody() const;
-		virtual void Update(const float deltaTime);
 
+		virtual void Update(const float deltaTime);
 		virtual void Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,
 			const double angle = 0, SDL_Point* center = nullptr,
 			const SDL_RendererFlip flip = SDL_RendererFlip::SDL_FLIP_NONE) const;
 
 		virtual void Print() const;
 
+	protected:
+		float32 RadiansToDegrees(float32 radians);
 
 // Member Fields
 	protected:
