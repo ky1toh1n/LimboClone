@@ -55,7 +55,9 @@ void GameObject::Draw(const int xOffset, const int yOffset, const float scale, S
 	if (sprite != nullptr){
 
 		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
-			(int)(position.y - Height() / 2) - yOffset + 350, scale, clip, angle, center, flip);
+			(int)(position.y - (Height()+1) / 2) - yOffset + 350, scale, clip, angle, center, flip);
+
+		// The +1 on Height() + 1 is the offset of the texture to the body, because it is slightly off the ground
 	}
 }
 

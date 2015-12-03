@@ -32,16 +32,16 @@ bool PlatformerScene0::LoadActors() {
 
 	// Scrolling Background
 	Texture* tex = LoadTexture("res/textures/background.png");
-	GameObject* bg = new GameObject(0, 195);
+	GameObject* bg = new GameObject(1151, 195);
 	bg->SetSprite(*tex);
 	AddToScene(bg);
-	bg = new GameObject(1150, 195);
+	bg = new GameObject(0, 195);
 	bg->SetSprite(*tex);
 	AddToScene(bg);
 
 
 
-	player = new Player(this, 50, 30);
+	player = new Player(this, 200, 30);
 	camera->SetFocus(player);
 
 	new Ground1024x32(this, 0, 300);
@@ -55,8 +55,10 @@ bool PlatformerScene0::LoadActors() {
 	//new Circle64x64(this, 300, -50);
 
 	//Testing
-	new Triangle64x32(this, 300, 0);
-	new Block64x32(this, 600, 0);
+	new Triangle64x32(this, 1200, 0);
+	new Block64x32(this, 0, 0);
+	new Block64x32(this, 33, 0);
+	new Block64x32(this, 60, 0);
 	new Circle64x64(this, 800, 50);
 
 

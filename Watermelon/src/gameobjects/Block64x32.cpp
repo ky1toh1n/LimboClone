@@ -3,7 +3,7 @@
 using namespace GAME;
 
 Block64x32::Block64x32(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
-	scenePtr->CreateBoxGameObject(this, "res/placeholders/block64x32.png", x, y, b2_dynamicBody);
+	scenePtr->CreateBoxGameObject(this, "res/textures/crate.png", x, y, b2_dynamicBody);
 }
 
 Block64x32::~Block64x32() {
