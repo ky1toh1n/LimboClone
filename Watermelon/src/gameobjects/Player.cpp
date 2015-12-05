@@ -6,7 +6,8 @@ Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y =
 	currentState = PlayerState::JUMPING;
 	animations = new std::vector<Animation*>();
 	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody);
-
+	
+	body->SetFixedRotation(true);
 	// There is no spritesheet class, so we are adding individual images to the animation
 
 	//TODO: ->SetBlendMode(SDL_BLENDMODE_BLEND) .. enable alpha transparency on the images
@@ -65,8 +66,8 @@ void Player::HandleInput(const bool keyDownW, const bool keyDownA,
 						 const bool keyDownS, const bool keyDownD,
 						 const bool keyDownSPACE) {
 
-	if (keyDownD) { Move(2); }
-	else if (keyDownA) { Move(-2); }
+	if (keyDownD) { Move(4); }
+	else if (keyDownA) { Move(-4); }
 	else if (currentState != PlayerState::JUMPING) { currentState = PlayerState::IDLE; }
 
 	if (keyDownSPACE) { Jump(); }
@@ -103,10 +104,16 @@ void Player::EndContact(const b2Contact* contact, const PhysicsObject& physObjRe
 
 }
 
+
+
 void Player::Update(const float deltaTime) {
 	PhysicsObject::Update(deltaTime);
 
 	SetSprite(*animations->at(static_cast<PlayerState>(currentState))->Play(deltaTime));
+
+	if (position.y > 600) {
+		// body->SetTransform(b2Vec2(50, 0), 0);
+	}
 }
 
 void Player::Draw(const int xOffset, const int yOffset, const float scale, SDL_Rect* clip,

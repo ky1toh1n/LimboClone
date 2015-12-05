@@ -118,7 +118,7 @@ Texture* PlatformerScene::LoadTexture(const string& path, const SDL_BlendMode bl
 
 void PlatformerScene::Update(const float deltaTime){
 	HandleInput();
-	camera->Update(deltaTime);
+
 
 	//Update players & World
 	for_each(gameObjects->begin(), gameObjects->end(), bind(&GameObject::Update, _1, deltaTime));
@@ -127,7 +127,7 @@ void PlatformerScene::Update(const float deltaTime){
 
 void PlatformerScene::Render() const{
 	windowPtr->ClearRenderer();
-
+	camera->Render();
 	//Draw bg
 	backgroundTexture->Draw();
 

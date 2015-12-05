@@ -20,7 +20,7 @@ namespace GAME {
 		void SetFocus(const GameObject* focusPtr);
 		Vec2 GetPosition() const;
 		SDL_Rect* GetRect() const;
-		void Update(const float deltaTime);
+		void Render(); // Put this on the render call, not Update
 
 	public:
 		SDL_Rect* cam;
