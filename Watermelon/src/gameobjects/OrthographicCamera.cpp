@@ -17,7 +17,7 @@ void OrthographicCamera::SetFocus(const GameObject* focusPtr) {
 }
 
 Vec2 OrthographicCamera::GetPosition() const {
-	return focus->Position();
+	return Vec2(cam->x, cam->y);
 }
 
 SDL_Rect* OrthographicCamera::GetRect() const {

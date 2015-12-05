@@ -60,6 +60,7 @@ bool GameSceneManager::Initialize(){
 	keyboardManager.Initialize();
 
 	/// *** This does not need to happen here; but, I need to start somewhere ***
+	/// well its gonna happen here then, cuz I'm only doing one scene anyway...
 	currentScene = new PlatformerScene0(windowInstance, keyboardManager);
 	if (!currentScene->OnCreate()){
 		Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
@@ -109,7 +110,6 @@ void GameSceneManager::Update(const float deltaTime) {
 		}
 	}
 
-	//keyboardManager.IsPressed(Keyboard::Key::W);
 
 	if(currentScene) currentScene->Update(deltaTime);
 }

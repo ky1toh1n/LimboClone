@@ -118,6 +118,7 @@ Texture* PlatformerScene::LoadTexture(const string& path, const SDL_BlendMode bl
 
 void PlatformerScene::Update(const float deltaTime){
 	HandleInput();
+	camera->Update(deltaTime);
 
 	//Update players & World
 	for_each(gameObjects->begin(), gameObjects->end(), bind(&GameObject::Update, _1, deltaTime));
@@ -131,7 +132,7 @@ void PlatformerScene::Render() const{
 	backgroundTexture->Draw();
 
 	//Draw actors
-	
+	// Sorry replaced it for now, not sure how to get it to work
 	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
 		GameObject* gameObject = *it;
 		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);

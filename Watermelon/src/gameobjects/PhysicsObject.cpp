@@ -7,12 +7,18 @@ PhysicsObject::PhysicsObject(const float32 x, const float32 y) : GameObject(x,y)
 
 PhysicsObject::~PhysicsObject() {
 
-	// TODO: Deallocate Body
+	// TODO: -Anyone- -> Deallocate Body
 	// deallocating this is trickier, because I believe you can only delete a body when b2World isn't locked? <Thanks Adam>
 	// so create a list of objects to be destroyed that the scene calls every <insert condition here>, and when the object
 	// is destroyed or goes out of scope, add it to the list.
 
-	// + How do I call the destructor of GameObject::~GameObject ?
+
+	// Can be done via..
+	// Pass to the scene to deallocate 
+	//			OR
+	// Keep a pointer to the list to be cleaned
+
+
 }
 
 void PhysicsObject::SetBody(b2Body& bodyRef) {

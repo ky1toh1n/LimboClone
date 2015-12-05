@@ -31,6 +31,8 @@ bool PlatformerScene0::LoadActors() {
 
 
 	// Scrolling Background
+	// TODO: Myles
+	// Create a GameObject class for backgrounds
 	Texture* tex = LoadTexture("res/textures/background.png");
 	GameObject* bg = new GameObject(1151, 195);
 	bg->SetSprite(*tex);
@@ -73,6 +75,17 @@ void PlatformerScene0::HandleInput() {
 						keyboardManager->IsPressed(Keyboard::Key::S),
 						keyboardManager->IsPressed(Keyboard::Key::D),
 						keyboardManager->IsPressed(Keyboard::Key::SPACE));
+
+	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+		// Reset Scene
+
+		// NOTE: Implement/Enable this only after properly deallocating the scene's gameObjects. 
+		// Of course, under special situations you may still decide to use it, though it isn't advised.
+
+		// (Current Status: Not Ready For Use)
+		// ResetScene();
+		// 	Debug::Log(EMessageType::INFO, "Successfully Reset PlatformerScene0.cpp", __FILENAME__, __LINE__);
+	}
 
 }
 

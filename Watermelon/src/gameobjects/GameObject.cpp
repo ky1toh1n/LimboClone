@@ -8,6 +8,7 @@ GameObject::GameObject(const float32 x, const float32 y) : position(x,y) {
 }
 
 GameObject::~GameObject() {
+	sprite->Destroy();
 	sprite = nullptr;
 }
 
@@ -50,8 +51,7 @@ void GameObject::Update(const float deltaTime) {
 // TODO: Get actual screen size values and recalculate position
 // HardCoded values for now
 void GameObject::Draw(const int xOffset, const int yOffset, const float scale, SDL_Rect* clip,
-	const double angle, SDL_Point* center,
-	const SDL_RendererFlip flip) const {
+	const double angle, SDL_Point* center, const SDL_RendererFlip flip) const {
 	if (sprite != nullptr){
 
 		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
