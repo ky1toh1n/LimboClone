@@ -39,58 +39,44 @@ Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y =
 Player::~Player() {
 }
 
-void Player::MoveLeft() {
-	// body->ApplyForceToCenter(b2Vec2(-200, 0), true);
-
-	body->ApplyLinearImpulse(b2Vec2(-5, 0), body->GetWorldCenter(), true);
-}
-
-void Player::MoveRight() {
+// === Private Functions ====
+void Player::Move(const float32 force) {
+	if (currentState != PlayerState::JUMPING) { currentState = PlayerState::RUNNING; }
 	// body->ApplyForceToCenter(b2Vec2(200, 0), true);
-	body->ApplyLinearImpulse(b2Vec2(5, 0), body->GetWorldCenter(), true);
+	body->ApplyLinearImpulse(b2Vec2(force, 0), body->GetWorldCenter(), true);
+	flipTex = force > 0 ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL;
 }
 
 void Player::Jump() {
 	if (currentState == PlayerState::JUMPING) return;
-	animations->at(2)->Reset();
+	animations->at(static_cast<PlayerState>(PlayerState::JUMPING))->Reset();
 	currentState = PlayerState::JUMPING;
 	body->ApplyLinearImpulse(b2Vec2(0, -body->GetMass() * 5), body->GetWorldCenter(), true);
 }
 
 void Player::Stop() {
+	if (currentState == PlayerState::IDLE) return;
 	currentState = PlayerState::IDLE;
 }
+
+// === Private Functions End ===
 
 void Player::HandleInput(const bool keyDownW, const bool keyDownA,
 						 const bool keyDownS, const bool keyDownD,
 						 const bool keyDownSPACE) {
 
-	if (keyDownA || keyDownD) {
-		if (currentState != PlayerState::JUMPING)
-			currentState = PlayerState::RUNNING;
-	}
-	else {
-		if (currentState != PlayerState::JUMPING)
-			currentState = PlayerState::IDLE;
-	}
+	if (keyDownD) { Move(2); }
+	else if (keyDownA) { Move(-2); }
+	else if (currentState != PlayerState::JUMPING) { currentState = PlayerState::IDLE; }
 
-	if (keyDownA) {
-		MoveLeft();
-		flipTex = SDL_FLIP_HORIZONTAL;
-	} else if (keyDownD) {
-		MoveRight();
-		flipTex = SDL_FLIP_NONE;
-	}
-
-	if (keyDownSPACE) {
-		Jump();
-	}
+	if (keyDownSPACE) { Jump(); }
 
 }
 
 
 
-void Player::HandleCollision(const b2Contact* contact, const PhysicsObject& physObjRef) {
+void Player::BeginContact(const b2Contact* contact, const PhysicsObject& physObjRef) {
+	numContacts++;
 	if (physObjRef.GetType() == TYPE::BLOCK_64x32) {
 		//std::cout << "Life -1;";
 	}
@@ -100,8 +86,20 @@ void Player::HandleCollision(const b2Contact* contact, const PhysicsObject& phys
 	} */
 
 	if (contact->GetManifold()->localNormal.y < 0) {
-		if (currentState != PlayerState::IDLE) currentState = PlayerState::IDLE;
+		// Insert ground contacts here if you would count hitting ceiling objects
+		// ie) groundContacts++;
+		Stop();
 	}
+
+}
+
+
+void Player::EndContact(const b2Contact* contact, const PhysicsObject& physObjRef) {
+	numContacts--;
+
+	if (numContacts <= 0) {
+		currentState = PlayerState::JUMPING;
+ 	}
 
 }
 

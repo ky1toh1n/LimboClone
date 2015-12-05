@@ -29,10 +29,13 @@ GameObject::TYPE PhysicsObject::GetType() const {
 	return NO_CLASS;
 }
 
-void PhysicsObject::HandleCollision(const b2Contact* contact, const PhysicsObject& physObjRef) {
+void PhysicsObject::BeginContact(const b2Contact* contact, const PhysicsObject& physObjRef) {
 	return;
 }
 
+void PhysicsObject::EndContact(const b2Contact* contact, const PhysicsObject& physObjRef) {
+	return;
+}
 
 void PhysicsObject::Update(const float deltaTime) {
 	GameObject::Update(deltaTime);

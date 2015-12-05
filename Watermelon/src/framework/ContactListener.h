@@ -22,7 +22,7 @@ namespace GAME {
 
 		// TODO: Adam --> Coupling to Scene
 		// Retrieves the GameObject with the respective bodyRef
-		virtual GameObject* GetGameObjectWithBody(const b2Body& bodyRef) const;
+		virtual GameObject* GetGameObjectWithBody(const b2Body& bodyRef) const; // was planning on using this to detect collisions, but I found a better way																		// so it this is currently unused
 
 		// b2ContactListener functions
 		virtual void BeginContact(b2Contact* contact);
