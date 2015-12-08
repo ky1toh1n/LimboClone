@@ -18,6 +18,11 @@ void Animation::AddFrame(Texture* texPtr) {
 	animation->push_back(texPtr);
 }
 
+void Animation::SetDuration(const float duration_) {
+	duration = duration_;
+	
+}
+
 Texture* Animation::Play(const float deltaTime) {
 	if (timeTillNextFrame <= 0) {
 		currentFrame++;

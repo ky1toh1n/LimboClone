@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="src\framework\Animation.cpp" />
     <ClCompile Include="src\framework\AudioFile.cpp" />
     <ClCompile Include="src\framework\ContactListener.cpp" />

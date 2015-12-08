@@ -13,8 +13,12 @@ PlatformerScene0::~PlatformerScene0(){
 bool PlatformerScene0::LoadAssets() {
 	/// Load Assets:
 	/// Background
+
 	if (!backgroundTexture->Load("res/textures/limb800x600.bmp"))
 		{return false;}
+	
+
+
 
 	/// Title
 	/// SoundEffects
@@ -33,6 +37,8 @@ bool PlatformerScene0::LoadActors() {
 	// Scrolling Background
 	// TODO: Myles
 	// Create a GameObject class for backgrounds
+	
+	/*
 	Texture* tex = LoadTexture("res/textures/background.png");
 	GameObject* bg = new GameObject(1151, 195);
 	bg->SetSprite(*tex);
@@ -40,11 +46,16 @@ bool PlatformerScene0::LoadActors() {
 	bg = new GameObject(0, 195);
 	bg->SetSprite(*tex);
 	AddToScene(bg);
+	*/
+	
 
-
+	new Background(this, 0, 195, camera);
+	new Background(this, 1265, 195, camera);
 
 	player = new Player(this, 200, 30);
 	camera->SetFocus(player);
+
+	
 
 	new Ground1024x32(this, 0, 300);
 	new Ground1024x32(this, 1025, 268);

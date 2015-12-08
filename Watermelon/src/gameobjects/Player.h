@@ -15,7 +15,8 @@ namespace GAME {
 			IDLE = 0,
 			RUNNING = 1,
 			JUMPING = 2,
-			NUM_ANIMATIONS = 3
+			DEAD = 3,
+			NUM_ANIMATIONS = 4
 		};
 
 

@@ -16,6 +16,7 @@ namespace GAME {
 		Animation& operator=(const Animation &) = delete;
 		Animation& operator=(Animation &&) = delete;
 
+		virtual void SetDuration(const float duration_);
 		virtual void Destroy();
 		virtual void Reset();
 		virtual void AddFrame(Texture* texPtr);

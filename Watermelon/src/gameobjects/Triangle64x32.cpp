@@ -8,8 +8,9 @@ Triangle64x32::Triangle64x32(PlatformerScene* scenePtr, const float32 x = 0, con
 	vertices[1].Set(64, 32);
 	vertices[2].Set(64, 0);
 	scenePtr->CreateTriangleGameObject(this, "res/placeholders/Triangle64x32.png", x, y, vertices, b2_dynamicBody);
+	body->SetFixedRotation(true);
 }
-
+ 
 Triangle64x32::~Triangle64x32() {
 }
 

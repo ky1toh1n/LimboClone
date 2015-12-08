@@ -6,6 +6,7 @@
 #include "Debug.h"
 
 #include "GameObject.h"
+#include "Background.h"
 #include "Player.h"
 #include "Ground1024x32.h"
 #include "Block64x32.h"
