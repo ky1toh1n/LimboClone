@@ -3,7 +3,7 @@
 using namespace GAME;
 
 Log::Log(PlatformerScene* scenePtr, const float32 x, const float32 y) : PhysicsObject(x, y) {
-	scenePtr->CreateBoxGameObject(this, "res/textures/log.png", x, y, b2_dynamicBody);
+	scenePtr->CreateBoxGameObject(this, "res/textures/log2.png", x, y, b2_dynamicBody);
 }
 
 Log::~Log() { }

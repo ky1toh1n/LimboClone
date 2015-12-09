@@ -4,9 +4,9 @@ using namespace GAME;
 
 SeeSaw::SeeSaw(PlatformerScene* scenePtr, const float32 x, const float32 y) : PhysicsObject(x, y) {
 	b2Vec2 vertices[3];
-	vertices[0].Set(0, 0);
-	vertices[1].Set(0, 0);
-	vertices[2].Set(0, 0);
+	vertices[0].Set(16, 32);
+	vertices[1].Set(0, 64);
+	vertices[2].Set(64, 64);
 	scenePtr->CreateTriangleGameObject(this, "res/textures/seesawrock.png", x, y, vertices, b2_staticBody);
 	body->SetFixedRotation(true);
 

@@ -55,10 +55,11 @@ bool PlatformerScene0::LoadActors() {
 
 
 
-	new SeeSaw(this, 300, 270);
+	new SeeSaw(this, 1500, 250);
 
 	new Ground1024x32(this, 0, 300);
 	new Ground1024x32(this, 1025, 268);
+	new Ground1024x32(this, 0, 100);
 
 
 	// Testing collisions
@@ -69,12 +70,12 @@ bool PlatformerScene0::LoadActors() {
 
 	//Testing
 	new Ramp64x32LR(this, 1200, 0);
-	new Crate32x32(this, 0, 0);
-	new Crate32x32(this, 33, 0);
-	new Crate32x32(this, 60, 0);
-	new Boulder64x64(this, 800, 50);
+	new Crate32x32(this, 0, 250);
+	new Crate32x32(this, 33, 250);
+	new Crate32x32(this, 60, 250);
+	new Boulder64x64(this, 800, 250);
 
-	player = new Player(this, 200, 30);
+	player = new Player(this, 200, 250);
 	camera->SetFocus(player);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
