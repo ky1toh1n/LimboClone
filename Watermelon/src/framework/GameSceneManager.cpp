@@ -58,6 +58,8 @@ bool GameSceneManager::Initialize(){
 }
 
 bool GameSceneManager::LoadScene(GameSceneManager::ScreenState state){
+	delete currentScene;
+
 	switch (state){
 		case MAINMENU:
 			currentScene = new MainMenu(windowInstance, keyboardManager);
