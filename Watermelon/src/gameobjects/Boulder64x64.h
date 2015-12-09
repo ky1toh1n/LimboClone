@@ -2,7 +2,7 @@
 #define Boulder64x64_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 
 namespace GAME {
 	class Boulder64x64 : public PhysicsObject {

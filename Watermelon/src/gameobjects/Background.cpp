@@ -20,6 +20,6 @@ void Background::Draw(const int xOffset, const int yOffset, const float scale, S
 	const double angle, SDL_Point* center, const SDL_RendererFlip flip) const {
 
 	PhysicsObject::Draw(xOffset,
-		camera->GetRect()->h/2, 
-		scale*1.1, clip, angle, center, flip);
+		camera->GetRect()->h/2,
+		scale*1.1, clip, (float)angle, center, flip);
 }

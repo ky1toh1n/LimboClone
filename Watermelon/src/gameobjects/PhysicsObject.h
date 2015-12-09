@@ -2,9 +2,9 @@
 #define PHYSICSOBJECT_H
 
 #include "GameObject.h"
-#include "ContactListener.h"
+#include "framework/ContactListener.h"
 #include "Box2D/Box2D.h"
-#include "WorldManager.h"
+#include "framework/WorldManager.h"
 
 
 namespace GAME {

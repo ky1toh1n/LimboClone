@@ -4,9 +4,9 @@
 #include "Window.h"
 
 #include "Scene.h"
-#include "PlatformerScene0.h"
-#include "MainMenu.h"
-#include "GameOver.h"
+#include "scenes/PlatformerScene0.h"
+#include "scenes/MainMenu.h"
+#include "scenes/GameOver.h"
 
 namespace GAME {
 

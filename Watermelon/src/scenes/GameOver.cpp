@@ -1,5 +1,5 @@
 #include "GameOver.h"
-#include "GameSceneManager.h"
+#include "framework/GameSceneManager.h"
 
 using namespace GAME;
 

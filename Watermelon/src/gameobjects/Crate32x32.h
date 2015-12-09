@@ -2,7 +2,7 @@
 #define Crate32x32_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 
 namespace GAME {
 	class Crate32x32 : PhysicsObject {

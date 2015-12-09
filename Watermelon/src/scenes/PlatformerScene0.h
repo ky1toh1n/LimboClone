@@ -2,19 +2,19 @@
 #define PlatformerScene0_H
 
 #include "PlatformerScene.h"
-#include "Window.h"
-#include "Debug.h"
+#include "framework/Window.h"
+#include "framework/Debug.h"
 
-#include "GameObject.h"
-#include "Background.h"
-#include "Player.h"
-#include "Ground1024x32.h"
-#include "Crate32x32.h"
-#include "Boulder64x64.h"
-#include "Ramp64x32LR.h"
-#include "SeeSaw.h"
-#include "Log.h"
-#include "KeyboardManager.h"
+#include "gameobjects/GameObject.h"
+#include "gameobjects/Background.h"
+#include "gameobjects/Player.h"
+#include "gameobjects/Ground1024x32.h"
+#include "gameobjects/Crate32x32.h"
+#include "gameobjects/Boulder64x64.h"
+#include "gameobjects/Ramp64x32LR.h"
+#include "gameobjects/SeeSaw.h"
+#include "gameobjects/Log.h"
+#include "framework/KeyboardManager.h"
 
 namespace GAME {
 	class PlatformerScene0 : public PlatformerScene  {

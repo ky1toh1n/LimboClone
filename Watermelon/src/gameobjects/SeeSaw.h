@@ -2,7 +2,7 @@
 #define SEESAW_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 #include "Log.h"
 
 namespace GAME{

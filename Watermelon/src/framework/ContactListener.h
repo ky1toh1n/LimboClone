@@ -3,7 +3,7 @@
 
 #include "Debug.h"
 #include "Box2D/Box2D.h"
-#include "GameObject.h"
+#include "gameobjects/GameObject.h"
 #include <vector>
 
 //Responsible for handling Box2D Contacts.

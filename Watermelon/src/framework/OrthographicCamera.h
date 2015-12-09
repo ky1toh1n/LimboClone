@@ -1,8 +1,8 @@
 #ifndef ORTHOGRAPHIC_CAMERA_H
 #define ORTHOGRAPHIC_CAMERA_H
 
-#include "GameObject.h"
-#include "Vector.h"
+#include "gameobjects/GameObject.h"
+#include "framework/Vector.h"
 using namespace MATH;
 
 namespace GAME {

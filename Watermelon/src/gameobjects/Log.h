@@ -2,7 +2,7 @@
 #define LOG_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 
 namespace GAME{
 	class Log : public PhysicsObject {

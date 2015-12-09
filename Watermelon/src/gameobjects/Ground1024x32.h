@@ -2,7 +2,7 @@
 #define GROUND1024x32_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 
 namespace GAME {
 	class Ground1024x32 : PhysicsObject {

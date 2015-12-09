@@ -1,10 +1,10 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include "Vector.h"
-#include "Texture.h"
+#include "framework/Vector.h"
+#include "framework/Texture.h"
 #include "Box2D/Box2D.h"
-#include "Debug.h"
+#include "framework/Debug.h"
 
 
 using namespace MATH;
