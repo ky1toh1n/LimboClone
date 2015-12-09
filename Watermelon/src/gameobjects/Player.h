@@ -28,6 +28,8 @@ namespace GAME {
 		Player& operator=(const Player &) = delete;
 		Player& operator=(Player &&) = delete;
 
+		bool IsDead() const;
+
 		void HandleInput(const bool keyDownW, const bool keyDownA,
 			const bool keyDownS, const bool keyDownD,
 			const bool keyDownSPACE);

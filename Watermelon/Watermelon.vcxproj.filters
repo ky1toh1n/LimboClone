@@ -105,6 +105,15 @@
     <ClCompile Include="src\gameobjects\Triangle64x32.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MainMenu.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GameOver.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -173,14 +182,23 @@
     <ClInclude Include="src\framework\Animation.h">
       <Filter>Header Files\framework</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\PlatformerScene.h">
-      <Filter>Header Files\scenes</Filter>
-    </ClInclude>
     <ClInclude Include="src\gameobjects\Circle64x64.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="src\gameobjects\Triangle64x32.h">
       <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\PlatformerScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Background.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MainMenu.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\GameOver.h">
+      <Filter>Header Files\scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
