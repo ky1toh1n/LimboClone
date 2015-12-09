@@ -45,7 +45,7 @@ bool MainMenu::OnCreate(){
 };
 
 void MainMenu::Update(const float deltaTime){
-	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+	if (keyboardManager->IsPressed(Keyboard::Action::TO_NEXT_SCREEN)) {
 		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::PLATFORMERSCENE0);
 	}
 };

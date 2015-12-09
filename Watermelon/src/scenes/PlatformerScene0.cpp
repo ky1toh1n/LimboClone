@@ -94,11 +94,11 @@ bool PlatformerScene0::LoadActors() {
 
 
 void PlatformerScene0::HandleInput() {
-	player->HandleInput(keyboardManager->IsPressed(Keyboard::Key::W),
-						keyboardManager->IsPressed(Keyboard::Key::A),
-						keyboardManager->IsPressed(Keyboard::Key::S),
-						keyboardManager->IsPressed(Keyboard::Key::D),
-						keyboardManager->IsPressed(Keyboard::Key::SPACE));
+	player->HandleInput(keyboardManager->IsPressed(Keyboard::Action::MOVE_UP),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_LEFT),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_DOWN),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_RIGHT),
+		keyboardManager->IsPressed(Keyboard::Action::JUMP));
 
 	
 

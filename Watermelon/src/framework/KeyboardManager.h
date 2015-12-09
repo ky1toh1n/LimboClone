@@ -29,14 +29,17 @@ namespace GAME {
 						keyboard.OnRelease(SDLEvent.type);*/
 		void OnRelease(const unsigned int& keyCode);
 
-		//return a boolean if the key was pressed or not *Call this when making any scancode call * after OnPress call
+		//Determines if the key that corresponds to a certain Action was pressed.
+		//See the private overload of this method for details.
 			//example
-				/*if (keyboard.IsPressed(Keyboard::Key::A))*/
-		bool IsPressed(const unsigned int& keyCode);
-
+				/*if (keyboard.IsPressed(Keyboard::Action::JUMP))*/
+		bool IsPressed(const Action action);
 	private:
 		// our Keyboard class , contains our keyboard booleans.
 		Keyboard* keyboard;
+
+		//return a boolean if the key was pressed or not *Call this when making any scancode call * after OnPress cal
+		bool IsPressed(const unsigned int& keyCode);
 	};
 }
 #endif

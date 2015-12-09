@@ -46,14 +46,13 @@ bool GameOver::OnCreate(){
 };
 
 void GameOver::Update(const float deltaTime){
-	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+	if (keyboardManager->IsPressed(Keyboard::Action::TO_NEXT_SCREEN)) {
 		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::MAINMENU);
 	}
-	else if (keyboardManager->IsPressed(Keyboard::Key::NUM_1)){
-		/*SDL_Event user_event;
+	else if (keyboardManager->IsPressed(Keyboard::Action::EXIT_GAME)){
+		SDL_Event user_event;
 		user_event.type = SDL_QUIT;
-		SDL_PushEvent(&user_event);*/
-
+		SDL_PushEvent(&user_event);
 	}
 };
 

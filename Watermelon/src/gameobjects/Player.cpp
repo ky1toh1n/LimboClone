@@ -66,15 +66,15 @@ bool Player::IsDead() const{
 
 // === Private Functions End ===
 
-void Player::HandleInput(const bool keyDownW, const bool keyDownA,
-						 const bool keyDownS, const bool keyDownD,
-						 const bool keyDownSPACE) {
+void Player::HandleInput(const bool moveUp, const bool moveLeft,
+	const bool keyDownS, const bool moveRight,
+						 const bool jump) {
 
-	if (keyDownD) { Move(4); }
-	else if (keyDownA) { Move(-4); }
+	if (moveRight) { Move(4); }
+	else if (moveLeft) { Move(-4); }
 	else if (currentState != PlayerState::JUMPING) { currentState = PlayerState::IDLE; }
 
-	if (keyDownSPACE) { Jump(); }
+	if (jump) { Jump(); }
 
 }
 
