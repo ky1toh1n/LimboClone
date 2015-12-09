@@ -69,11 +69,11 @@ bool PlatformerScene0::LoadActors() {
 	//new Circle64x64(this, 300, -50);
 
 	//Testing
-	new Ramp64x32LR(this, 1200, 0);
-	new Crate32x32(this, 0, 0);
-	new Crate32x32(this, 33, 0);
-	new Crate32x32(this, 60, 0);
-	new Boulder64x64(this, 800, 50);
+	new Triangle64x32(this, 1200, 0);
+	new Block64x32(this, 0, 0);
+	new Block64x32(this, 33, 0);
+	new Block64x32(this, 60, 0);
+	new Circle64x64(this, 800, 50);
 
 
 

@@ -19,9 +19,8 @@ namespace GAME {
 			NO_CLASS,
 			PLAYER,
 			GROUND_1024x32,
-			CRATE_32x32,
-			BOULDER_64x64,
-			RAMP
+			BLOCK_64x32,
+			CIRCLE_64x64
 		};
 
 
