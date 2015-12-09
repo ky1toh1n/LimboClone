@@ -18,7 +18,7 @@ namespace GAME{
 
 
 	private:
-		GameObject* beam;
+		b2Joint* joint;
 
 	};
 }

@@ -53,8 +53,7 @@ bool PlatformerScene0::LoadActors() {
 	new Background(this, 0, 195, camera);
 	new Background(this, 1265, 195, camera);
 
-	player = new Player(this, 200, 30);
-	camera->SetFocus(player);
+
 
 	new SeeSaw(this, 300, 270);
 
@@ -75,7 +74,8 @@ bool PlatformerScene0::LoadActors() {
 	new Crate32x32(this, 60, 0);
 	new Boulder64x64(this, 800, 50);
 
-
+	player = new Player(this, 200, 30);
+	camera->SetFocus(player);
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
