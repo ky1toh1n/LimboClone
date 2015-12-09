@@ -7,6 +7,7 @@ GameOver::GameOver(class Window& windowRef, class KeyboardManager& keymanRef) : 
 {
 	//Background texture & music
 	backgroundTexture = new Texture(windowPtr->GetRenderer());
+	Debug::Log(EMessageType::INFO, "Sucessfully created GameOver.cpp.", __FILENAME__, __LINE__);
 }
 
 
@@ -14,7 +15,7 @@ GameOver::~GameOver()
 {
 	delete backgroundTexture;
 	backgroundTexture = nullptr;
-	Debug::Log(EMessageType::INFO, "Successfully destroyed MainMenu.cpp", __FILENAME__, __LINE__);
+	Debug::Log(EMessageType::INFO, "Successfully destroyed GameOver.cpp", __FILENAME__, __LINE__);
 }
 
 void GameOver::HandleInput() {

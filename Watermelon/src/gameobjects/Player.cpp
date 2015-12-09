@@ -5,7 +5,7 @@ using namespace GAME;
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	currentState = PlayerState::JUMPING;
 	animations = new std::vector<Animation*>();
-	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody);
+	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody, 25);
 	
 	body->SetFixedRotation(true);
 	// There is no spritesheet class, so we are adding individual images to the animation
@@ -13,11 +13,11 @@ Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y =
 	//TODO: ->SetBlendMode(SDL_BLENDMODE_BLEND) .. enable alpha transparency on the images
 	// NTS: The images dont have transparency yet, I tested it and it works
 
-	Animation* anim = new Animation(0.08);
+	Animation* anim = new Animation(0.08f);
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/idle/idle0.png", SDL_BLENDMODE_BLEND));
 	animations->push_back(anim);
 
-	anim = new Animation(0.08);
+	anim = new Animation(0.08f);
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/run/pl1.png", SDL_BLENDMODE_BLEND));
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/run/pl2.png", SDL_BLENDMODE_BLEND));
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/run/pl3.png", SDL_BLENDMODE_BLEND));
@@ -29,7 +29,7 @@ Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y =
 	animations->push_back(anim);
 
 	// then we add the animation to a collection of animations
-	anim = new Animation(0.08, false);
+	anim = new Animation(0.08f, false);
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/jump/jump0.png", SDL_BLENDMODE_BLEND));
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/jump/jump1.png", SDL_BLENDMODE_BLEND));
 	anim->AddFrame(scenePtr->LoadTexture("res/placeholders/player/jump/jump2.png", SDL_BLENDMODE_BLEND));

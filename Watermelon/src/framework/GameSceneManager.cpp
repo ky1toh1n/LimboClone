@@ -7,30 +7,28 @@
 
 using namespace GAME;
 
-GameSceneManager * GameSceneManager::instance = nullptr;
-
+/// See the header file reguarding unique_ptr
+std::unique_ptr<GameSceneManager> GameSceneManager::instance(nullptr);
 
 GameSceneManager* GameSceneManager::getInstance(){
-	if (instance == nullptr){
-		instance = new GameSceneManager();
+	if (instance.get() == nullptr){
+		/// I originally set the unique_ptr to be null in the constructor - 
+		/// reset() sets the new address
+		instance.reset(new GameSceneManager());
 	}
-	return instance;
+	return instance.get();
 }
-
-
 
 GameSceneManager::GameSceneManager() : windowInstance(), currentScene(nullptr),isRunning(false),fps(60) {
-	Debug::Log(EMessageType::INFO, "Sucessfully created GameSceneManager.", __FILENAME__, __LINE__);
+	Debug::Log(EMessageType::INFO, "Sucessfully created GameSceneManager.cpp", __FILENAME__, __LINE__);
 }
-
-
 
 GameSceneManager::~GameSceneManager(){
 	windowInstance.Shutdown();
 	delete currentScene;
 	currentScene = nullptr;
 	isRunning = false;
-	Debug::Log(EMessageType::INFO, "Sucessfully destroyed GameSceneManager.", __FILENAME__, __LINE__);
+	Debug::Log(EMessageType::INFO, "Sucessfully destroyed GameSceneManager.cpp", __FILENAME__, __LINE__);
 }
 
 
@@ -55,7 +53,6 @@ bool GameSceneManager::Initialize(){
 	}
 
 	keyboardManager.Initialize();
-
 	
 	return LoadScene(MAINMENU);
 }
@@ -72,8 +69,8 @@ bool GameSceneManager::LoadScene(GameSceneManager::ScreenState state){
 			currentScene = new GameOver(windowInstance, keyboardManager);
 			break;
 		default:
-			Debug::Log(EMessageType::FATAL_ERROR, "ScreenState does not exist!" + state, __FILENAME__, __LINE__);
-			return false;
+			Debug::Log(EMessageType::FATAL_ERROR, "ScreenState is unhandled! " + state, __FILENAME__, __LINE__);
+			throw state;
 			break;
 	}
 

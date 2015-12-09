@@ -7,6 +7,7 @@ MainMenu::MainMenu(class Window& windowRef, class KeyboardManager& keymanRef) : 
 {
 	//Background texture & music
 	backgroundTexture = new Texture(windowPtr->GetRenderer());
+	Debug::Log(EMessageType::INFO, "Successfully created MainMenu.cpp", __FILENAME__, __LINE__);
 }
 
 

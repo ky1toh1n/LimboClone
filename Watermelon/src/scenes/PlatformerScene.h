@@ -46,7 +46,7 @@ namespace GAME {
 			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
 		
 		void CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
-			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 radius, const float32 friction = WorldManager::DEF_FRICTION,
 			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
 		
 		void CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,

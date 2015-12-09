@@ -16,6 +16,7 @@ PlatformerScene::PlatformerScene(Window& windowRef, KeyboardManager& keymanRef) 
 	//Framework
 	gameObjects = new std::vector<GameObject*>();
 	camera = new OrthographicCamera();
+	Debug::Log(EMessageType::INFO, "Successfully created PlatformerScene.cpp", __FILENAME__, __LINE__);
 }
 
 PlatformerScene::~PlatformerScene() {
@@ -65,19 +66,13 @@ void PlatformerScene::CreateBoxGameObject(PhysicsObject* gameObjectPtr, const st
 }
 
 void PlatformerScene::CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
-	const float32 x, const float32 y, const b2BodyType& type, const float32 friction,
+	const float32 x, const float32 y, const b2BodyType& type, const float32 radius, const float32 friction,
 	const float32 restitution, const float32 density) {
 	//Load texture
 	Texture* tmpTex = LoadTexture(path, SDL_BLENDMODE_BLEND);
-	
-	#ifndef _DEBUG 
-		if (tmpTex->GetWidth() != tmpTex->GetHeight())
-		{Debug::Log(EMessageType::ERROR, "Texture's width and height are not equal: " + path, __FILENAME__, __LINE__);}
-	#endif
-
 
 	//Box creation
-	b2Body * tmpBody = worldManager->CreateCircle(x, y, (float32)tmpTex->GetWidth() / 2,
+	b2Body * tmpBody = worldManager->CreateCircle(x, y, radius,
 		type, friction, restitution, density);
 
 	BindToScene(tmpTex, tmpBody, gameObjectPtr);
@@ -148,7 +143,7 @@ void PlatformerScene::Render() const{
 	// Sorry replaced it for now, not sure how to get it to work
 	for (std::vector<GameObject*>::iterator it = gameObjects->begin(); it != gameObjects->end(); ++it) {
 		GameObject* gameObject = *it;
-		gameObject->Draw(camera->GetPosition().x, camera->GetPosition().y);
+		gameObject->Draw((int)camera->GetPosition().x, (int)camera->GetPosition().y);
 	}
 	
 	// for_each(gameObjects->begin(), gameObjects->end(),

@@ -4,7 +4,7 @@
 using namespace GAME;
 
 PlatformerScene0::PlatformerScene0(class Window& windowRef, class KeyboardManager& keymanRef): PlatformerScene(windowRef, keymanRef) {
-	
+	Debug::Log(EMessageType::INFO, "Successfully created PlatformerScene0.cpp", __FILENAME__, __LINE__);
 }
 
 PlatformerScene0::~PlatformerScene0(){
@@ -77,7 +77,7 @@ bool PlatformerScene0::LoadActors() {
 	player = new Player(this, 200, 30);
 	camera->SetFocus(player);
 
-	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
+	Debug::Log(EMessageType::INFO, "Initialized PlatformerScene0", __FILENAME__, __LINE__);
 	return true;
 }
 
