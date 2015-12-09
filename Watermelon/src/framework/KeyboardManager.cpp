@@ -7,20 +7,14 @@ KeyboardManager::KeyboardManager():keyboard(new Keyboard()) {
 }
 
 KeyboardManager::~KeyboardManager(){
-	Delete();
+	delete keyboard;
+	keyboard = nullptr;
 }
 
 void KeyboardManager::Initialize() {
 	// initialize all keys to false
 	keyboard->Initialize();
 }
-
-void KeyboardManager::Delete() {
-	// delete the array of keys in the keyboard;
-	keyboard->Delete();
-	keyboard = nullptr;
-}
-
 void  KeyboardManager::OnPress(const unsigned int& keyCode) {
 	keyboard->key[keyCode] = true;
 }

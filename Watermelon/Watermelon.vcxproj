@@ -51,7 +51,6 @@
     <ClInclude Include="src\framework\KeyboardManager.h" />
     <ClInclude Include="src\framework\Music.h" />
     <ClInclude Include="src\framework\OrthographicCamera.h" />
-    <ClInclude Include="src\framework\PlatformerScene.h" />
     <ClInclude Include="src\framework\Scene.h" />
     <ClInclude Include="src\framework\Texture.h" />
     <ClInclude Include="src\framework\Timer.h" />
@@ -71,6 +70,7 @@
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\GameOver.h" />
     <ClInclude Include="src\scenes\MainMenu.h" />
+    <ClInclude Include="src\scenes\PlatformerScene.h" />
     <ClInclude Include="src\scenes\PlatformerScene0.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -107,7 +107,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src;C:\GameDev\Box2D_v2.3.0\Box2D;C:\Users\Myles\Desktop\Box2D;C:\GameDev\Box2D_v2.3.0\Box2D\Box2D;C:\GameDev\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;-divider-;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src;C:\GameDev\Box2D_v2.3.0\Box2D;C:\Users\Myles\Desktop\Box2D;C:\GameDev\Box2D_v2.3.0\Box2D\Box2D;C:\GameDev\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -118,6 +118,10 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

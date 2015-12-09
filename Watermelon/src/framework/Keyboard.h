@@ -20,7 +20,8 @@ namespace GAME {
 			S = SDL_SCANCODE_S,
 			W = SDL_SCANCODE_W,
 			SPACE = SDL_SCANCODE_SPACE,
-			ESCAPE = SDL_SCANCODE_ESCAPE
+			ESCAPE = SDL_SCANCODE_ESCAPE,
+			NUM_1 = SDL_SCANCODE_1,
 		};
 		// get the number of scan codes from SDL but them into a static const int , going to need it for an array of boolean keys
 		static const int KEYBOARD_KEYS = SDL_NUM_SCANCODES;

@@ -11,8 +11,6 @@ Scene::Scene(Window& windowRef, KeyboardManager& keymanRef) : windowPtr(&windowR
 Scene::~Scene() {
 	delete windowPtr;
 	windowPtr = nullptr;
-	delete keyboardManager;
-	keyboardManager = nullptr;
 	delete backgroundMusic;
 	backgroundMusic = nullptr;
 	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene.cpp", __FILENAME__, __LINE__);

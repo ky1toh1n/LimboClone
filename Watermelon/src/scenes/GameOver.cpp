@@ -48,6 +48,12 @@ void GameOver::Update(const float deltaTime){
 	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
 		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::MAINMENU);
 	}
+	else if (keyboardManager->IsPressed(Keyboard::Key::NUM_1)){
+		/*SDL_Event user_event;
+		user_event.type = SDL_QUIT;
+		SDL_PushEvent(&user_event);*/
+
+	}
 };
 
 void GameOver::Render() const{
