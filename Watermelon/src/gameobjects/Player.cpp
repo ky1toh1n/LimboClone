@@ -60,6 +60,10 @@ void Player::Stop() {
 	currentState = PlayerState::IDLE;
 }
 
+bool Player::IsDead() const{
+	return currentState == DEAD;
+}
+
 // === Private Functions End ===
 
 void Player::HandleInput(const bool keyDownW, const bool keyDownA,

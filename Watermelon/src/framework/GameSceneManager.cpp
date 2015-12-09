@@ -60,8 +60,8 @@ bool GameSceneManager::Initialize(){
 	keyboardManager.Initialize();
 
 	/// *** This does not need to happen here; but, I need to start somewhere ***
-	/// well its gonna happen here then, cuz I'm only doing one scene anyway...
-	currentScene = new PlatformerScene0(windowInstance, keyboardManager);
+	//currentScene = new PlatformerScene0(windowInstance, keyboardManager);
+	currentScene = new MainMenu(windowInstance, keyboardManager);
 	if (!currentScene->OnCreate()){
 		Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
 		return false;
@@ -70,6 +70,30 @@ bool GameSceneManager::Initialize(){
 	return true;
 }
 
+void GameSceneManager::LoadScene(GameSceneManager::ScreenState state){
+	switch (state){
+		case MAINMENU:
+			currentScene = new MainMenu(windowInstance, keyboardManager);
+			if (!currentScene->OnCreate()){
+				Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
+			}
+			break;
+		case PLATFORMERSCENE0:
+			currentScene = new PlatformerScene0(windowInstance, keyboardManager);
+			if (!currentScene->OnCreate()){
+				Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
+			}
+			break;
+		case GAMEOVER:
+			currentScene = new GameOver(windowInstance, keyboardManager);
+			if (!currentScene->OnCreate()){
+				Debug::Log(EMessageType::FATAL_ERROR, "Failed to create a Scene!", __FILENAME__, __LINE__);
+			}
+			break;
+		default:
+			break;
+	}
+}
 
 void GameSceneManager::Run(){
 	isRunning = Initialize();

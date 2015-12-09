@@ -1,4 +1,5 @@
 #include "PlatformerScene0.h"
+#include "GameSceneManager.h"
 
 using namespace GAME;
 
@@ -80,6 +81,8 @@ bool PlatformerScene0::LoadActors() {
 	return true;
 }
 
+
+
 void PlatformerScene0::HandleInput() {
 	player->HandleInput(keyboardManager->IsPressed(Keyboard::Key::W),
 						keyboardManager->IsPressed(Keyboard::Key::A),
@@ -87,7 +90,8 @@ void PlatformerScene0::HandleInput() {
 						keyboardManager->IsPressed(Keyboard::Key::D),
 						keyboardManager->IsPressed(Keyboard::Key::SPACE));
 
-	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+	
+
 		// Reset Scene
 
 		// NOTE: Implement/Enable this only after properly deallocating the scene's gameObjects. 
@@ -96,7 +100,12 @@ void PlatformerScene0::HandleInput() {
 		// (Current Status: Not Ready For Use)
 		// ResetScene();
 		// 	Debug::Log(EMessageType::INFO, "Successfully Reset PlatformerScene0.cpp", __FILENAME__, __LINE__);
-	}
 
+}
+
+void PlatformerScene0::Update(const float deltaTime) {
+	PlatformerScene::Update(deltaTime);
+	if (player->IsDead())
+		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::GAMEOVER);
 }
 

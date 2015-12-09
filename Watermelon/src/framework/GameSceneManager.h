@@ -5,10 +5,18 @@
 
 #include "Scene.h"
 #include "PlatformerScene0.h"
+#include "MainMenu.h"
+#include "GameOver.h"
 
 namespace GAME {
 
 class GameSceneManager {
+public:
+	enum ScreenState{
+		MAINMENU = 0,
+		PLATFORMERSCENE0 = 1,
+		GAMEOVER = 2
+	};
 private:
 	
 	GameSceneManager();
@@ -25,8 +33,8 @@ private:
 	/// Notice that windowInstance is a stack variable here - see the 
 	/// GameSceneManager constructor for the best way to initialize it 
 	Window windowInstance;
-	PlatformerScene *currentScene;
-
+	//PlatformerScene *currentScene;
+	Scene *currentScene;
 
 	///std::unique_ptr is a smart pointer that destroys the object it point to when the unique_ptr goes out of scope.
 	static std::unique_ptr<GameSceneManager> instance;
@@ -53,6 +61,7 @@ public:
 	static GameSceneManager* getInstance();
 	void ThreadDemo(); /// Just a thread demo
 	void Run();
+	void LoadScene(GameSceneManager::ScreenState state);
 	
 };
 

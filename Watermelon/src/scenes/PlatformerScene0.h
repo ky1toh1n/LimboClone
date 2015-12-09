@@ -26,6 +26,7 @@ namespace GAME {
 		PlatformerScene0& operator=(PlatformerScene0 &&) = delete;
 
 		virtual void HandleInput();
+		virtual void Update(const float deltaTime);
 	protected:
 		virtual bool LoadActors();
 		virtual bool LoadAssets();
