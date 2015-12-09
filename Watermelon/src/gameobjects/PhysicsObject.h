@@ -22,7 +22,7 @@ namespace GAME {
 		virtual void BeginContact(const b2Contact* contact, const PhysicsObject& physObjRef);
 		virtual void EndContact(const b2Contact* contact, const PhysicsObject& physObjRef);
 		virtual void SetBody(b2Body& bodyRef);
-		virtual const b2Body* GetBody() const;
+		virtual b2Body* GetBody() const;
 		virtual void Update(const float deltaTime);
 		virtual void  Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,
 			const double angle = 0, SDL_Point* center = nullptr,

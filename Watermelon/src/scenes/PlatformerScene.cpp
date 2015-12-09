@@ -98,6 +98,19 @@ void PlatformerScene::CreateTriangleGameObject(PhysicsObject* gameObjectPtr, con
 	BindToScene(tmpTex, tmpBody, gameObjectPtr);
 }
 
+
+b2Joint* PlatformerScene::CreateJoint(b2Body* bodyA, b2Body* bodyB, const bool collideConnected) {
+	//set up the definition for a xxx joint
+	b2RevoluteJointDef jointDef;
+	jointDef.bodyA = bodyA;
+	jointDef.bodyB = bodyB;
+	jointDef.collideConnected = false;
+
+	//create the joint
+	b2RevoluteJoint* joint = (b2RevoluteJoint*)worldManager->CreateJoint(jointDef);
+	return joint;
+}
+
 void PlatformerScene::BindToScene(Texture* tmpTex, b2Body * tmpBody, PhysicsObject * gameObjectPtr){
 	//Binding b2Body to GameObject
 	tmpBody->SetUserData(gameObjectPtr);

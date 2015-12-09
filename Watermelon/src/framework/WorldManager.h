@@ -29,6 +29,9 @@ namespace GAME {
 			const int verticeCount, const float32 width, const float32 height, 
 			const b2BodyType bodyType, const float32 friction = DEF_FRICTION,
 			const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
+
+		b2Joint* CreateJoint(b2JointDef& jointDef) const;
+
 		void Update(const float deltaTime);
 	public:
 		static const float32 PTM;

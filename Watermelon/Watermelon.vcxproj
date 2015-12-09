@@ -29,10 +29,12 @@
     <ClCompile Include="src\gameobjects\Boulder64x64.cpp" />
     <ClCompile Include="src\gameobjects\GameObject.cpp" />
     <ClCompile Include="src\gameobjects\Ground1024x32.cpp" />
+    <ClCompile Include="src\gameobjects\Log.cpp" />
     <ClCompile Include="src\gameobjects\OrthographicCamera.cpp" />
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\gameobjects\Ramp64x32LR.cpp" />
+    <ClCompile Include="src\gameobjects\SeeSaw.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\scenes\GameOver.cpp" />
     <ClCompile Include="src\scenes\MainMenu.cpp" />
@@ -60,10 +62,12 @@
     <ClInclude Include="src\gameobjects\Boulder64x64.h" />
     <ClInclude Include="src\gameobjects\GameObject.h" />
     <ClInclude Include="src\gameobjects\Ground1024x32.h" />
+    <ClInclude Include="src\gameobjects\Log.h" />
     <ClInclude Include="src\gameobjects\OrthographicCamera.h" />
     <ClInclude Include="src\gameobjects\PhysicsObject.h" />
     <ClInclude Include="src\gameobjects\Player.h" />
     <ClInclude Include="src\gameobjects\Ramp64x32LR.h" />
+    <ClInclude Include="src\gameobjects\SeeSaw.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\GameOver.h" />
     <ClInclude Include="src\scenes\MainMenu.h" />

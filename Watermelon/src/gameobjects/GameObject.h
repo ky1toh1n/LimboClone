@@ -39,7 +39,7 @@ namespace GAME {
 		virtual float32 Width() const;
 		virtual float32 Height() const;
 		virtual void SetSprite(Texture& spriteRef);
-		virtual const b2Body* GetBody() const;
+		virtual b2Body* GetBody() const;
 
 		virtual void Update(const float deltaTime);
 		virtual void Draw(const int xOffset = 0, const int yOffset = 0, const float scale = 1, SDL_Rect* clip = nullptr,

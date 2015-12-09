@@ -54,6 +54,8 @@ namespace GAME {
 			const float32 friction = WorldManager::DEF_FRICTION, const float32 restitution = WorldManager::DEF_RESTITUTION,
 			const float32 density = WorldManager::DEF_DENSITY);
 
+		b2Joint* CreateJoint(b2Body* bodyA, b2Body* bodyB, const bool collideConnected);
+
 	protected:
 		//Abstract functions
 		virtual bool LoadActors() = 0;

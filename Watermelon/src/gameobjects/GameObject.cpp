@@ -40,7 +40,7 @@ float32 GameObject::RadiansToDegrees(float32 radians) {
 }
 
 
-const b2Body* GameObject::GetBody() const {
+b2Body* GameObject::GetBody() const {
 	return nullptr;
 }
 

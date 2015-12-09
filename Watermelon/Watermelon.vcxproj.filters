@@ -96,9 +96,6 @@
     <ClCompile Include="src\scenes\PlatformerScene.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="src\gameobjects\Boulder64x64.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -106,6 +103,21 @@
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
     <ClCompile Include="src\gameobjects\Ramp64x32LR.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GameOver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Background.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\SeeSaw.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Log.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -186,6 +198,18 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="src\gameobjects\Ramp64x32LR.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\GameOver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\SeeSaw.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Log.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>

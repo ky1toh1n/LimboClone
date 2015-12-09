@@ -56,7 +56,7 @@ bool PlatformerScene0::LoadActors() {
 	player = new Player(this, 200, 30);
 	camera->SetFocus(player);
 
-	
+	new SeeSaw(this, 300, 270);
 
 	new Ground1024x32(this, 0, 300);
 	new Ground1024x32(this, 1025, 268);

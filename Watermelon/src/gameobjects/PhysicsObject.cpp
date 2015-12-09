@@ -27,7 +27,7 @@ void PhysicsObject::SetBody(b2Body& bodyRef) {
 	SetPosition(body->GetPosition().x, body->GetPosition().y);
 }
 
-const b2Body* PhysicsObject::GetBody() const{
+b2Body* PhysicsObject::GetBody() const{
 	return body;
 }
 

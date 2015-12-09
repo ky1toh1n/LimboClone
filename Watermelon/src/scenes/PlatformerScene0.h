@@ -12,6 +12,8 @@
 #include "Crate32x32.h"
 #include "Boulder64x64.h"
 #include "Ramp64x32LR.h"
+#include "SeeSaw.h"
+#include "Log.h"
 #include "KeyboardManager.h"
 
 namespace GAME {
