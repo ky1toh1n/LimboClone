@@ -9,9 +9,9 @@
 #include "Background.h"
 #include "Player.h"
 #include "Ground1024x32.h"
-#include "Block64x32.h"
-#include "Circle64x64.h"
-#include "Triangle64x32.h"
+#include "Crate32x32.h"
+#include "Boulder64x64.h"
+#include "Ramp64x32LR.h"
 #include "KeyboardManager.h"
 
 namespace GAME {
