@@ -55,27 +55,37 @@ bool PlatformerScene0::LoadActors() {
 
 
 
-	new SeeSaw(this, 300, 270);
+
+
+
+	float x = 0, y = 0;
+
+
+	// put in arranged order for oragnization for now
+	for (int i = 0; i < 3; i++) {
+		new Crate32x32(this, 0, 210+i*32, b2_staticBody);
+	}
+
+	// new Crate32x32(this, 0, 241, b2_staticBody);
+	//new Crate32x32(this, 0, 219, b2_staticBody);
+	new Boulder64x64(this, 800, 250);
+	new Ramp64x32LR(this, 1200, 0);
+
+	x = 1200;
+	y = 240;
+	new SeeSaw(this, x, y);
+	new Crate32x32(this, x + 70, y, b2_staticBody);
+
+
+
+	new Boulder64x64(this, 300, 100);
+	
+	player = new Player(this, 200, 250);
+	camera->SetFocus(player);
 
 	new Ground1024x32(this, 0, 300);
 	new Ground1024x32(this, 1025, 268);
-
-
-	// Testing collisions
-	//new Block64x32(this, 250, 0);
-	//new Block64x32(this, 350, 50);
-	//new Block64x32(this, 450, 100);
-	//new Circle64x64(this, 300, -50);
-
-	//Testing
-	new Ramp64x32LR(this, 1200, 0);
-	new Crate32x32(this, 0, 0);
-	new Crate32x32(this, 33, 0);
-	new Crate32x32(this, 60, 0);
-	new Boulder64x64(this, 800, 50);
-
-	player = new Player(this, 200, 30);
-	camera->SetFocus(player);
+	new Ground1024x32(this, 0, 132);
 
 	Debug::Log(EMessageType::INFO, "Initialized PlatformerScene0", __FILENAME__, __LINE__);
 	return true;

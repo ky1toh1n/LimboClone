@@ -7,7 +7,7 @@
 namespace GAME {
 	class Crate32x32 : PhysicsObject {
 	public:
-		Crate32x32(PlatformerScene* scenePtr, const float32 x, const float32 y);
+		Crate32x32(PlatformerScene* scenePtr, const float32 x, const float32 y, const b2BodyType type = b2_dynamicBody);
 		~Crate32x32();
 
 		Crate32x32(const Crate32x32&) = delete;
@@ -16,6 +16,7 @@ namespace GAME {
 		Crate32x32& operator=(Crate32x32 &&) = delete;
 
 		GameObject::TYPE GetType() const;
+
 	};
 }
 
