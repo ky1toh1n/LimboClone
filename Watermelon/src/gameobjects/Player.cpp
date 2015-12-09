@@ -78,7 +78,7 @@ void Player::HandleInput(const bool keyDownW, const bool keyDownA,
 
 void Player::BeginContact(const b2Contact* contact, const PhysicsObject& physObjRef) {
 	numContacts++;
-	if (physObjRef.GetType() == TYPE::BLOCK_64x32) {
+	if (physObjRef.GetType() == TYPE::CRATE_32x32) {
 		//std::cout << "Life -1;";
 	}
 

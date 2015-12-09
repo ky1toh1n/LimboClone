@@ -1,8 +1,8 @@
-#include "Triangle64x32.h"
+#include "Ramp64x32LR.h"
 
 using namespace GAME;
 
-Triangle64x32::Triangle64x32(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
+Ramp64x32LR::Ramp64x32LR(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	b2Vec2 vertices[3];
 	vertices[0].Set(0, 32);
 	vertices[1].Set(64, 32);
@@ -11,9 +11,9 @@ Triangle64x32::Triangle64x32(PlatformerScene* scenePtr, const float32 x = 0, con
 	body->SetFixedRotation(true);
 }
  
-Triangle64x32::~Triangle64x32() {
+Ramp64x32LR::~Ramp64x32LR() {
 }
 
-GameObject::TYPE Triangle64x32::GetType() const {
-	return TYPE::CIRCLE_64x64;
+GameObject::TYPE Ramp64x32LR::GetType() const {
+	return TYPE::RAMP;
 }
