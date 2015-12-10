@@ -46,7 +46,7 @@ void GameSceneManager::ThreadDemo(){  /// Just a threading demo
 
 bool GameSceneManager::Initialize(){
 	Debug::Log(EMessageType::INFO, "Initializing" ,__FILENAME__, __LINE__);
-	windowInstance.SetWindowSize(800, 600);
+	windowInstance.SetWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 	if (!windowInstance.Initialize()) {
 		Debug::Log(EMessageType::FATAL_ERROR, "Failed to initialize a GUI Window!",__FILENAME__, __LINE__);
 		return false;

@@ -21,5 +21,5 @@ void Background::Draw(const int xOffset, const int yOffset, const float scale, S
 
 	PhysicsObject::Draw(xOffset,
 		camera->GetRect()->h/2,
-		scale*1.1, clip, (float)angle, center, flip);
+		scale*1.1f, clip, angle, center, flip);
 }

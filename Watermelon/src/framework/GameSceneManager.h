@@ -19,6 +19,8 @@ public:
 		PLATFORMERSCENE0 = 1,
 		GAMEOVER = 2
 	};
+	const static int SCREEN_WIDTH = 800;
+	const static int SCREEN_HEIGHT = 600;
 private:
 	
 	GameSceneManager();

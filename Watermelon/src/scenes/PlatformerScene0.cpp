@@ -63,7 +63,7 @@ bool PlatformerScene0::LoadActors() {
 
 	// put in arranged order for oragnization for now
 	for (int i = 0; i < 3; i++) {
-		new Crate32x32(this, 0, 210+i*32, b2_staticBody);
+		new Crate32x32(this, 0, (float32)210+i*32, b2_staticBody);
 	}
 
 	// new Crate32x32(this, 0, 241, b2_staticBody);
