@@ -6,13 +6,10 @@ Scene::Scene(Window& windowRef, KeyboardManager& keymanRef) : windowPtr(&windowR
 	///Heap allocation for things that every Scene needs:
 	//Background music
 	backgroundMusic = new Music();
+	Debug::Log(EMessageType::INFO, "Sucessfully created Scene.cpp", __FILENAME__, __LINE__);
 }
 
 Scene::~Scene() {
-	delete windowPtr;
-	windowPtr = nullptr;
-	delete keyboardManager;
-	keyboardManager = nullptr;
 	delete backgroundMusic;
 	backgroundMusic = nullptr;
 	Debug::Log(EMessageType::INFO, "Successfully destroyed Scene.cpp", __FILENAME__, __LINE__);

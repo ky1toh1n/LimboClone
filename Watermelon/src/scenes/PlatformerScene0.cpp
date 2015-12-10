@@ -1,10 +1,10 @@
 #include "PlatformerScene0.h"
-#include "GameSceneManager.h"
+#include "framework/GameSceneManager.h"
 
 using namespace GAME;
 
 PlatformerScene0::PlatformerScene0(class Window& windowRef, class KeyboardManager& keymanRef): PlatformerScene(windowRef, keymanRef) {
-	
+	Debug::Log(EMessageType::INFO, "Successfully created PlatformerScene0.cpp", __FILENAME__, __LINE__);
 }
 
 PlatformerScene0::~PlatformerScene0(){
@@ -59,7 +59,7 @@ bool PlatformerScene0::LoadActors() {
 	float x = 0, y = 0;
 
 	for (int i = 0; i < 3; i++) {
-		new Crate32x32(this, 0, 210+i*32, b2_staticBody);
+		new Crate32x32(this, 0, (float32)210+i*32, b2_staticBody);
 	}
 
 	// new Crate32x32(this, 0, 241, b2_staticBody);
@@ -81,25 +81,25 @@ bool PlatformerScene0::LoadActors() {
 	player = new Player(this, x+775, 250);
 	camera->SetFocus(player);
 
-
 	new Ground1024x32(this, 0, 300);
 	new Ground1024x32(this, 0, 132);
+
 	new Ground1024x32(this, 1025, 268);
 	new Ground1024x32(this, 3025, 268);
 
+	Debug::Log(EMessageType::INFO, "Initialized PlatformerScene0", __FILENAME__, __LINE__);
 
-	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);
 	return true;
 }
 
 
 
 void PlatformerScene0::HandleInput() {
-	player->HandleInput(keyboardManager->IsPressed(Keyboard::Key::W),
-						keyboardManager->IsPressed(Keyboard::Key::A),
-						keyboardManager->IsPressed(Keyboard::Key::S),
-						keyboardManager->IsPressed(Keyboard::Key::D),
-						keyboardManager->IsPressed(Keyboard::Key::SPACE));
+	player->HandleInput(keyboardManager->IsPressed(Keyboard::Action::MOVE_UP),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_LEFT),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_DOWN),
+		keyboardManager->IsPressed(Keyboard::Action::MOVE_RIGHT),
+		keyboardManager->IsPressed(Keyboard::Action::JUMP));
 
 	
 

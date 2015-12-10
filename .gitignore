@@ -230,12 +230,8 @@ _Pvt_Extensions
 .fake/
 
 #Watermelon specific
-Watermelon/res/bgm
 Watermelon/log.txt
 *.vcxproj
-Watermelon/log.txt
 *.txt
-Watermelon/log.txt
-Watermelon/log.txt
 *.filters
-*.filters
+Watermelon/log.txt

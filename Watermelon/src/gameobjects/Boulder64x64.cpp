@@ -5,9 +5,7 @@ using namespace MATH;
 using namespace GAME;
 
 Boulder64x64::Boulder64x64(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
-	// scenePtr->CreateCircleGameObject(this, "res/textures/roundRock.png", x, y, b2_dynamicBody);
-	scenePtr->CreateCircleGameObject(this, "res/textures/roundRock.png", x, y, b2_dynamicBody, 0.2, 0.1, 3);
-
+	scenePtr->CreateCircleGameObject(this, "res/textures/roundRock.png", x, y, b2_dynamicBody, 32, 0.2f, 0.1f, 3);
 
 }
 

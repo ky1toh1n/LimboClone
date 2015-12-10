@@ -3,13 +3,13 @@
 
 #include "SDL.h"
 
-#include "Scene.h"
+#include "framework/Scene.h"
 
-#include "Window.h"
-#include "Texture.h"
-#include "Music.h"
-#include "Debug.h"
-#include "KeyboardManager.h"
+#include "framework/Window.h"
+#include "framework/Texture.h"
+#include "framework/Music.h"
+#include "framework/Debug.h"
+#include "framework/KeyboardManager.h"
 
 namespace GAME {
 	class MainMenu : public Scene {

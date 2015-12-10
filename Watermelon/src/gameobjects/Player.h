@@ -1,9 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "PlatformerScene.h"
-#include "PhysicsObject.h"
-#include "Animation.h"
+#include "scenes/PlatformerScene.h"
+#include "gameobjects/PhysicsObject.h"
+#include "framework/Animation.h"
 
 
 

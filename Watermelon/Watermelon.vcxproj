@@ -19,6 +19,7 @@
     <ClCompile Include="src\framework\Keyboard.cpp" />
     <ClCompile Include="src\framework\KeyboardManager.cpp" />
     <ClCompile Include="src\framework\Music.cpp" />
+    <ClCompile Include="src\framework\OrthographicCamera.cpp" />
     <ClCompile Include="src\framework\Scene.cpp" />
     <ClCompile Include="src\framework\Texture.cpp" />
     <ClCompile Include="src\framework\Timer.cpp" />
@@ -30,7 +31,6 @@
     <ClCompile Include="src\gameobjects\GameObject.cpp" />
     <ClCompile Include="src\gameobjects\Ground1024x32.cpp" />
     <ClCompile Include="src\gameobjects\Log.cpp" />
-    <ClCompile Include="src\gameobjects\OrthographicCamera.cpp" />
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
     <ClCompile Include="src\gameobjects\Pulley.cpp" />
@@ -51,7 +51,7 @@
     <ClInclude Include="src\framework\Keyboard.h" />
     <ClInclude Include="src\framework\KeyboardManager.h" />
     <ClInclude Include="src\framework\Music.h" />
-    <ClInclude Include="src\framework\PlatformerScene.h" />
+    <ClInclude Include="src\framework\OrthographicCamera.h" />
     <ClInclude Include="src\framework\Scene.h" />
     <ClInclude Include="src\framework\Texture.h" />
     <ClInclude Include="src\framework\Timer.h" />
@@ -64,7 +64,6 @@
     <ClInclude Include="src\gameobjects\GameObject.h" />
     <ClInclude Include="src\gameobjects\Ground1024x32.h" />
     <ClInclude Include="src\gameobjects\Log.h" />
-    <ClInclude Include="src\gameobjects\OrthographicCamera.h" />
     <ClInclude Include="src\gameobjects\PhysicsObject.h" />
     <ClInclude Include="src\gameobjects\Player.h" />
     <ClInclude Include="src\gameobjects\Pulley.h" />
@@ -73,6 +72,7 @@
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\scenes\GameOver.h" />
     <ClInclude Include="src\scenes\MainMenu.h" />
+    <ClInclude Include="src\scenes\PlatformerScene.h" />
     <ClInclude Include="src\scenes\PlatformerScene0.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -109,17 +109,21 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\GameDev\Box2D_v2.3.0\Box2D;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\gameobjects;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\scenes;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src\framework;C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\gameobjects;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\scenes;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src\framework;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src\framework;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src\gameobjects;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src\scenes;C:\Users\Myles\Desktop\Box2D;%(AdditionalIncludeDirectories);C:\GameDev\Box2D_v2.3.0\Box2D\Box2D</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameDev\SDL2_image-2.0.0\include;C:\GameDev\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\include;C:\GameDev\SDL2-2.0.3\include;-divider-;C:\GameDev\_Projects\C++ SDL\Watermelon\Watermelon\src;C:\GameDev\lib-SCHOOL\Y3-C++\Final\Watermelon\Watermelon\src;C:\Users\Myles\Documents\_Semester 3\C++\Watermelon\Watermelon\src;C:\GameDev\Box2D_v2.3.0\Box2D;C:\Users\Myles\Desktop\Box2D;C:\GameDev\Box2D_v2.3.0\Box2D\Box2D;C:\GameDev\Box2D-master%28vs13%29\Box2D;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;C:\Users\Myles\Desktop\Box2D\Build\vs2012\bin\Release;C:\GameDev\SDL2-2.0.3\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2_image-2.0.0\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\GameDev\SDL2_image-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2_mixer-devel-2.0.0-VC\SDL2_mixer-2.0.0\lib\x86;C:\GameDev\SDL2-2.0.3\lib\x86;-divider-;C:\GameDev\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Release;C:\Users\Myles\Desktop\Box2D\Build\vs2012\bin\Release;C:\GameDev\Box2D-master%28vs13%29\Box2D\Build\vs2013\bin\x32\Release</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;Box2D.lib</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
     </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

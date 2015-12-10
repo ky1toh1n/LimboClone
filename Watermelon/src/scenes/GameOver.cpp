@@ -1,5 +1,5 @@
 #include "GameOver.h"
-#include "GameSceneManager.h"
+#include "framework/GameSceneManager.h"
 
 using namespace GAME;
 
@@ -7,6 +7,7 @@ GameOver::GameOver(class Window& windowRef, class KeyboardManager& keymanRef) : 
 {
 	//Background texture & music
 	backgroundTexture = new Texture(windowPtr->GetRenderer());
+	Debug::Log(EMessageType::INFO, "Sucessfully created GameOver.cpp.", __FILENAME__, __LINE__);
 }
 
 
@@ -14,7 +15,7 @@ GameOver::~GameOver()
 {
 	delete backgroundTexture;
 	backgroundTexture = nullptr;
-	Debug::Log(EMessageType::INFO, "Successfully destroyed MainMenu.cpp", __FILENAME__, __LINE__);
+	Debug::Log(EMessageType::INFO, "Successfully destroyed GameOver.cpp", __FILENAME__, __LINE__);
 }
 
 void GameOver::HandleInput() {
@@ -45,8 +46,13 @@ bool GameOver::OnCreate(){
 };
 
 void GameOver::Update(const float deltaTime){
-	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+	if (keyboardManager->IsPressed(Keyboard::Action::TO_NEXT_SCREEN)) {
 		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::MAINMENU);
+	}
+	else if (keyboardManager->IsPressed(Keyboard::Action::EXIT_GAME)){
+		SDL_Event user_event;
+		user_event.type = SDL_QUIT;
+		SDL_PushEvent(&user_event);
 	}
 };
 

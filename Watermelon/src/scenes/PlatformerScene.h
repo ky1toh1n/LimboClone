@@ -3,15 +3,15 @@
 
 #include "SDL.h"
 
-#include "Scene.h"
-#include "Window.h"
-#include "Texture.h"
-#include "Music.h"
-#include "ContactListener.h"
-#include "WorldManager.h"
-#include "GameObject.h"
-#include "PhysicsObject.h"
-#include "OrthographicCamera.h"
+#include "framework/Scene.h"
+#include "framework/Window.h"
+#include "framework/Texture.h"
+#include "framework/Music.h"
+#include "framework/ContactListener.h"
+#include "framework/WorldManager.h"
+#include "gameobjects/GameObject.h"
+#include "gameobjects/PhysicsObject.h"
+#include "framework/OrthographicCamera.h"
 
 #include <vector>
 #include <functional>
@@ -46,7 +46,7 @@ namespace GAME {
 			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
 		
 		void CreateCircleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,
-			const float32 x, const float32 y, const b2BodyType& type, const float32 friction = WorldManager::DEF_FRICTION,
+			const float32 x, const float32 y, const b2BodyType& type, const float32 radius, const float32 friction = WorldManager::DEF_FRICTION,
 			const float32 restitution = WorldManager::DEF_RESTITUTION, const float32 density = WorldManager::DEF_DENSITY);
 		
 		void CreateTriangleGameObject(PhysicsObject* gameObjectPtr, const std::string& path,

@@ -1,5 +1,5 @@
 #include "MainMenu.h"
-#include "GameSceneManager.h"
+#include "framework/GameSceneManager.h"
 
 using namespace GAME;
 
@@ -7,6 +7,7 @@ MainMenu::MainMenu(class Window& windowRef, class KeyboardManager& keymanRef) : 
 {
 	//Background texture & music
 	backgroundTexture = new Texture(windowPtr->GetRenderer());
+	Debug::Log(EMessageType::INFO, "Successfully created MainMenu.cpp", __FILENAME__, __LINE__);
 }
 
 
@@ -44,7 +45,7 @@ bool MainMenu::OnCreate(){
 };
 
 void MainMenu::Update(const float deltaTime){
-	if (keyboardManager->IsPressed(Keyboard::Key::ESCAPE)) {
+	if (keyboardManager->IsPressed(Keyboard::Action::TO_NEXT_SCREEN)) {
 		GameSceneManager::getInstance()->LoadScene(GameSceneManager::ScreenState::PLATFORMERSCENE0);
 	}
 };

@@ -1,5 +1,5 @@
 #include "GameObject.h"
-
+#include "framework/GameSceneManager.h" //If you move this to the header file, everything explodes.
 
 using namespace GAME;
 
@@ -54,8 +54,10 @@ void GameObject::Draw(const int xOffset, const int yOffset, const float scale, S
 	const double angle, SDL_Point* center, const SDL_RendererFlip flip) const {
 	if (sprite != nullptr){
 
-		sprite->Draw((int)(position.x - Width() / 2) - xOffset + 400,
-			(int)(position.y - (Height()+1) / 2) - yOffset + 350, scale, clip, angle, center, flip);
+		sprite->Draw(
+			(int)(position.x - Width() / 2) - xOffset + GameSceneManager::SCREEN_WIDTH / 2,
+			(int)(position.y - (Height()+1) / 2) - yOffset + GameSceneManager::SCREEN_HEIGHT / 1.71428f
+			, scale, clip, angle, center, flip);
 
 		// The +1 on Height() + 1 is the offset of the texture to the body, because it is slightly off the ground
 	}

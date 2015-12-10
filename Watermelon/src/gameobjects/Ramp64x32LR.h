@@ -2,7 +2,7 @@
 #define Ramp64x32LR_H
 
 #include "PhysicsObject.h"
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 
 namespace GAME {
 	class Ramp64x32LR : PhysicsObject {
