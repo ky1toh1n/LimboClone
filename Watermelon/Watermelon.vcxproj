@@ -33,6 +33,7 @@
     <ClCompile Include="src\gameobjects\OrthographicCamera.cpp" />
     <ClCompile Include="src\gameobjects\PhysicsObject.cpp" />
     <ClCompile Include="src\gameobjects\Player.cpp" />
+    <ClCompile Include="src\gameobjects\Pulley.cpp" />
     <ClCompile Include="src\gameobjects\Ramp64x32LR.cpp" />
     <ClCompile Include="src\gameobjects\SeeSaw.cpp" />
     <ClCompile Include="src\Main.cpp" />
@@ -66,6 +67,7 @@
     <ClInclude Include="src\gameobjects\OrthographicCamera.h" />
     <ClInclude Include="src\gameobjects\PhysicsObject.h" />
     <ClInclude Include="src\gameobjects\Player.h" />
+    <ClInclude Include="src\gameobjects\Pulley.h" />
     <ClInclude Include="src\gameobjects\Ramp64x32LR.h" />
     <ClInclude Include="src\gameobjects\SeeSaw.h" />
     <ClInclude Include="src\Main.h" />

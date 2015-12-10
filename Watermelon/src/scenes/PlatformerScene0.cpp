@@ -52,16 +52,12 @@ bool PlatformerScene0::LoadActors() {
 
 	new Background(this, 0, 195, camera);
 	new Background(this, 1265, 195, camera);
-
-
-
-
+	new Background(this, 2530, 195, camera);
+	new Background(this, 3795, 195, camera);
 
 
 	float x = 0, y = 0;
 
-
-	// put in arranged order for oragnization for now
 	for (int i = 0; i < 3; i++) {
 		new Crate32x32(this, 0, 210+i*32, b2_staticBody);
 	}
@@ -75,19 +71,21 @@ bool PlatformerScene0::LoadActors() {
 	y = 240;
 	new SeeSaw(this, x, y);
 	new Crate32x32(this, x + 70, y, b2_staticBody);
+	new Pulley(this, x + 800, y - 300);
+	new Crate32x32(this, x + 720, y, b2_staticBody);
 
 
 
 	new Boulder64x64(this, 300, 100);
 	
-	player = new Player(this, 200, 250);
+	player = new Player(this, x+775, 250);
 	camera->SetFocus(player);
 
 
 	new Ground1024x32(this, 0, 300);
-	new Ground1024x32(this, 1025, 268);
 	new Ground1024x32(this, 0, 132);
-
+	new Ground1024x32(this, 1025, 268);
+	new Ground1024x32(this, 3025, 268);
 
 
 	Debug::Log(EMessageType::INFO, "Created Scene 0", __FILENAME__, __LINE__);

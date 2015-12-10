@@ -12,7 +12,11 @@ SeeSaw::SeeSaw(PlatformerScene* scenePtr, const float32 x, const float32 y) : Ph
 
 	GameObject* beam = new Log(scenePtr, x, y);
 	// Store the joint so it can be destroyed.
-	joint = scenePtr->CreateJoint(body, beam->GetBody(), false);
+	b2RevoluteJointDef jointDef;
+	jointDef.bodyA = body;
+	jointDef.bodyB = beam->GetBody();
+	jointDef.collideConnected = false;
+	joint = scenePtr->CreateRevoluteJoint(jointDef);
 	
 }
 

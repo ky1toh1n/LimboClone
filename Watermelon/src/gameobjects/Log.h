@@ -8,7 +8,7 @@ namespace GAME{
 	class Log : public PhysicsObject {
 	public:
 		Log(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0);
-		virtual ~Log();
+		~Log();
 
 		Log(const Log&) = delete;
 		Log(Log &&) = delete;

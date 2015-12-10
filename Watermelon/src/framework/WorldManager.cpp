@@ -80,7 +80,7 @@ b2Shape * WorldManager::CreatePolygonShape(const b2Vec2 & vertices, const int32 
 	return shape;
 }
 
-b2Joint* WorldManager::CreateJoint(b2JointDef& jointDef) const {
+b2Joint* WorldManager::CreateJoint(const b2JointDef& jointDef) const {
 	return world->CreateJoint(&jointDef);
 }
 

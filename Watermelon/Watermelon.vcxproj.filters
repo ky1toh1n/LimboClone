@@ -120,6 +120,9 @@
     <ClCompile Include="src\gameobjects\Log.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameobjects\Pulley.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -210,6 +213,9 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="src\gameobjects\Log.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Pulley.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>

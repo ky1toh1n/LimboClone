@@ -30,7 +30,7 @@ namespace GAME {
 			const b2BodyType bodyType, const float32 friction = DEF_FRICTION,
 			const float32 restitution = DEF_RESTITUTION, const float32 density = DEF_DENSITY);
 
-		b2Joint* CreateJoint(b2JointDef& jointDef) const;
+		b2Joint* CreateJoint(const b2JointDef& jointDef) const;
 
 		void Update(const float deltaTime);
 	public:

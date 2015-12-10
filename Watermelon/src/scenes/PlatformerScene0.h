@@ -13,6 +13,7 @@
 #include "Boulder64x64.h"
 #include "Ramp64x32LR.h"
 #include "SeeSaw.h"
+#include "Pulley.h"
 #include "Log.h"
 #include "KeyboardManager.h"
 
