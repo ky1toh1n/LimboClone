@@ -5,7 +5,7 @@ using namespace GAME;
 Player::Player(PlatformerScene* scenePtr, const float32 x = 0, const float32 y = 0) {
 	currentState = PlayerState::JUMPING;
 	animations = new std::vector<Animation*>();
-	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody, 25);
+	scenePtr->CreateCircleGameObject(this, "res/placeholders/player/idle/idle0.png", x, y, b2_dynamicBody, 25, 0.5);
 	
 	body->SetFixedRotation(true);
 	// There is no spritesheet class, so we are adding individual images to the animation
@@ -43,7 +43,6 @@ Player::~Player() {
 // === Private Functions ====
 void Player::Move(const float32 force) {
 	if (currentState != PlayerState::JUMPING) { currentState = PlayerState::RUNNING; }
-	// body->ApplyForceToCenter(b2Vec2(200, 0), true);
 	body->ApplyLinearImpulse(b2Vec2(force, 0), body->GetWorldCenter(), true);
 	flipTex = force > 0 ? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL;
 }

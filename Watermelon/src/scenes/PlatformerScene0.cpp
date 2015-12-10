@@ -61,24 +61,30 @@ bool PlatformerScene0::LoadActors() {
 	for (int i = 0; i < 3; i++) {
 		new Crate32x32(this, 0, (float32)210+i*32, b2_staticBody);
 	}
+	new Crate32x32(this, 210, 271, b2_staticBody);
 
 	// new Crate32x32(this, 0, 241, b2_staticBody);
 	//new Crate32x32(this, 0, 219, b2_staticBody);
 	new Boulder64x64(this, 800, 250);
-	new Ramp64x32LR(this, 1200, 0);
+	new Ramp64x32LR(this, 1064, 250);
+	//new Crate32x32(this, 1100, 250);
+	new Crate32x32(this, 1400, 250);
 
 	x = 1200;
 	y = 240;
 	new SeeSaw(this, x, y);
 	new Crate32x32(this, x + 70, y, b2_staticBody);
+	new Crate32x32(this, x + 86, y - 32, b2_staticBody);
+
 	new Pulley(this, x + 800, y - 300);
 	new Crate32x32(this, x + 720, y, b2_staticBody);
-
-
-
-	new Boulder64x64(this, 300, 100);
 	
-	player = new Player(this, x+775, 250);
+
+
+	new Boulder64x64(this, 575, 100);
+	new Crate32x32(this, 420, 100, b2_staticBody);
+	
+	player = new Player(this, 80, 0);
 	camera->SetFocus(player);
 
 	new Ground1024x32(this, 0, 300);

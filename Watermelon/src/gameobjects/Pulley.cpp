@@ -4,7 +4,7 @@ using namespace GAME;
 
 Pulley::Pulley(PlatformerScene* scenePtr, const float32 x , const float32 y) {
 
-	scenePtr->CreateBoxGameObject(this, "res/textures/log.png", x, y, b2_staticBody);
+	scenePtr->CreateBoxGameObject(this, "res/textures/loglong.png", x-xDist, y, b2_staticBody);
 	
 	GameObject* leftObject = new Log(scenePtr, x - xDist, y + length);
 	GameObject* rightObject = new Log(scenePtr, x + xDist, y + length);
