@@ -111,10 +111,15 @@
     <ClCompile Include="src\gameobjects\Log.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="src\gameobjects\Pulley.cpp">
-      <Filter>Source Files\gameobjects</Filter>
     <ClCompile Include="src\framework\OrthographicCamera.cpp">
-
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MainMenu.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GameOver.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -195,9 +200,17 @@
     <ClInclude Include="src\gameobjects\Log.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="src\gameobjects\Pulley.h">
-      <Filter>Header Files\gameobjects</Filter>
-     <ClInclude Include="src\framework\OrthographicCamera.h">
-
+    <ClInclude Include="src\framework\OrthographicCamera.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\MainMenu.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\GameOver.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\PlatformerScene.h">
+      <Filter>Header Files\scenes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

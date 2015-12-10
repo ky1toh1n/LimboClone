@@ -1,7 +1,7 @@
 #ifndef PULLEY_H
 #define PULLEY_H
 
-#include "PlatformerScene.h"
+#include "scenes/PlatformerScene.h"
 #include "Log.h"
 #include "Crate32x32.h"
 
