@@ -13,7 +13,7 @@ Background::~Background() {
 }
 
 void Background::Update(float deltaTime) {
-
+	// ...
 }
 
 void Background::Draw(const int xOffset, const int yOffset, const float scale, SDL_Rect* clip,

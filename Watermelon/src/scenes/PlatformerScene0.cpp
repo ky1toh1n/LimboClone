@@ -83,6 +83,9 @@ bool PlatformerScene0::LoadActors() {
 
 	new Boulder64x64(this, 575, 100);
 	new Crate32x32(this, 420, 100, b2_staticBody);
+
+
+	new Boulder64x64(this, 1800, 100);
 	
 	player = new Player(this, 80, 0);
 	camera->SetFocus(player);

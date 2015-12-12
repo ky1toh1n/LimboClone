@@ -120,6 +120,12 @@
     <ClCompile Include="src\scenes\GameOver.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="src\gameobjects\Pulley.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameobjects\Rope.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\framework\AudioFile.h">
@@ -211,6 +217,12 @@
     </ClInclude>
     <ClInclude Include="src\scenes\PlatformerScene.h">
       <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Pulley.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gameobjects\Rope.h">
+      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
