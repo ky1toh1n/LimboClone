@@ -14,6 +14,7 @@ namespace GAME {
 		Rope& operator=(const Rope &) = delete;
 		Rope& operator=(Rope &&) = delete;
 
+		void SetStart(const b2Vec2& startPos);
 		void SetEnd(const b2Vec2& endPos);
 
 

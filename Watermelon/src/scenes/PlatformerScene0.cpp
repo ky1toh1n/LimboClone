@@ -61,7 +61,7 @@ bool PlatformerScene0::LoadActors() {
 	for (int i = 0; i < 3; i++) {
 		new Crate32x32(this, 0, (float32)210+i*32, b2_staticBody);
 	}
-	new Crate32x32(this, 210, 271, b2_staticBody);
+	new Crate32x32(this, 190, 271, b2_staticBody);
 
 	// new Crate32x32(this, 0, 241, b2_staticBody);
 	//new Crate32x32(this, 0, 219, b2_staticBody);
@@ -85,7 +85,7 @@ bool PlatformerScene0::LoadActors() {
 	new Crate32x32(this, 420, 100, b2_staticBody);
 
 
-	// new Boulder64x64(this, 1864, 100); // Rock spawn on Pulley
+	new Boulder64x64(this, 1864, 100); // Rock spawn on Pulley
 	
 	player = new Player(this, 80, 0);
 	camera->SetFocus(player);
@@ -94,7 +94,7 @@ bool PlatformerScene0::LoadActors() {
 	new Ground1024x32(this, 0, 132);
 
 	new Ground1024x32(this, 1025, 268);
-	new Ground1024x32(this, 3025, 268);
+	new Ground1024x32(this, 3000, 268);
 
 	Debug::Log(EMessageType::INFO, "Initialized PlatformerScene0", __FILENAME__, __LINE__);
 

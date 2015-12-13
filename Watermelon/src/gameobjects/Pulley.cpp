@@ -6,14 +6,14 @@ Pulley::Pulley(PlatformerScene* scenePtr, const float32 x , const float32 y) {
 
 	scenePtr->CreateBoxGameObject(this, "res/textures/loglong.png", x-112, y, b2_staticBody);
 	
-	anchors[0] = (PhysicsObject*)new Crate32x32(scenePtr, x - xDist + 40, y, b2_staticBody); // Anchor Body
+	ropes[0] = new Rope(scenePtr, x - xDist + 56, y + 50);
+	ropes[1] = new Rope(scenePtr, x + xDist + 56, y + 50);
+
+	anchors[0] = (PhysicsObject*)new Crate32x32(scenePtr, x - xDist + 40, y - 200, b2_staticBody); // Anchor Body
 	anchors[1] = (PhysicsObject*)new Crate32x32(scenePtr, x + xDist + 40, y, b2_staticBody); // Anchor Body
 
 	platforms[0] = new Log(scenePtr, x - xDist, y + length);
 	platforms[1] = new Log(scenePtr, x + xDist, y + length);
-
-	ropes[0] = new Rope(scenePtr, x - xDist + 56, y + 64);
-	ropes[1] = new Rope(scenePtr, x + xDist + 56, y + 64);
 
 	b2Body* leftBody = platforms[0]->GetBody();
 	b2Body* rightBody = platforms[1]->GetBody();
@@ -24,11 +24,11 @@ Pulley::Pulley(PlatformerScene* scenePtr, const float32 x , const float32 y) {
 
 
 	b2PulleyJointDef jointDef;
-	b2Vec2 anchor1(x - xDist, y + length);
-	b2Vec2 anchor2(x + xDist, y + length);
-	b2Vec2 groundAnchor1(x - xDist, y);
+	b2Vec2 anchor1(x - xDist, y+32);
+	b2Vec2 anchor2(x + xDist, y+32);
+	b2Vec2 groundAnchor1(x - xDist, y - 200);
 	b2Vec2 groundAnchor2(x + xDist, y);
-	jointDef.Initialize(leftBody, rightBody, groundAnchor1, groundAnchor2, anchor1, anchor2, 1.05f);
+	jointDef.Initialize(leftBody, rightBody, groundAnchor1, groundAnchor2, anchor1, anchor2, 1.2f);
 
 	pulleyJoint = (b2PulleyJoint*)scenePtr->CreatePulleyJoint(jointDef);
 }
@@ -47,7 +47,7 @@ void Pulley::Update(const float deltaTime) {
 
 	// leftBody->SetTransform(leftBody->GetPosition(), leftBody->GetAngle());
 
-	ropes[0]->SetEnd(platforms[0]->GetBody()->GetPosition()); // platforms[0]->GetPosition() uses MATH::Vec2 so.. gotta change that
-	ropes[1]->SetEnd(platforms[1]->GetBody()->GetPosition());
+	ropes[0]->SetStart(platforms[0]->GetBody()->GetPosition()); // platforms[0]->GetPosition() uses MATH::Vec2 so.. gotta change that
+	ropes[1]->SetStart(platforms[1]->GetBody()->GetPosition());
 	PhysicsObject::Update(deltaTime);
 }
