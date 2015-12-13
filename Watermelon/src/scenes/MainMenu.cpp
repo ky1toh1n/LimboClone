@@ -26,7 +26,7 @@ bool MainMenu::OnCreate(){
 	/// Load Assets:
 	/// Background
 
-	if (!backgroundTexture->Load("res/textures/limb800x600.bmp"))
+	if (!backgroundTexture->Load("res/textures/limb800x600B.bmp"))
 	{
 		return false;
 	}
