@@ -7,7 +7,7 @@ Ramp64x32LR::Ramp64x32LR(PlatformerScene* scenePtr, const float32 x = 0, const f
 	vertices[0].Set(0, 32);
 	vertices[1].Set(64, 32);
 	vertices[2].Set(64, 0);
-	scenePtr->CreateTriangleGameObject(this, "res/placeholders/Triangle64x32.png", x, y, vertices, b2_dynamicBody);
+	scenePtr->CreateTriangleGameObject(this, "res/textures/ramp.jpg", x, y, vertices, b2_dynamicBody);
 	body->SetFixedRotation(true);
 }
  
