@@ -9,7 +9,7 @@ Pulley::Pulley(PlatformerScene* scenePtr, const float32 x , const float32 y) {
 	ropes[0] = new Rope(scenePtr, x - xDist + 56, y + 50);
 	ropes[1] = new Rope(scenePtr, x + xDist + 56, y + 50);
 
-	anchors[0] = (PhysicsObject*)new Crate32x32(scenePtr, x - xDist + 40, y - 200, b2_staticBody); // Anchor Body
+	anchors[0] = (PhysicsObject*)new Crate32x32(scenePtr, x - xDist + 40, y, b2_staticBody); // Anchor Body
 	anchors[1] = (PhysicsObject*)new Crate32x32(scenePtr, x + xDist + 40, y, b2_staticBody); // Anchor Body
 
 	platforms[0] = new Log(scenePtr, x - xDist, y + length);
@@ -26,9 +26,9 @@ Pulley::Pulley(PlatformerScene* scenePtr, const float32 x , const float32 y) {
 	b2PulleyJointDef jointDef;
 	b2Vec2 anchor1(x - xDist, y+32);
 	b2Vec2 anchor2(x + xDist, y+32);
-	b2Vec2 groundAnchor1(x - xDist, y - 200);
+	b2Vec2 groundAnchor1(x - xDist, y);
 	b2Vec2 groundAnchor2(x + xDist, y);
-	jointDef.Initialize(leftBody, rightBody, groundAnchor1, groundAnchor2, anchor1, anchor2, 1.2f);
+	jointDef.Initialize(leftBody, rightBody, groundAnchor1, groundAnchor2, anchor1, anchor2, 1.05f);
 
 	pulleyJoint = (b2PulleyJoint*)scenePtr->CreatePulleyJoint(jointDef);
 }

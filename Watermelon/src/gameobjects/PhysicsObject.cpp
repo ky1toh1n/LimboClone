@@ -13,6 +13,9 @@ PhysicsObject::~PhysicsObject() {
 	// is destroyed or goes out of scope, add it to the list.
 
 
+	// not enough time to complete, will be adjusting if the time comes.
+
+
 	// Can be done via..
 	// Pass to the scene to deallocate 
 	//			OR

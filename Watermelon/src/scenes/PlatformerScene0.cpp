@@ -65,7 +65,7 @@ bool PlatformerScene0::LoadActors() {
 
 	// new Crate32x32(this, 0, 241, b2_staticBody);
 	//new Crate32x32(this, 0, 219, b2_staticBody);
-	new Boulder64x64(this, 800, 250);
+
 	new Ramp64x32LR(this, 1064, 250);
 	//new Crate32x32(this, 1100, 250);
 	new Crate32x32(this, 1400, 250);
@@ -80,8 +80,8 @@ bool PlatformerScene0::LoadActors() {
 	new Crate32x32(this, x + 720, y, b2_staticBody);
 	
 
-
-	new Boulder64x64(this, 575, 100);
+	new Boulder64x64(this, 800, 250); // Rock Top
+	new Boulder64x64(this, 575, 100); // Rock Bottom
 	new Crate32x32(this, 420, 100, b2_staticBody);
 
 
