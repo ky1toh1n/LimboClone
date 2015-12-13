@@ -114,7 +114,7 @@ void Player::Update(const float deltaTime) {
 
 	SetSprite(*animations->at(static_cast<PlayerState>(currentState))->Play(deltaTime));
 
-	if (position.y > 600) { 
+	if (position.y > 400) { 
 		currentState = PlayerState::DEAD;
 	}
 }
