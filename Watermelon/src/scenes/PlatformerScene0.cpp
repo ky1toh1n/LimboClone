@@ -85,7 +85,7 @@ bool PlatformerScene0::LoadActors() {
 	new Crate32x32(this, 420, 100, b2_staticBody);
 
 
-	new Boulder64x64(this, 1864, 100); // Rock spawn on Pulley
+	// new Boulder64x64(this, 1864, 100); // Rock spawn on Pulley
 	
 	player = new Player(this, 80, 0);
 	camera->SetFocus(player);
