@@ -1,4 +1,4 @@
-# Watermelon
+# Limbo Clone (codename: Watermelon)
 A Limbo Clone written in C++, made with SDL and Box2D.
 
 It is a platformer with physics-based puzzles.
